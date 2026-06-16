@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCF-GLB-3D viewer</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/tabs.css?v=20260608-tabbar-patch-1">
+  <link rel="stylesheet" href="styles/tables.css">
+  <link rel="stylesheet" href="styles/debug.css">
+  <link rel="stylesheet" href="styles/viewer3d.css?v=20260518-statusbar-theme-12">
+  <link rel="stylesheet" href="styles/print.css">
+  <link rel="stylesheet" href="tabs/model-exchange-tab.css">
+  <link rel="stylesheet" href="tabs/interchange-config-tab.css">
+  <link rel="stylesheet" href="tabs/model-converters-tab.css">
+  <link rel="stylesheet" href="tabs/model-converters-weight-ranking.css">
+  <link rel="stylesheet" href="tabs/viewer3d-rvm-tab.css?v=20260518-statusbar-theme-12">
+  <link rel="stylesheet" href="tabs/rvm-json-pcf-extract-tab.css">
+  <link rel="stylesheet" href="tabs/universal-xml-converter-tab.css">
+  <link rel="stylesheet" href="tabs/xml-compare-tab.css">
+  <link rel="stylesheet" href="rvm-pcf-master-tabs/RvmPcfMasterTabs.css">
+  <link rel="stylesheet" href="rvm-pcf-master-tabs/RvmPcfLegacyMasterPanel.css">
+
+  <!-- Import map - CDN libraries, no build step required -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three":        "https://unpkg.com/three@0.160.1/build/three.module.js",
+      "three/addons/":"https://unpkg.com/three@0.160.1/examples/jsm/",
+      "gltf-exporter": "https://unpkg.com/three@0.160.1/examples/jsm/exporters/GLTFExporter.js",
+      "mdb-reader":   "https://esm.sh/mdb-reader@2",
+      "buffer":       "https://esm.sh/buffer@6",
+      "xlsx":         "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/+esm"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<div id="app-layout">
+  <nav id="tab-bar"></nav>
+  <main id="tab-content">
+    <!-- Rendered by active tab module -->
+  </main>
+</div>
+
+<!-- Loading overlay — shown during parse/render, hidden on completion -->
+<div id="app-loading-overlay" aria-live="polite" aria-label="Loading">
+  <div class="app-loading-spinner" aria-hidden="true"></div>
+  <span class="app-loading-label" id="app-loading-label">Loading…</span>
+</div>
+
+<!-- Toast notifications — populated by core/toast.js -->
+<div id="app-toast-container" aria-live="assertive" role="status"></div>
+
+<!-- PAT modal — shown when no RVM conversion backend is reachable -->
+<div id="app-pat-modal" role="dialog" aria-modal="true" aria-labelledby="app-pat-modal-title">
+  <div class="app-pat-modal__box">
+    <p class="app-pat-modal__title" id="app-pat-modal-title">GitHub Personal Access Token</p>
+    <p class="app-pat-modal__desc">No local conversion server found. Enter a PAT to enable remote RVM conversion via GitHub Actions. The token is used only for this session and is never stored.</p>
+    <input class="app-pat-modal__input" id="app-pat-input" type="password"
+           placeholder="ghp_…" autocomplete="off" aria-label="GitHub Personal Access Token" />
+    <div class="app-pat-modal__actions">
+      <button class="app-pat-modal__cancel" id="app-pat-cancel" type="button">Cancel</button>
+      <button class="app-pat-modal__submit" id="app-pat-submit" type="button">Connect</button>
+    </div>
+  </div>
+</div>
+
+<div id="print-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; padding:20px; border-radius:4px; max-width:500px; width:100%; max-height:80vh; display:flex; flex-direction:column;">
+    <h3 style="margin-top:0; border-bottom:1px solid #ccc; padding-bottom:10px;">Select Sections to Print</h3>
+    <div id="print-modal-list" style="overflow-y:auto; flex:1; margin:10px 0;"></div>
+    <div style="text-align:right; border-top:1px solid #ccc; padding-top:10px;">
+      <button id="print-modal-cancel" class="btn-secondary">Cancel</button>
+      <button id="print-modal-confirm" class="btn-primary">Print Selected</button>
+    </div>
+  </div>
+</div>
+
+<!-- Application entrypoint -->
+<script type="module" src="./main.js"></script>
+</body>
+</html>

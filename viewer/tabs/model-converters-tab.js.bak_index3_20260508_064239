@@ -1,0 +1,2488 @@
+﻿import { emit } from '../core/event-bus.js';
+import { state } from '../core/state.js';
+import { RuntimeEvents } from '../contracts/runtime-events.js';
+import { notify } from '../diagnostics/notification-center.js';
+import { pickImportAdapter } from '../interchange/source/adapter-registry.js';
+import { ModelConverters_3DModelConv_PreviewRenderer } from '../converters/view/model-conv-preview-renderer.js';
+import {
+  buildConverterWorkerRequest,
+  validateConverterWorkerResponse,
+} from '../converters/worker-contract.js';
+import { parseRmssAttributes } from '../converters/rmss-attribute-parser.js';
+
+const STORAGE_KEY = 'model-converters.defaults.v1';
+const INPUTXML_HEADER_DEFAULTS = Object.freeze({
+  headerDateTime: '13:40:45 6 May 2026',
+  headerSource: 'AVEVA PSI',
+  headerVersion: '3.1.7.0 (psi2cii.exe version 3.1.0.3 (Feb 21 2024))',
+  headerUserName: 'MUCE828',
+  headerPurpose: 'Preliminary stress run',
+  headerProjectName: 'ZAU',
+  headerMdbName: '/ZAU1',
+});
+
+function _defaultInputxml2019LayoutConfigJson() {
+  return JSON.stringify({
+    elements: {
+      row3: ['0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000'],
+      row4: ['10.0000', '30.0000', '0.000000', '0.000000', '0.000000', '0.000000'],
+      row5: ['0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000'],
+      row6: ['0.499901E-04', '0.965312E-03', '0.000000', '0.000000', '0.000000', '15.0000'],
+      row7: ['0.000000', '0.000000', '0.000000', '0.000000', '0.000000', '0.000000'],
+      row8: ['0.000000', '0.000000', '0.000000', '0.000000', '9999.99', '9999.99'],
+      row9: ['0.000000', '0.000000', '0.000000', '0.000000', '0.000000'],
+      row10: ['0'],
+      row11: ['-1', '-1'],
+      row12: ['{bend}', '{rigid}', '0', '{restraint}', '{sif}', '0'],
+      row13: ['0', '0', '0', '{sif}', '0', '0'],
+      row14: ['{reducer}', '0', '{sif}'],
+      line_label: {
+        pointer_start: 0,
+        label_index_start: 1,
+        label_prefix: 'LINENO',
+        label_width: 1,
+        default_line: '0',
+        line_labels: ['10 unassigned'],
+      },
+    },
+    nodename: {
+      nonam_count: 0,
+      from_label: 'PS-XXX',
+      to_label: 'PS-XXX',
+      from_labels: [],
+      to_labels: [],
+    },
+    control: {
+      line1: ['{elements}', '0', '3', '0', '3', '0'],
+      line2: ['{bends}', '{rigids}', '0', '{restraints}', '3', '0'],
+      line3: ['0', '0', '0', '1', '{sifs}', '0'],
+      line4: ['4'],
+    },
+    sections: {
+      include_nodename: false,
+    },
+    miscel_1: {
+      material_id_default: '0.000',
+      material_ids: [],
+    },
+    units: {
+      numeric_lines: [
+        '      0.0000      0.00000      0.00000      0.00000      0.00000      0.00000',
+        '      0.000000      0.0000      0.00000      0.00000      0.00000      0.00000',
+        '      0.00000      0.00000      0.00000      0.00000      0.00000      0.00000',
+        '      0.00000      0.0000      0.0000      0.0000',
+      ],
+    },
+  }, null, 2);
+}
+const NATIVE_RVM_ENDPOINT_CANDIDATES = Object.freeze([
+  'http://localhost:3000/api/native/rvm-to-rev',
+  'http://localhost:3001/api/native/rvm-to-rev',
+  'http://localhost:3200/api/native/rvm-to-rev',
+  'http://127.0.0.1:3000/api/native/rvm-to-rev',
+  'http://127.0.0.1:3001/api/native/rvm-to-rev',
+  'http://127.0.0.1:3200/api/native/rvm-to-rev',
+]);
+
+const CONVERTER_DEFS = Object.freeze({
+  rvm_to_rev: {
+    id: 'rvm_to_rev',
+    label: 'RVM -> REV',
+    primaryAccept: '.rvm,.RVM',
+    primaryLabel: 'RVM Input',
+    secondaryLabel: 'ATT/TXT Attribute File (optional)',
+    secondaryAccept: '.att,.ATT,.txt,.TXT',
+    description: 'Convert RVM source to REV text.',
+    defaults: {},
+    fields: [],
+  },
+  rvmattr_to_xml: {
+    id: 'rvmattr_to_xml',
+    label: 'RVM+ATTRIBUTE -> XML',
+    primaryAccept: '.rvm,.RVM',
+    primaryLabel: 'RVM Input',
+    secondaryLabel: 'ATT/TXT Attribute File (optional)',
+    secondaryAccept: '.att,.ATT,.txt,.TXT',
+    description: 'Managed native stage to XML; JSON->XML is attempted first, then REV->XML fallback.',
+    defaults: {
+      coordFactor: 1000,
+      nodeStart: 10,
+      nodeStep: 10,
+      nodeMergeTolerance: 0.5,
+      source: 'AVEVA PSI',
+      purpose: 'Preliminary stress run',
+      titleLine: 'PSI stress Output',
+      enablePsiRigidLogic: false,
+      preferJsonToXml: true,
+      defaultDiameter: 100,
+      defaultWallThickness: 0.01,
+      defaultInsulationThickness: 0,
+      defaultCorrosionAllowance: 0,
+    },
+    fields: [
+      { key: 'coordFactor', label: 'Coord Factor', type: 'number', step: '0.01' },
+      { key: 'nodeStart', label: 'Node Start', type: 'number', step: '1' },
+      { key: 'nodeStep', label: 'Node Step', type: 'number', step: '1' },
+      { key: 'nodeMergeTolerance', label: 'Node Merge Tol.', type: 'number', step: '0.01' },
+      { key: 'preferJsonToXml', label: 'Prefer JSON -> XML', type: 'checkbox' },
+      { key: 'source', label: 'Source', type: 'text' },
+      { key: 'purpose', label: 'Purpose', type: 'text' },
+      { key: 'titleLine', label: 'Title Line', type: 'text' },
+      { key: 'enablePsiRigidLogic', label: 'Enable PSI Rigid Logic', type: 'checkbox' },
+      { key: 'defaultDiameter', label: 'JSON Fallback Diameter', type: 'number', step: '0.001' },
+      { key: 'defaultWallThickness', label: 'JSON Fallback Wall Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultInsulationThickness', label: 'JSON Fallback Insulation', type: 'number', step: '0.001' },
+      { key: 'defaultCorrosionAllowance', label: 'JSON Fallback Corrosion', type: 'number', step: '0.001' },
+    ],
+  },
+  rev_to_pcf: {
+    id: 'rev_to_pcf',
+    label: 'REV -> PCF',
+    primaryAccept: '.rev,.REV,.txt,.TXT',
+    primaryLabel: 'REV Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert REV text export to PCF.',
+    defaults: {
+      coordFactor: 1000,
+      topologyMergeTolerance: 0.5,
+      pipelineReference: '',
+      projectIdentifier: '',
+      excludeGroupTokens: '-PIPESUPP',
+    },
+    fields: [
+      { key: 'coordFactor', label: 'Coord Factor', type: 'number', step: '0.01' },
+      { key: 'topologyMergeTolerance', label: 'Topology Merge Tol.', type: 'number', step: '0.01' },
+      { key: 'pipelineReference', label: 'Pipeline Reference', type: 'text' },
+      { key: 'projectIdentifier', label: 'Project Identifier', type: 'text' },
+      {
+        key: 'excludeGroupTokens',
+        label: 'Exclude Group Tokens (comma-separated)',
+        type: 'text',
+      },
+    ],
+  },
+  rev_to_xml: {
+    id: 'rev_to_xml',
+    label: 'REV -> XML',
+    primaryAccept: '.rev,.REV,.txt,.TXT',
+    primaryLabel: 'REV Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert REV text export to PSI116-style XML.',
+    defaults: {
+      coordFactor: 1000,
+      nodeStart: 10,
+      nodeStep: 10,
+      nodeMergeTolerance: 0.5,
+      source: 'AVEVA PSI',
+      purpose: 'Preliminary stress run',
+      titleLine: 'PSI stress Output',
+      enablePsiRigidLogic: false,
+    },
+    fields: [
+      { key: 'coordFactor', label: 'Coord Factor', type: 'number', step: '0.01' },
+      { key: 'nodeStart', label: 'Node Start', type: 'number', step: '1' },
+      { key: 'nodeStep', label: 'Node Step', type: 'number', step: '1' },
+      { key: 'nodeMergeTolerance', label: 'Node Merge Tol.', type: 'number', step: '0.01' },
+      { key: 'source', label: 'Source', type: 'text' },
+      { key: 'purpose', label: 'Purpose', type: 'text' },
+      { key: 'titleLine', label: 'Title Line', type: 'text' },
+      { key: 'enablePsiRigidLogic', label: 'Enable PSI Rigid Logic', type: 'checkbox' },
+    ],
+  },
+  json_to_xml: {
+    id: 'json_to_xml',
+    label: 'JSON -> XML',
+    disabled: true,
+    primaryAccept: '.json,.JSON',
+    primaryLabel: 'RVM JSON Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert rvmparser hierarchy JSON to PSI116-style XML.',
+    defaults: {
+      coordFactor: 1000,
+      nodeStart: 10,
+      nodeStep: 10,
+      defaultDiameter: 100,
+      defaultWallThickness: 0.01,
+      defaultInsulationThickness: 0,
+      defaultCorrosionAllowance: 0,
+      mockTemperature: -100000,
+      mockTemperatureOther: -100000,
+      mockPressure: 0,
+      mockPressureOther: 0,
+      mockMaterialNumber: 0,
+      mockInsulationDensity: 0,
+      mockFluidDensity: 0,
+    },
+    fields: [
+      { key: 'coordFactor', label: 'Coord Factor', type: 'number', step: '0.01' },
+      { key: 'nodeStart', label: 'Node Start', type: 'number', step: '1' },
+      { key: 'nodeStep', label: 'Node Step', type: 'number', step: '1' },
+      { key: 'defaultDiameter', label: 'Default Diameter', type: 'number', step: '0.001' },
+      { key: 'defaultWallThickness', label: 'Default Wall Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultInsulationThickness', label: 'Default Insulation', type: 'number', step: '0.001' },
+      { key: 'defaultCorrosionAllowance', label: 'Default Corrosion', type: 'number', step: '0.001' },
+      { key: 'mockTemperature', label: 'Mock Temperature1', type: 'number', step: '0.1' },
+      { key: 'mockTemperatureOther', label: 'Mock Temperature2..9', type: 'number', step: '0.1' },
+      { key: 'mockPressure', label: 'Mock Pressure1', type: 'number', step: '0.1' },
+      { key: 'mockPressureOther', label: 'Mock Pressure2..9', type: 'number', step: '0.1' },
+      { key: 'mockMaterialNumber', label: 'Mock Material Number', type: 'number', step: '1' },
+      { key: 'mockInsulationDensity', label: 'Mock Insulation Density', type: 'number', step: '0.1' },
+      { key: 'mockFluidDensity', label: 'Mock Fluid Density', type: 'number', step: '0.1' },
+    ],
+  },
+  stagedjson_to_inputxml: {
+    id: 'stagedjson_to_inputxml',
+    label: 'StagedJSON -> InputXML',
+    primaryAccept: '.json,.JSON',
+    primaryLabel: 'Staged JSON Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert staged hierarchy JSON to CAESAR II Input XML using benchmark defaults (B7410250).',
+    defaults: {
+      nodeStart: 10,
+      nodeStep: 10,
+      temperature1: 50.0,
+      wallThickness: 0.01,
+    },
+    fields: [
+      { key: 'inputxmlBookmark', label: 'Defaults Bookmark JSON (overrides B7410250 benchmark)', type: 'text' },
+      { key: 'nodeStart', label: 'Node Start', type: 'number', step: '1' },
+      { key: 'nodeStep', label: 'Node Step', type: 'number', step: '1' },
+      { key: 'jobName', label: 'Job Name', type: 'text' },
+      { key: 'temperature1', label: 'Temperature 1 (Â°C)', type: 'number', step: '0.1' },
+      { key: 'wallThickness', label: 'Wall Thickness (mm)', type: 'number', step: '0.001' },
+      { key: 'modulus', label: 'Modulus', type: 'number', step: '0.1' },
+      { key: 'materialName', label: 'Material Name', type: 'text' },
+    ],
+  },
+  stagedjson_to_xml: {
+    id: 'stagedjson_to_xml',
+    label: 'StagedJSON -> XML',
+    disabled: true,
+    primaryAccept: '.json,.JSON',
+    primaryLabel: 'Staged JSON Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert staged hierarchy JSON (branch -> children -> attributes) to PSI116-style XML.',
+    defaults: {
+      nodeStart: 10,
+      nodeStep: 10,
+      source: 'AVEVA PSI',
+      purpose: 'RMSS staged JSON conversion',
+      titleLine: 'RMSS StagedJSON Output',
+      defaultDiameter: 100,
+      defaultWallThickness: 0.01,
+      defaultInsulationThickness: 0,
+      defaultCorrosionAllowance: 0,
+    },
+    fields: [
+      { key: 'nodeStart', label: 'Node Start', type: 'number', step: '1' },
+      { key: 'nodeStep', label: 'Node Step', type: 'number', step: '1' },
+      { key: 'source', label: 'Source', type: 'text' },
+      { key: 'purpose', label: 'Purpose', type: 'text' },
+      { key: 'titleLine', label: 'Title Line', type: 'text' },
+      { key: 'defaultDiameter', label: 'Default Diameter', type: 'number', step: '0.001' },
+      { key: 'defaultWallThickness', label: 'Default Wall Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultInsulationThickness', label: 'Default Insulation', type: 'number', step: '0.001' },
+      { key: 'defaultCorrosionAllowance', label: 'Default Corrosion', type: 'number', step: '0.001' },
+    ],
+  },
+  rev_to_stp: {
+    id: 'rev_to_stp',
+    label: 'REV -> STP',
+    primaryAccept: '.rev,.REV,.txt,.TXT',
+    primaryLabel: 'REV Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert REV support blocks to STEP member polylines.',
+    defaults: {
+      coordFactor: 1000,
+      supportPathContains: 'RRIMS-PIPESUPP',
+      includeGenericSupportGroups: false,
+      schemaName: 'CIS2',
+    },
+    fields: [
+      { key: 'coordFactor', label: 'Coord Factor', type: 'number', step: '0.01' },
+      { key: 'supportPathContains', label: 'Support Path Token', type: 'text' },
+      { key: 'schemaName', label: 'STEP Schema Name', type: 'text' },
+      { key: 'includeGenericSupportGroups', label: 'Include Generic Support Groups', type: 'checkbox' },
+    ],
+  },
+  xml_to_cii: {
+    id: 'xml_to_cii',
+    label: 'XML->CII(2019)',
+    primaryAccept: '.xml,.XML',
+    primaryLabel: 'XML Input',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert PSI116-style XML to CII.',
+    defaults: {
+      coordsMode: 'first',
+    },
+    fields: [
+      { key: 'coordsMode', label: 'Coords Mode', type: 'select', options: ['first', 'all', 'none'] },
+    ],
+  },
+  cii_syntax_check_2019: {
+    id: 'cii_syntax_check_2019',
+    label: 'CII Syntax Check (2019)',
+    primaryAccept: '.cii,.CII',
+    primaryLabel: 'CII Input (2019)',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Validate CAESAR II 2019 CII syntax (format-only) and output a JSON report.',
+    defaults: {},
+    fields: [],
+  },
+  inputxml_to_cii: {
+    id: 'inputxml_to_cii',
+    label: 'InputXML->CII(v2014)',
+    disabled: true,
+    primaryAccept: '.xml,.XML',
+    primaryLabel: 'Input XML',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert CAESARII Input XML to CII.',
+    defaults: {
+      inferReducerAngleFromGeometry: false,
+      defaultDiameter: 0,
+      defaultWallThickness: 0.01,
+      defaultInsulationThickness: 0,
+      defaultCorrosionAllowance: 0,
+      defaultTemperature1: 0,
+      defaultTemperature2: 0,
+      defaultTemperature3: 0,
+      defaultReducerAngle: 0,
+      coordReconstructionTolerance: 25,
+      layoutConfigJson: _defaultInputxml2019LayoutConfigJson(),
+      ...INPUTXML_HEADER_DEFAULTS,
+    },
+    fields: [
+      { key: 'inferReducerAngleFromGeometry', label: 'Infer Reducer Angle From Geometry', type: 'checkbox' },
+      { key: 'defaultDiameter', label: 'Default Diameter', type: 'number', step: '0.001' },
+      { key: 'defaultWallThickness', label: 'Default Wall Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultInsulationThickness', label: 'Default Insulation Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultCorrosionAllowance', label: 'Default Corrosion Allowance', type: 'number', step: '0.001' },
+      { key: 'defaultTemperature1', label: 'Default Temperature1', type: 'number', step: '0.01' },
+      { key: 'defaultTemperature2', label: 'Default Temperature2', type: 'number', step: '0.01' },
+      { key: 'defaultTemperature3', label: 'Default Temperature3', type: 'number', step: '0.01' },
+      { key: 'defaultReducerAngle', label: 'Default Reducer Angle', type: 'number', step: '0.01' },
+      { key: 'coordReconstructionTolerance', label: 'Coord Reconstruction Tolerance (mm)', type: 'number', step: '0.001' },
+      { key: 'headerDateTime', label: 'Header DateTime', type: 'text' },
+      { key: 'headerSource', label: 'Header Source', type: 'text' },
+      { key: 'headerVersion', label: 'Header Version', type: 'text' },
+      { key: 'headerUserName', label: 'Header UserName', type: 'text' },
+      { key: 'headerPurpose', label: 'Header Purpose', type: 'text' },
+      { key: 'headerProjectName', label: 'Header ProjectName', type: 'text' },
+      { key: 'headerMdbName', label: 'Header MDBName', type: 'text' },
+    ],
+  },
+  inputxml14_to_cii: {
+    id: 'inputxml14_to_cii',
+    label: 'InputXML(Ver14) -> CII [TBA]',
+    primaryAccept: '.xml,.XML',
+    primaryLabel: 'Input XML (Ver14)',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert CAESARII Input XML Ver14 to CII.',
+    defaults: {
+      inferReducerAngleFromGeometry: false,
+      defaultDiameter: 0,
+      defaultWallThickness: 0.01,
+      defaultInsulationThickness: 0,
+      defaultCorrosionAllowance: 0,
+      defaultTemperature1: 0,
+      defaultTemperature2: 0,
+      defaultTemperature3: 0,
+      defaultReducerAngle: 0,
+      coordReconstructionTolerance: 25,
+      ...INPUTXML_HEADER_DEFAULTS,
+    },
+    fields: [
+      { key: 'inferReducerAngleFromGeometry', label: 'Infer Reducer Angle From Geometry', type: 'checkbox' },
+      { key: 'defaultDiameter', label: 'Default Diameter', type: 'number', step: '0.001' },
+      { key: 'defaultWallThickness', label: 'Default Wall Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultInsulationThickness', label: 'Default Insulation Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultCorrosionAllowance', label: 'Default Corrosion Allowance', type: 'number', step: '0.001' },
+      { key: 'defaultTemperature1', label: 'Default Temperature1', type: 'number', step: '0.01' },
+      { key: 'defaultTemperature2', label: 'Default Temperature2', type: 'number', step: '0.01' },
+      { key: 'defaultTemperature3', label: 'Default Temperature3', type: 'number', step: '0.01' },
+      { key: 'defaultReducerAngle', label: 'Default Reducer Angle', type: 'number', step: '0.01' },
+      { key: 'coordReconstructionTolerance', label: 'Coord Reconstruction Tolerance (mm)', type: 'number', step: '0.001' },
+      { key: 'headerDateTime', label: 'Header DateTime', type: 'text' },
+      { key: 'headerSource', label: 'Header Source', type: 'text' },
+      { key: 'headerVersion', label: 'Header Version', type: 'text' },
+      { key: 'headerUserName', label: 'Header UserName', type: 'text' },
+      { key: 'headerPurpose', label: 'Header Purpose', type: 'text' },
+      { key: 'headerProjectName', label: 'Header ProjectName', type: 'text' },
+      { key: 'headerMdbName', label: 'Header MDBName', type: 'text' },
+    ],
+  },
+  inputxml_to_cii2019: {
+    id: 'inputxml_to_cii2019',
+    label: 'InputXML->CII(2019)',
+    primaryAccept: '.xml,.XML',
+    primaryLabel: 'Input XML (2019)',
+    secondaryLabel: '',
+    secondaryAccept: '',
+    description: 'Convert CAESARII Input XML to CII using 2019 benchmark structure profiles.',
+    defaults: {
+      inferReducerAngleFromGeometry: false,
+      defaultDiameter: 0,
+      defaultWallThickness: 0.01,
+      defaultInsulationThickness: 0,
+      defaultCorrosionAllowance: 0,
+      defaultTemperature1: 0,
+      defaultTemperature2: 0,
+      defaultTemperature3: 0,
+      defaultReducerAngle: 0,
+      coordReconstructionTolerance: 25,
+      layoutConfigJson: _defaultInputxml2019LayoutConfigJson(),
+      ...INPUTXML_HEADER_DEFAULTS,
+    },
+    fields: [
+      { key: 'inferReducerAngleFromGeometry', label: 'Infer Reducer Angle From Geometry', type: 'checkbox' },
+      { key: 'defaultDiameter', label: 'Default Diameter', type: 'number', step: '0.001' },
+      { key: 'defaultWallThickness', label: 'Default Wall Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultInsulationThickness', label: 'Default Insulation Thickness', type: 'number', step: '0.001' },
+      { key: 'defaultCorrosionAllowance', label: 'Default Corrosion Allowance', type: 'number', step: '0.001' },
+      { key: 'defaultTemperature1', label: 'Default Temperature1', type: 'number', step: '0.01' },
+      { key: 'defaultTemperature2', label: 'Default Temperature2', type: 'number', step: '0.01' },
+      { key: 'defaultTemperature3', label: 'Default Temperature3', type: 'number', step: '0.01' },
+      { key: 'defaultReducerAngle', label: 'Default Reducer Angle', type: 'number', step: '0.01' },
+      { key: 'coordReconstructionTolerance', label: 'Coord Reconstruction Tolerance (mm)', type: 'number', step: '0.001' },
+      { key: 'headerDateTime', label: 'Header DateTime', type: 'text' },
+      { key: 'headerSource', label: 'Header Source', type: 'text' },
+      { key: 'headerVersion', label: 'Header Version', type: 'text' },
+      { key: 'headerUserName', label: 'Header UserName', type: 'text' },
+      { key: 'headerPurpose', label: 'Header Purpose', type: 'text' },
+      { key: 'headerProjectName', label: 'Header ProjectName', type: 'text' },
+      { key: 'headerMdbName', label: 'Header MDBName', type: 'text' },
+    ],
+  },
+  pdf_to_inputxml: {
+    id: 'pdf_to_inputxml',
+    label: 'PDF -> InputXML',
+    primaryAccept: '.pdf,.PDF',
+    primaryLabel: 'Input Echo PDF',
+    secondaryLabel: 'Misc PDF (optional)',
+    secondaryAccept: '.pdf,.PDF',
+    description: 'Convert CAESAR Input Echo PDF to Input XML.',
+    defaults: {},
+    fields: [],
+  },
+  pdf_to_inputxml_cii14: {
+    id: 'pdf_to_inputxml_cii14',
+    label: 'PDF -> InputXML (CII14)',
+    primaryAccept: '.pdf,.PDF',
+    primaryLabel: 'Input Echo PDF',
+    secondaryLabel: 'Benchmark Input XML (optional)',
+    secondaryAccept: '.xml,.XML',
+    description: 'Convert PDF to CII14 InputXML using benchmark structure (falls back to bundled profile when omitted).',
+    defaults: {
+      outputMode: 'preserve',
+    },
+    fields: [
+      { key: 'outputMode', label: 'Output Mode', type: 'select', options: ['preserve', 'overlay'] },
+    ],
+  },
+});
+
+const CONVERTER_ORDER = Object.freeze([
+  'rvm_to_rev',
+  'rvmattr_to_xml',
+  'rev_to_pcf',
+  'rev_to_xml',
+  'rev_to_stp',
+  'json_to_xml',
+  'stagedjson_to_xml',
+  'stagedjson_to_inputxml',
+  'pdf_to_inputxml',
+  'pdf_to_inputxml_cii14',
+  'xml_to_cii',
+  'cii_syntax_check_2019',
+  'inputxml_to_cii',
+  'inputxml14_to_cii',
+  'inputxml_to_cii2019',
+]);
+
+const ORDERED_CONVERTER_DEFS = Object.freeze(
+  CONVERTER_ORDER
+    .map((converterId) => CONVERTER_DEFS[converterId])
+    .filter(Boolean),
+);
+
+const RMSS_BORE_FIELDS = Object.freeze(['HBOR', 'TBOR', 'ABORE', 'LBORE', 'DTXR']);
+
+function _clone(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function _toText(value) {
+  if (value === undefined || value === null) return '';
+  return String(value);
+}
+
+async function _loadInputXmlAutoReference(primaryFileName) {
+  const normalizedName = _toText(primaryFileName).trim();
+  if (!normalizedName) return null;
+  for (const profile of INPUTXML_AUTO_REFERENCE_PROFILES) {
+    if (!profile.namePattern.test(normalizedName)) continue;
+    const profileUrl = new URL(`../converters/scripts/${profile.fileName}`, import.meta.url);
+    const response = await fetch(profileUrl, { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`Bundled InputXML benchmark profile failed to load (${profile.fileName}).`);
+    }
+    const bytes = await response.arrayBuffer();
+    return { name: profile.outputName, bytes };
+  }
+  return null;
+}
+
+function _esc(value) {
+  return _toText(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+function _createWorkerRuntime() {
+  const worker = new Worker(new URL('../converters/py-worker.js?v=20260508-preview-geometry', import.meta.url), { type: 'module' });
+  const pending = new Map();
+  let nextJobId = 1;
+
+  const onMessage = (event) => {
+    const payload = event.data || {};
+    const pendingJob = pending.get(payload.jobId);
+    if (!pendingJob) return;
+    pending.delete(payload.jobId);
+    const validation = validateConverterWorkerResponse(payload);
+    if (!validation.ok) {
+      pendingJob.reject(new Error(validation.error));
+      return;
+    }
+    if (payload.ok) pendingJob.resolve(payload);
+    else pendingJob.reject(new Error(_toText(payload.error || 'Converter worker failed.')));
+  };
+
+  const onError = (event) => {
+    for (const pendingJob of pending.values()) {
+      pendingJob.reject(new Error(_toText(event?.message || 'Converter worker crashed.')));
+    }
+    pending.clear();
+  };
+
+  worker.addEventListener('message', onMessage);
+  worker.addEventListener('error', onError);
+
+  function runJob(request) {
+    const jobId = nextJobId;
+    nextJobId += 1;
+    const transfer = [];
+    for (const fileSpec of request.inputFiles || []) {
+      if (fileSpec?.bytes instanceof ArrayBuffer) transfer.push(fileSpec.bytes);
+    }
+    const payload = { type: 'run', jobId, ...request };
+    return new Promise((resolve, reject) => {
+      pending.set(jobId, { resolve, reject });
+      worker.postMessage(
+        buildConverterWorkerRequest(jobId, payload.converterId, payload.inputFiles, payload.options),
+        transfer,
+      );
+    });
+  }
+
+  function dispose() {
+    worker.removeEventListener('message', onMessage);
+    worker.removeEventListener('error', onError);
+    worker.terminate();
+    pending.clear();
+  }
+
+  return { runJob, dispose };
+}
+
+function _loadStoredState() {
+  const defaultsByConverter = {};
+  for (const def of ORDERED_CONVERTER_DEFS) {
+    defaultsByConverter[def.id] = _clone(def.defaults);
+  }
+  const enabledConverterIds = new Set(ORDERED_CONVERTER_DEFS.map((def) => def.id));
+
+  let selectedConverter = 'rvm_to_rev';
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+      return { selectedConverter, defaultsByConverter };
+    }
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === 'object') {
+      if (enabledConverterIds.has(parsed.selectedConverter)) selectedConverter = parsed.selectedConverter;
+      const source = parsed.defaultsByConverter || {};
+      for (const [converterId, sourceValues] of Object.entries(source)) {
+        if (!enabledConverterIds.has(converterId) || !sourceValues || typeof sourceValues !== 'object') continue;
+        defaultsByConverter[converterId] = {
+          ...defaultsByConverter[converterId],
+          ...sourceValues,
+        };
+      }
+    }
+  } catch {
+    // Keep defaults.
+  }
+
+  return { selectedConverter, defaultsByConverter };
+}
+
+function _saveStoredState(selectedConverter, defaultsByConverter) {
+  const payload = JSON.stringify({ selectedConverter, defaultsByConverter });
+  window.localStorage.setItem(STORAGE_KEY, payload);
+}
+
+function _readOptionValue(field, input) {
+  if (field.type === 'checkbox') return !!input.checked;
+  if (field.type === 'number') {
+    const value = Number(input.value);
+    return Number.isFinite(value) ? value : 0;
+  }
+  return input.value;
+}
+
+function _summarizeJsonConfig(text) {
+  const source = String(text || '').trim();
+  if (!source) return 'Empty config (default script config will apply).';
+  try {
+    const parsed = JSON.parse(source);
+    const keys = Object.keys(parsed || {});
+    return `Configured keys: ${keys.join(', ') || '(none)'}`;
+  } catch {
+    return 'Invalid JSON (converter will fail until fixed).';
+  }
+}
+
+const INPUTXML2019_POPUP_HEADER_KEYS = Object.freeze([
+  'inferReducerAngleFromGeometry',
+  'defaultDiameter',
+  'defaultWallThickness',
+  'defaultInsulationThickness',
+  'defaultCorrosionAllowance',
+  'defaultTemperature1',
+  'defaultTemperature2',
+  'defaultTemperature3',
+  'defaultReducerAngle',
+  'coordReconstructionTolerance',
+  'headerDateTime',
+  'headerSource',
+  'headerVersion',
+  'headerUserName',
+  'headerPurpose',
+  'headerProjectName',
+  'headerMdbName',
+]);
+
+function _popupFieldValueToTyped(field, input) {
+  if (field.type === 'checkbox') return !!input.checked;
+  if (field.type === 'number') {
+    const value = Number(input.value);
+    return Number.isFinite(value) ? value : 0;
+  }
+  return String(input.value ?? '');
+}
+
+function _popupFieldValueAsText(field) {
+  if (field.type === 'checkbox') return '';
+  if (field.type === 'number') return Number.isFinite(Number(field.value)) ? String(field.value) : '0';
+  return String(field.value ?? '');
+}
+
+function _flattenConfigRows(value, path, rows) {
+  if (Array.isArray(value)) {
+    if (!value.length) {
+      rows.push({ path, type: 'array', value: '[]' });
+      return;
+    }
+    for (let index = 0; index < value.length; index += 1) {
+      _flattenConfigRows(value[index], `${path}[${index}]`, rows);
+    }
+    return;
+  }
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value);
+    if (!entries.length) {
+      rows.push({ path, type: 'object', value: '{}' });
+      return;
+    }
+    for (const [key, child] of entries) {
+      _flattenConfigRows(child, path ? `${path}.${key}` : key, rows);
+    }
+    return;
+  }
+  rows.push({
+    path,
+    type: value === null ? 'null' : typeof value,
+    value: typeof value === 'string' ? value : JSON.stringify(value),
+  });
+}
+
+function _setValueAtPath(obj, pathStr, value) {
+  const parts = pathStr.replace(/\[(\d+)\]/g, '.$1').split('.').filter(Boolean);
+  let cur = obj;
+  for (let i = 0; i < parts.length - 1; i += 1) {
+    if (cur == null || typeof cur !== 'object') return;
+    cur = cur[parts[i]];
+  }
+  if (cur != null && typeof cur === 'object') {
+    cur[parts[parts.length - 1]] = value;
+  }
+}
+
+function _openJsonPopup({
+  title,
+  value,
+  onSave,
+  onCancel,
+  headerFields,
+  requirementLines,
+}) {
+  const popupHeaderFields = Array.isArray(headerFields) ? headerFields : [];
+  const headerFieldsHtml = popupHeaderFields.map((field) => {
+    if (field.type === 'checkbox') {
+      return `
+        <label style="display:flex;align-items:center;gap:8px;color:#d7e6ff;font-size:13px;">
+          <input type="checkbox" data-popup-header-key="${_esc(field.key)}" ${field.value ? 'checked' : ''}>
+          <span>${_esc(field.label)}</span>
+        </label>
+      `;
+    }
+    const inputType = field.type === 'number' ? 'number' : 'text';
+    const stepAttr = field.step ? `step="${_esc(field.step)}"` : '';
+    return `
+      <label style="display:flex;flex-direction:column;gap:6px;">
+        <span style="color:#9cc5ff;font-size:12px;">${_esc(field.label)}</span>
+        <input type="${inputType}" ${stepAttr} data-popup-header-key="${_esc(field.key)}"
+          value="${_esc(_popupFieldValueAsText(field))}"
+          style="background:#182334;color:#e6edf5;border:1px solid #31455f;border-radius:6px;padding:8px;">
+      </label>
+    `;
+  }).join('');
+  const requirementText = Array.isArray(requirementLines) && requirementLines.length
+    ? requirementLines.map((line) => `<div style="color:#9aa8ba;font-size:12px;">${_esc(line)}</div>`).join('')
+    : '';
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.inset = '0';
+  overlay.style.background = 'rgba(0,0,0,0.55)';
+  overlay.style.zIndex = '9999';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.innerHTML = `
+    <div style="width:min(1000px,96vw);height:min(780px,94vh);display:flex;flex-direction:column;background:#0f1724;border:1px solid #2c3a4f;border-radius:10px;overflow:hidden;">
+      <div style="padding:10px 12px;border-bottom:1px solid #2c3a4f;color:#9cc5ff;font-weight:700;">${_esc(title)}</div>
+      <div style="display:flex;gap:6px;padding:10px 12px 0 12px;">
+        <button type="button" data-popup-tab="header" class="model-converters-download-btn">Header</button>
+        <button type="button" data-popup-tab="config" class="model-converters-run-btn">Config</button>
+        <button type="button" data-popup-tab="json" class="model-converters-download-btn">JSON</button>
+      </div>
+      <div style="padding:10px 12px;color:#9aa8ba;font-size:12px;">Element-wise fields: <code>elements.line_label.line_labels</code>, <code>nodename.from_labels</code>/<code>to_labels</code>, <code>miscel_1.material_ids</code>. Control is block-level.</div>
+      <div style="padding:0 12px 10px 12px;">${requirementText}</div>
+      <div data-popup-panel="header" style="display:none;flex:1;padding:0 12px 12px 12px;overflow:auto;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;">
+          ${headerFieldsHtml || '<div style="color:#9aa8ba;">No header fields configured for this popup.</div>'}
+        </div>
+      </div>
+      <div data-popup-panel="config" style="display:none;flex:1;padding:0 12px 12px 12px;overflow:auto;">
+        <div data-popup-config-status style="margin-bottom:8px;color:#9aa8ba;font-size:12px;"></div>
+        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:6px;border-bottom:1px solid #31455f;color:#9cc5ff;">Path</th>
+              <th style="text-align:left;padding:6px;border-bottom:1px solid #31455f;color:#9cc5ff;">Type</th>
+              <th style="text-align:left;padding:6px;border-bottom:1px solid #31455f;color:#9cc5ff;">Value</th>
+            </tr>
+          </thead>
+          <tbody data-popup-config-rows></tbody>
+        </table>
+      </div>
+      <div data-popup-panel="json" style="display:flex;flex:1;padding:0 12px 12px 12px;">
+        <textarea data-popup-json-text style="flex:1;background:#182334;color:#e6edf5;border:1px solid #31455f;border-radius:8px;padding:10px;font-family:Consolas,monospace;font-size:12px;resize:none;">${_esc(String(value || ''))}</textarea>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;padding:10px 12px;border-top:1px solid #2c3a4f;background:#111c2c;">
+        <button type="button" data-popup-action="cancel" class="model-converters-download-btn">Cancel</button>
+        <button type="button" data-popup-action="save" class="model-converters-run-btn">Save</button>
+      </div>
+    </div>
+  `;
+  const textarea = overlay.querySelector('[data-popup-json-text]');
+  const configRowsEl = overlay.querySelector('[data-popup-config-rows]');
+  const configStatusEl = overlay.querySelector('[data-popup-config-status]');
+  const tabButtons = Array.from(overlay.querySelectorAll('[data-popup-tab]'));
+  const panels = Array.from(overlay.querySelectorAll('[data-popup-panel]'));
+  const activateTab = (tabName) => {
+    for (const button of tabButtons) {
+      const isActive = button.getAttribute('data-popup-tab') === tabName;
+      button.className = isActive ? 'model-converters-run-btn' : 'model-converters-download-btn';
+    }
+    for (const panel of panels) {
+      const isActive = panel.getAttribute('data-popup-panel') === tabName;
+      panel.style.display = isActive ? 'flex' : 'none';
+    }
+  };
+  const renderConfigTable = () => {
+    if (!configRowsEl || !configStatusEl) return;
+    const source = String(textarea?.value ?? '').trim();
+    if (!source) {
+      configStatusEl.textContent = 'Empty JSON.';
+      configRowsEl.innerHTML = '<tr><td colspan="3" style="padding:8px;color:#9aa8ba;">No config rows.</td></tr>';
+      return;
+    }
+    let parsed;
+    try {
+      parsed = JSON.parse(source);
+    } catch (error) {
+      configStatusEl.textContent = `Invalid JSON: ${_toText(error?.message || error)}`;
+      configRowsEl.innerHTML = '<tr><td colspan="3" style="padding:8px;color:#ffb4b4;">Fix JSON to view table.</td></tr>';
+      return;
+    }
+    const rows = [];
+    _flattenConfigRows(parsed, '', rows);
+    configStatusEl.textContent = `Rows: ${rows.length}`;
+    if (!rows.length) {
+      configRowsEl.innerHTML = '<tr><td colspan="3" style="padding:8px;color:#9aa8ba;">No config rows.</td></tr>';
+      return;
+    }
+    const inputStyle = 'background:#182334;color:#e6edf5;border:1px solid #31455f;border-radius:4px;padding:3px 6px;font-size:12px;width:100%;box-sizing:border-box;';
+    configRowsEl.innerHTML = rows.map((row) => {
+      let cellHtml;
+      if (row.type === 'boolean') {
+        cellHtml = `<input type="checkbox" data-config-path="${_esc(row.path)}" data-config-type="boolean" ${row.value === 'true' ? 'checked' : ''}>`;
+      } else if (row.type === 'number') {
+        cellHtml = `<input type="number" data-config-path="${_esc(row.path)}" data-config-type="number" value="${_esc(row.value)}" style="${inputStyle}">`;
+      } else if (row.type === 'string') {
+        cellHtml = `<input type="text" data-config-path="${_esc(row.path)}" data-config-type="string" value="${_esc(row.value)}" style="${inputStyle}">`;
+      } else {
+        cellHtml = `<code style="color:#9aa8ba;">${_esc(row.value)}</code>`;
+      }
+      return `
+        <tr>
+          <td style="padding:6px;border-bottom:1px solid #24354a;vertical-align:middle;color:#e6edf5;"><code>${_esc(row.path || '(root)')}</code></td>
+          <td style="padding:6px;border-bottom:1px solid #24354a;vertical-align:middle;color:#9cc5ff;white-space:nowrap;">${_esc(row.type)}</td>
+          <td style="padding:6px;border-bottom:1px solid #24354a;vertical-align:middle;color:#d7e6ff;">${cellHtml}</td>
+        </tr>
+      `;
+    }).join('');
+    configRowsEl.querySelectorAll('[data-config-path]').forEach((input) => {
+      const eventName = input.type === 'checkbox' ? 'change' : 'input';
+      input.addEventListener(eventName, () => {
+        const configPath = input.getAttribute('data-config-path');
+        const configType = input.getAttribute('data-config-type');
+        let val;
+        if (configType === 'boolean') val = input.checked;
+        else if (configType === 'number') val = Number.isFinite(Number(input.value)) ? Number(input.value) : 0;
+        else val = input.value;
+        _setValueAtPath(parsed, configPath, val);
+        if (textarea) textarea.value = JSON.stringify(parsed, null, 2);
+      });
+    });
+  };
+  for (const button of tabButtons) {
+    button.addEventListener('click', () => {
+      const tabName = button.getAttribute('data-popup-tab') || 'json';
+      if (tabName === 'config') renderConfigTable();
+      activateTab(tabName);
+    });
+  }
+  textarea?.addEventListener('input', () => {
+    const active = tabButtons.find((button) => button.className === 'model-converters-run-btn');
+    if (active?.getAttribute('data-popup-tab') === 'config') renderConfigTable();
+  });
+  activateTab('config');
+  renderConfigTable();
+  const close = () => overlay.remove();
+  overlay.querySelector('[data-popup-action="cancel"]')?.addEventListener('click', () => {
+    onCancel?.();
+    close();
+  });
+  overlay.querySelector('[data-popup-action="save"]')?.addEventListener('click', () => {
+    const headerValues = {};
+    for (const field of popupHeaderFields) {
+      const input = overlay.querySelector(`[data-popup-header-key="${field.key}"]`);
+      if (!input) continue;
+      headerValues[field.key] = _popupFieldValueToTyped(field, input);
+    }
+    onSave?.({ jsonText: textarea?.value ?? '', headerValues });
+    close();
+  });
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+      onCancel?.();
+      close();
+    }
+  });
+  document.body.appendChild(overlay);
+}
+
+function _openJsonPopupAsync(options) {
+  return new Promise((resolve) => {
+    _openJsonPopup({
+      ...options,
+      onSave: (payload) => resolve({ saved: true, payload }),
+      onCancel: () => resolve({ saved: false, payload: null }),
+    });
+  });
+}
+
+function _parseInputxml2019Requirements(xmlText) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(String(xmlText || ''), 'application/xml');
+  const parserError = doc.querySelector('parsererror');
+  if (parserError) {
+    throw new Error('Input XML parse failed. Cannot derive file-specific config requirements.');
+  }
+
+  const elements = Array.from(doc.getElementsByTagName('PIPINGELEMENT'));
+  if (!elements.length) {
+    throw new Error('Input XML has no PIPINGELEMENT rows. Cannot derive file-specific config requirements.');
+  }
+
+  let bendCount = 0;
+  let rigidCount = 0;
+  let restraintCount = 0;
+  let sifCount = 0;
+  const nodeIds = new Set();
+
+  for (const element of elements) {
+    bendCount += element.getElementsByTagName('BEND').length;
+    rigidCount += element.getElementsByTagName('RIGID').length;
+    restraintCount += element.getElementsByTagName('RESTRAINT').length;
+    sifCount += element.getElementsByTagName('SIF').length;
+
+    const fromNode = Number(element.getAttribute('FROM_NODE'));
+    const toNode = Number(element.getAttribute('TO_NODE'));
+    if (Number.isFinite(fromNode)) nodeIds.add(fromNode);
+    if (Number.isFinite(toNode)) nodeIds.add(toNode);
+  }
+
+  return {
+    elementCount: elements.length,
+    bendCount,
+    rigidCount,
+    restraintCount,
+    sifCount,
+    nodeCount: nodeIds.size,
+  };
+}
+
+function _parseInputxml2019ConfigOrDefault(layoutConfigJsonText) {
+  const source = String(layoutConfigJsonText || '').trim();
+  if (!source) return { config: JSON.parse(_defaultInputxml2019LayoutConfigJson()), parseIssue: null };
+  try {
+    const parsed = JSON.parse(source);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      return {
+        config: JSON.parse(_defaultInputxml2019LayoutConfigJson()),
+        parseIssue: 'Existing config is not a JSON object. Replaced with default profile.',
+      };
+    }
+    return { config: parsed, parseIssue: null };
+  } catch {
+    return {
+      config: JSON.parse(_defaultInputxml2019LayoutConfigJson()),
+      parseIssue: 'Existing config is invalid JSON. Replaced with default profile.',
+    };
+  }
+}
+
+function _prepareInputxml2019ConfigForRequirements(layoutConfigJsonText, requirements) {
+  const { config, parseIssue } = _parseInputxml2019ConfigOrDefault(layoutConfigJsonText);
+  const notes = [];
+  if (parseIssue) notes.push(parseIssue);
+
+  if (!config.compatibility || typeof config.compatibility !== 'object' || Array.isArray(config.compatibility)) {
+    config.compatibility = {};
+  }
+  if (!config.compatibility.raw_override_mode) {
+    config.compatibility.raw_override_mode = 'schema_validated';
+    notes.push('Set compatibility.raw_override_mode to schema_validated for robust file-based generation.');
+  }
+
+  if (!config.elements || typeof config.elements !== 'object' || Array.isArray(config.elements)) {
+    config.elements = {};
+  }
+  if (!config.elements.line_label || typeof config.elements.line_label !== 'object' || Array.isArray(config.elements.line_label)) {
+    config.elements.line_label = {};
+  }
+  if (!Array.isArray(config.elements.line_label.line_labels)) {
+    config.elements.line_label.line_labels = [];
+  }
+  const lineLabelsCount = config.elements.line_label.line_labels.length;
+
+  if (Array.isArray(config.elements.raw_block_overrides) && config.elements.raw_block_overrides.length > 0) {
+    if (config.elements.raw_block_overrides.length !== requirements.elementCount) {
+      notes.push(
+        `Cleared elements.raw_block_overrides (${config.elements.raw_block_overrides.length}) because file has ${requirements.elementCount} elements.`,
+      );
+      delete config.elements.raw_block_overrides;
+    }
+  }
+
+  if (!config.sections || typeof config.sections !== 'object' || Array.isArray(config.sections)) {
+    config.sections = {};
+  }
+  if (config.sections.raw_payload_overrides && typeof config.sections.raw_payload_overrides === 'object' && !Array.isArray(config.sections.raw_payload_overrides)) {
+    const rawElements = config.sections.raw_payload_overrides.ELEMENTS;
+    if (Array.isArray(rawElements)) {
+      const expectedElementLines = requirements.elementCount * 15;
+      if (rawElements.length !== expectedElementLines) {
+        notes.push(
+          `Cleared sections.raw_payload_overrides because ELEMENTS payload length (${rawElements.length}) does not match required ${expectedElementLines}.`,
+        );
+        delete config.sections.raw_payload_overrides;
+      }
+    }
+  }
+
+  if (!config.miscel_1 || typeof config.miscel_1 !== 'object' || Array.isArray(config.miscel_1)) {
+    config.miscel_1 = {};
+  }
+  if (!Array.isArray(config.miscel_1.material_ids)) {
+    config.miscel_1.material_ids = [];
+  }
+  const materialIdsCount = config.miscel_1.material_ids.length;
+
+  const requirementLines = [
+    `Detected from selected XML: ${requirements.elementCount} elements, ${requirements.bendCount} bends, ${requirements.rigidCount} rigids, ${requirements.restraintCount} restraints, ${requirements.sifCount} SIF blocks, ${requirements.nodeCount} nodes.`,
+    `Element-wise configurable lengths: elements.line_label.line_labels=${requirements.elementCount}, miscel_1.material_ids=${requirements.elementCount}.`,
+    `Current config lengths: line_labels=${lineLabelsCount}, material_ids=${materialIdsCount}.`,
+  ];
+  for (const note of notes) requirementLines.push(note);
+
+  return {
+    jsonText: JSON.stringify(config, null, 2),
+    requirementLines,
+  };
+}
+
+async function _openInputxml2019PreRunPopup(def, values, primaryFileName, primaryBytes) {
+  const xmlText = _decodeTextUtf8(primaryBytes);
+  const requirements = _parseInputxml2019Requirements(xmlText);
+  const prepared = _prepareInputxml2019ConfigForRequirements(values.layoutConfigJson, requirements);
+
+  const popupHeaderFields = def.fields
+    .filter((entry) => INPUTXML2019_POPUP_HEADER_KEYS.includes(entry.key))
+    .map((entry) => ({
+      ...entry,
+      value: values[entry.key],
+    }));
+
+  const popupResult = await _openJsonPopupAsync({
+    title: `${def.label}: File-based Config Review (${_toText(primaryFileName)})`,
+    value: prepared.jsonText,
+    headerFields: popupHeaderFields,
+    requirementLines: prepared.requirementLines,
+  });
+
+  if (!popupResult.saved || !popupResult.payload) return false;
+  const { jsonText, headerValues } = popupResult.payload;
+  values.layoutConfigJson = jsonText;
+  for (const [headerKey, headerValue] of Object.entries(headerValues || {})) {
+    values[headerKey] = headerValue;
+  }
+  return true;
+}
+
+function _buildAdvancedFieldsHtml(def, values) {
+  return def.fields.map((field) => {
+    const key = field.key;
+    const value = values[key];
+    if (field.type === 'checkbox') {
+      return `
+        <label class="model-converters-checkbox">
+          <input type="checkbox" data-option-key="${key}" ${value ? 'checked' : ''}>
+          <span>${_esc(field.label)}</span>
+        </label>
+      `;
+    }
+    if (field.type === 'select') {
+      return `
+        <label class="model-converters-label">
+          <span>${_esc(field.label)}</span>
+          <select data-option-key="${key}">
+            ${(field.options || []).map((option) => `
+              <option value="${_esc(option)}" ${String(option) === String(value) ? 'selected' : ''}>${_esc(option)}</option>
+            `).join('')}
+          </select>
+        </label>
+      `;
+    }
+    if (field.type === 'json-popup') {
+      const summary = _summarizeJsonConfig(value);
+      return `
+        <label class="model-converters-label">
+          <span>${_esc(field.label)}</span>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <button type="button" class="model-converters-download-btn" data-json-popup-key="${key}">Open Popup</button>
+            <small class="model-converters-muted">${_esc(summary)}</small>
+          </div>
+          <textarea data-option-key="${key}" style="display:none;">${_esc(String(value || ''))}</textarea>
+        </label>
+      `;
+    }
+    const inputType = field.type === 'number' ? 'number' : 'text';
+    const stepAttr = field.step ? `step="${_esc(field.step)}"` : '';
+    return `
+      <label class="model-converters-label">
+        <span>${_esc(field.label)}</span>
+        <input type="${inputType}" ${stepAttr} data-option-key="${key}" value="${_esc(value)}">
+      </label>
+    `;
+  }).join('');
+}
+
+function _downloadOutput(output) {
+  let blob;
+  if (typeof output.base64 === 'string' && output.base64.length > 0) {
+    const binary = atob(output.base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i += 1) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+    blob = new Blob([bytes], { type: output.mime || 'application/octet-stream' });
+  } else {
+    blob = new Blob([output.text], { type: output.mime || 'text/plain;charset=utf-8' });
+  }
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = output.name || 'conversion-output.txt';
+  anchor.click();
+  URL.revokeObjectURL(url);
+}
+
+function _arrayBufferToBase64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    const chunk = bytes.subarray(i, i + chunkSize);
+    binary += String.fromCharCode(...chunk);
+  }
+  return btoa(binary);
+}
+
+function _baseNameWithoutExtension(name) {
+  const normalized = _toText(name).trim();
+  if (!normalized) return 'converted';
+  return normalized.replace(/\.[^.]+$/, '');
+}
+
+function _isRvmFileName(name) {
+  return _toText(name).toLowerCase().endsWith('.rvm');
+}
+
+function _isAttOrTxtFileName(name) {
+  const normalized = _toText(name).toLowerCase();
+  return normalized.endsWith('.att') || normalized.endsWith('.txt');
+}
+
+function _encodeTextUtf8(text) {
+  return new TextEncoder().encode(_toText(text)).buffer;
+}
+
+function _decodeTextUtf8(bytes) {
+  return new TextDecoder('utf-8').decode(new Uint8Array(bytes));
+}
+
+function _toFiniteNumber(value, fallback) {
+  const numeric = Number(value);
+  if (Number.isFinite(numeric)) return numeric;
+  return fallback;
+}
+
+function _parseNumericMm(value) {
+  const text = _toText(value).replace(/mm/gi, ' ').trim();
+  if (!text) return null;
+  const match = text.match(/-?\d+(?:\.\d+)?/);
+  if (!match) return null;
+  const numeric = Number(match[0]);
+  if (!Number.isFinite(numeric)) return null;
+  return numeric;
+}
+
+function _normalizePoint(point) {
+  if (!point || typeof point !== 'object') return null;
+  const x = Number(point.x);
+  const y = Number(point.y);
+  const z = Number(point.z);
+  if (!Number.isFinite(x) || !Number.isFinite(y) || !Number.isFinite(z)) return null;
+  return { x, y, z };
+}
+
+function _formatDecimal(value, decimals) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return '0';
+  const text = numeric.toFixed(decimals);
+  return text.replace(/\.?0+$/, '') || '0';
+}
+
+function _formatPosition(point) {
+  return `${_formatDecimal(point.x, 2)} ${_formatDecimal(point.y, 2)} ${_formatDecimal(point.z, 2)}`;
+}
+
+function _resolveBoreMm(attributes, fallback) {
+  for (const field of RMSS_BORE_FIELDS) {
+    const parsed = _parseNumericMm(attributes?.[field]);
+    if (Number.isFinite(parsed) && parsed > 0) return parsed;
+  }
+  return fallback;
+}
+
+function _buildXmlNodeBlock(lines, node) {
+  lines.push('      <Node>');
+  lines.push(`        <NodeNumber>${node.nodeNumber}</NodeNumber>`);
+  lines.push(`        <NodeName>${_esc(node.nodeName)}</NodeName>`);
+  lines.push(`        <Endpoint>${node.endpoint}</Endpoint>`);
+  if (node.rigid !== null) {
+    lines.push(`        <Rigid>${node.rigid}</Rigid>`);
+  }
+  lines.push(`        <ComponentType>${_esc(node.componentType)}</ComponentType>`);
+  lines.push('        <Weight>0</Weight>');
+  lines.push(`        <ComponentRefNo>${_esc(node.componentRefNo)}</ComponentRefNo>`);
+  lines.push(`        <ConnectionType>${_esc(node.connectionType)}</ConnectionType>`);
+  lines.push(`        <OutsideDiameter>${_formatDecimal(node.outsideDiameter, 3)}</OutsideDiameter>`);
+  lines.push(`        <WallThickness>${_formatDecimal(node.wallThickness, 3)}</WallThickness>`);
+  lines.push(`        <CorrosionAllowance>${_formatDecimal(node.corrosionAllowance, 3)}</CorrosionAllowance>`);
+  lines.push(`        <InsulationThickness>${_formatDecimal(node.insulationThickness, 3)}</InsulationThickness>`);
+  lines.push(`        <Position>${_formatPosition(node.position)}</Position>`);
+  lines.push('        <BendRadius>0</BendRadius>');
+  lines.push(`        <SIF>${node.sif}</SIF>`);
+  lines.push('      </Node>');
+}
+
+function _buildPsiXmlFromRmssHierarchy(hierarchy, inputName, options) {
+  const normalizedHierarchy = Array.isArray(hierarchy) ? hierarchy : [];
+  const branches = normalizedHierarchy.filter((entry) => entry && Array.isArray(entry.children) && entry.children.length > 0);
+  if (!branches.length) {
+    throw new Error('ATT/TXT parser returned no branch topology. Cannot generate XML.');
+  }
+
+  const source = _toText(options?.source).trim() || 'AVEVA PSI';
+  const purpose = _toText(options?.purpose).trim() || 'RMSS attribute conversion';
+  const titleLine = _toText(options?.titleLine).trim() || 'RMSS Attribute Output';
+  const nodeStart = Math.max(1, Math.trunc(_toFiniteNumber(options?.nodeStart, 10)));
+  const nodeStep = Math.max(1, Math.trunc(_toFiniteNumber(options?.nodeStep, 10)));
+  const defaultDiameter = Math.max(0.001, _toFiniteNumber(options?.defaultDiameter, 100));
+  const defaultWallThickness = Math.max(0, _toFiniteNumber(options?.defaultWallThickness, 0.01));
+  const defaultCorrosionAllowance = Math.max(0, _toFiniteNumber(options?.defaultCorrosionAllowance, 0));
+  const defaultInsulationThickness = Math.max(0, _toFiniteNumber(options?.defaultInsulationThickness, 0));
+
+  let nodeNumber = nodeStart;
+  let componentRefCounter = 1;
+  let nodeCount = 0;
+  let skippedComponents = 0;
+  const lines = [];
+
+  lines.push('<?xml version="1.0" encoding="utf-8"?>');
+  lines.push('<PipeStressExport xmlns="http://aveva.com/pipeStress116.xsd">');
+  lines.push(`  <DateTime>${_esc(new Date().toISOString())}</DateTime>`);
+  lines.push(`  <Source>${_esc(source)}</Source>`);
+  lines.push('  <Version>0.0.0.0</Version>');
+  lines.push('  <UserName>browser-runtime</UserName>');
+  lines.push(`  <Purpose>${_esc(purpose)}</Purpose>`);
+  lines.push(`  <ProjectName>${_esc(_baseNameWithoutExtension(inputName || 'RMSS_ATTRIBUTE'))}</ProjectName>`);
+  lines.push(`  <MDBName>/${_esc(_baseNameWithoutExtension(inputName || 'RMSS_ATTRIBUTE'))}</MDBName>`);
+  lines.push(`  <TitleLine>${_esc(titleLine)}</TitleLine>`);
+  lines.push('  <!-- Configuration information -->');
+  lines.push('  <RestrainOpenEnds>No</RestrainOpenEnds>');
+  lines.push('  <AmbientTemperature>0</AmbientTemperature>');
+  lines.push('  <Pipe>');
+  lines.push(`    <FullName>/RMSS/${_esc(_baseNameWithoutExtension(inputName || 'ATTRIBUTES'))}</FullName>`);
+  lines.push('    <Ref>=ATT/PIPE/1</Ref>');
+
+  for (const branch of branches) {
+    const branchName = _toText(branch.name).trim() || 'UNSPECIFIED-BRANCH';
+    const branchChildren = Array.isArray(branch.children) ? branch.children : [];
+
+    lines.push('    <Branch>');
+    lines.push(`      <Branchname>${_esc(branchName)}</Branchname>`);
+    lines.push('      <Temperature>');
+    for (let idx = 1; idx <= 9; idx += 1) lines.push(`        <Temperature${idx}>0</Temperature${idx}>`);
+    lines.push('      </Temperature>');
+    lines.push('      <Pressure>');
+    for (let idx = 1; idx <= 9; idx += 1) lines.push(`        <Pressure${idx}>0</Pressure${idx}>`);
+    lines.push('      </Pressure>');
+    lines.push('      <MaterialNumber>0</MaterialNumber>');
+    lines.push('      <InsulationDensity>0</InsulationDensity>');
+    lines.push('      <FluidDensity>0</FluidDensity>');
+
+    for (const child of branchChildren) {
+      const attributes = child?.attributes || {};
+      const componentType = _toText(child?.type || 'PIPE').toUpperCase() || 'PIPE';
+      const componentRefNo = `=ATT/${componentRefCounter}`;
+      componentRefCounter += 1;
+      const outsideDiameter = _resolveBoreMm(attributes, defaultDiameter);
+      const nodeName = _toText(attributes.NAME || child?.name || componentType).trim() || componentType;
+      const apos = _normalizePoint(attributes.APOS);
+      const lpos = _normalizePoint(attributes.LPOS);
+      const pos = _normalizePoint(attributes.POS);
+
+      if (componentType === 'SUPPORT') {
+        const anchor = pos || apos || lpos;
+        if (!anchor) {
+          skippedComponents += 1;
+          continue;
+        }
+        _buildXmlNodeBlock(lines, {
+          nodeNumber,
+          nodeName,
+          endpoint: 0,
+          rigid: 1,
+          componentType: 'ATTA',
+          componentRefNo,
+          connectionType: '',
+          outsideDiameter,
+          wallThickness: defaultWallThickness,
+          corrosionAllowance: defaultCorrosionAllowance,
+          insulationThickness: defaultInsulationThickness,
+          position: anchor,
+          sif: 0,
+        });
+        nodeCount += 1;
+        nodeNumber += nodeStep;
+        continue;
+      }
+
+      if (apos && lpos) {
+        _buildXmlNodeBlock(lines, {
+          nodeNumber,
+          nodeName,
+          endpoint: 1,
+          rigid: null,
+          componentType,
+          componentRefNo,
+          connectionType: 'BW',
+          outsideDiameter,
+          wallThickness: defaultWallThickness,
+          corrosionAllowance: defaultCorrosionAllowance,
+          insulationThickness: defaultInsulationThickness,
+          position: apos,
+          sif: 0,
+        });
+        nodeCount += 1;
+        nodeNumber += nodeStep;
+
+        _buildXmlNodeBlock(lines, {
+          nodeNumber,
+          nodeName,
+          endpoint: 2,
+          rigid: null,
+          componentType,
+          componentRefNo,
+          connectionType: 'BW',
+          outsideDiameter,
+          wallThickness: defaultWallThickness,
+          corrosionAllowance: defaultCorrosionAllowance,
+          insulationThickness: defaultInsulationThickness,
+          position: lpos,
+          sif: 0,
+        });
+        nodeCount += 1;
+        nodeNumber += nodeStep;
+        continue;
+      }
+
+      const singlePoint = pos || apos || lpos;
+      if (!singlePoint) {
+        skippedComponents += 1;
+        continue;
+      }
+
+      _buildXmlNodeBlock(lines, {
+        nodeNumber,
+        nodeName,
+        endpoint: 0,
+        rigid: null,
+        componentType,
+        componentRefNo,
+        connectionType: 'BW',
+        outsideDiameter,
+        wallThickness: defaultWallThickness,
+        corrosionAllowance: defaultCorrosionAllowance,
+        insulationThickness: defaultInsulationThickness,
+        position: singlePoint,
+        sif: 0,
+      });
+      nodeCount += 1;
+      nodeNumber += nodeStep;
+    }
+
+    lines.push('    </Branch>');
+  }
+
+  lines.push('  </Pipe>');
+  lines.push('</PipeStressExport>');
+
+  return {
+    xmlText: `${lines.join('\n')}\n`,
+    branchCount: branches.length,
+    nodeCount,
+    skippedComponents,
+  };
+}
+
+function _isObjectRecord(value) {
+  return !!value && typeof value === 'object' && !Array.isArray(value);
+}
+
+function _looksLikeBranchNode(entry) {
+  if (!_isObjectRecord(entry)) return false;
+  const typeToken = _toText(entry?.type || entry?.attributes?.TYPE || '').toUpperCase();
+  const hasBranchType = typeToken === 'BRANCH' || typeToken === 'BRAN';
+  const hasChildren = Array.isArray(entry.children);
+  return hasBranchType && hasChildren;
+}
+
+function _looksLikeStagedHierarchy(payload) {
+  if (!Array.isArray(payload) || payload.length === 0) return false;
+  let branchCount = 0;
+  for (const entry of payload) {
+    if (_looksLikeBranchNode(entry)) branchCount += 1;
+  }
+  return branchCount > 0;
+}
+
+function _collectBboxLeafCount(payload) {
+  let count = 0;
+  const stack = [payload];
+  while (stack.length > 0) {
+    const current = stack.pop();
+    if (Array.isArray(current)) {
+      for (const child of current) stack.push(child);
+      continue;
+    }
+    if (!_isObjectRecord(current)) continue;
+    const children = Array.isArray(current.children) ? current.children : null;
+    const bbox = Array.isArray(current.bbox) ? current.bbox : null;
+    const isLeaf = !children || children.length === 0;
+    if (isLeaf && bbox && bbox.length === 6) count += 1;
+    if (children) {
+      for (const child of children) stack.push(child);
+    }
+  }
+  return count;
+}
+
+function _buildXmlFromStagedJsonText(stagedJsonText, inputName, options) {
+  let parsed;
+  try {
+    parsed = JSON.parse(_toText(stagedJsonText));
+  } catch (error) {
+    throw new Error(`Staged JSON parse failed: ${_toText(error?.message || error)}`);
+  }
+  if (!_looksLikeStagedHierarchy(parsed)) {
+    throw new Error('JSON payload is not staged hierarchy format (branch -> children -> attributes).');
+  }
+  const xmlBuild = _buildPsiXmlFromRmssHierarchy(parsed, inputName, options);
+  return {
+    xmlText: xmlBuild.xmlText,
+    stageJsonText: JSON.stringify(parsed, null, 2),
+    branchCount: xmlBuild.branchCount,
+    nodeCount: xmlBuild.nodeCount,
+    skippedComponents: xmlBuild.skippedComponents,
+  };
+}
+
+function _normalizePreviewPoint(value) {
+  if (!value && value !== 0) return null;
+  if (typeof value === 'object' && !Array.isArray(value)) return _normalizePoint(value);
+  if (typeof value !== 'string') return null;
+  const src = value.trim();
+  if (!src) return null;
+  const tokens = src.split(/\s+/g);
+  if (tokens.length < 2) return null;
+  const point = { x: 0, y: 0, z: 0 };
+  let parsedAny = false;
+  for (let i = 0; i < tokens.length - 1; i += 2) {
+    const axis = tokens[i].toUpperCase();
+    const num = Number.parseFloat(tokens[i + 1].replace(/mm/gi, ''));
+    if (!Number.isFinite(num)) continue;
+    if (axis === 'E') { point.x = num; parsedAny = true; }
+    else if (axis === 'W') { point.x = -num; parsedAny = true; }
+    else if (axis === 'N') { point.y = num; parsedAny = true; }
+    else if (axis === 'S') { point.y = -num; parsedAny = true; }
+    else if (axis === 'U') { point.z = num; parsedAny = true; }
+    else if (axis === 'D') { point.z = -num; parsedAny = true; }
+  }
+  return parsedAny ? point : null;
+}
+
+function _buildPreviewProjectFromStagedHierarchy(payload) {
+  if (!_looksLikeStagedHierarchy(payload)) return null;
+  const segments = [];
+  const nodes = [];
+  const supports = [];
+  const annotations = [];
+  const nodeByKey = new Map();
+  let segmentId = 1;
+  let nodeId = 1;
+  let supportId = 1;
+
+  const asNode = (coord) => {
+    const key = `${_formatDecimal(coord.x, 4)}|${_formatDecimal(coord.y, 4)}|${_formatDecimal(coord.z, 4)}`;
+    if (nodeByKey.has(key)) return nodeByKey.get(key);
+    const created = {
+      id: `SJ-N${nodeId}`,
+      position: { x: coord.x, y: coord.y, z: coord.z },
+      normalized: { position: { x: coord.x, y: coord.y, z: coord.z } },
+    };
+    nodeId += 1;
+    nodes.push(created);
+    nodeByKey.set(key, created);
+    return created;
+  };
+
+  for (const branch of payload) {
+    if (!_looksLikeBranchNode(branch)) continue;
+    const children = Array.isArray(branch.children) ? branch.children : [];
+    for (const child of children) {
+      const attrs = child?.attributes || {};
+      const type = _toText(child?.type || attrs.TYPE).toUpperCase();
+      const apos = _normalizePreviewPoint(attrs.APOS);
+      const lpos = _normalizePreviewPoint(attrs.LPOS);
+      const pos = _normalizePreviewPoint(attrs.POS);
+      if (type === 'SUPPORT' || type === 'ATTA' || type === 'ANCI') {
+        const anchor = pos || apos || lpos;
+        if (!anchor) continue;
+        supports.push({
+          id: `SJ-S${supportId}`,
+          normalized: { supportCoord: { x: anchor.x, y: anchor.y, z: anchor.z } },
+        });
+        supportId += 1;
+        continue;
+      }
+      if (!apos || !lpos) continue;
+      const fromNode = asNode(apos);
+      const toNode = asNode(lpos);
+      segments.push({
+        id: `SJ-E${segmentId}`,
+        fromNodeId: fromNode.id,
+        toNodeId: toNode.id,
+        normalized: {
+          ep1: { x: apos.x, y: apos.y, z: apos.z },
+          ep2: { x: lpos.x, y: lpos.y, z: lpos.z },
+        },
+        attributes: { TYPE: type },
+      });
+      segmentId += 1;
+    }
+  }
+
+  if (!segments.length && !supports.length) return null;
+  return {
+    id: 'stagedjson-preview',
+    name: 'Staged JSON Preview',
+    segments,
+    nodes,
+    supports,
+    annotations,
+  };
+}
+
+function _normalizeCoordsMode(value) {
+  const mode = _toText(value).trim().toLowerCase();
+  if (mode === 'all' || mode === 'none') return mode;
+  return 'first';
+}
+
+function _3DModelConv_buildPreviewMetaText(project, outputName, adapterName) {
+  const segmentCount = Array.isArray(project?.segments) ? project.segments.length : 0;
+  const nodeCount = Array.isArray(project?.nodes) ? project.nodes.length : 0;
+  const supportCount = Array.isArray(project?.supports) ? project.supports.length : 0;
+  const annotationCount = Array.isArray(project?.annotations) ? project.annotations.length : 0;
+  return `Preview source: ${outputName} | adapter: ${adapterName} | segments: ${segmentCount} | nodes: ${nodeCount} | supports: ${supportCount} | annotations: ${annotationCount}`;
+}
+
+async function _3DModelConv_tryBuildProjectFromOutput(output) {
+  const name = _toText(output?.name).trim();
+  const text = _toText(output?.text);
+  if (!name || !text) {
+    return { ok: false, reason: 'Output has no text payload for preview.' };
+  }
+
+  if (name.toLowerCase().endsWith('.json')) {
+    try {
+      const parsed = JSON.parse(text);
+      const stagedProject = _buildPreviewProjectFromStagedHierarchy(parsed);
+      if (stagedProject) {
+        return {
+          ok: true,
+          project: stagedProject,
+          adapterName: 'StagedHierarchyPreview',
+          outputName: name,
+        };
+      }
+    } catch {
+      // Continue to adapter-based fallback.
+    }
+  }
+
+  try {
+    const match = pickImportAdapter({ name, text, payload: null });
+    const adapter = new match.Adapter();
+    const imported = await adapter.import({
+      id: `3dmodelconv-preview-${Date.now()}`,
+      name,
+      text,
+      payload: null,
+    });
+    const project = imported?.project || null;
+    if (!project) {
+      return { ok: false, reason: `Adapter ${adapter.constructor.name} returned no project.` };
+    }
+    const hasGeometry = Array.isArray(project?.segments) && project.segments.length > 0;
+    if (!hasGeometry) {
+      return { ok: false, reason: `Adapter ${adapter.constructor.name} produced no segments.` };
+    }
+    return {
+      ok: true,
+      project,
+      adapterName: adapter.constructor.name,
+      outputName: name,
+    };
+  } catch (error) {
+    return { ok: false, reason: _toText(error?.message || error) };
+  }
+}
+
+async function _3DModelConv_buildPreviewFromOutputs(outputs) {
+  const normalized = Array.isArray(outputs) ? outputs.filter((entry) => entry && entry.name) : [];
+  if (!normalized.length) {
+    return { ok: false, reason: 'No outputs available to preview.' };
+  }
+
+  const prioritized = [...normalized].sort((a, b) => {
+    const nameA = _toText(a?.name).toLowerCase();
+    const nameB = _toText(b?.name).toLowerCase();
+    const score = (name) => {
+      if (name.endsWith('.json') && name.includes('managed_stage')) return 0;
+      if (name.endsWith('.json')) return 1;
+      if (name.endsWith('.rev')) return 2;
+      if (name.endsWith('.xml')) return 3;
+      return 4;
+    };
+    return score(nameA) - score(nameB);
+  });
+
+  let lastReason = 'No previewable output found.';
+  for (const output of prioritized) {
+    const result = await _3DModelConv_tryBuildProjectFromOutput(output);
+    if (result.ok) return result;
+    lastReason = result.reason || lastReason;
+  }
+  return { ok: false, reason: lastReason };
+}
+
+function _mergeStageLogs(stages) {
+  const stdout = [];
+  const stderr = [];
+  for (const stage of stages) {
+    const title = _toText(stage?.title || '').trim();
+    if (title) {
+      stdout.push(`[${title}]`);
+      stderr.push(`[${title}]`);
+    }
+    const stageStdout = Array.isArray(stage?.logs?.stdout) ? stage.logs.stdout : [];
+    const stageStderr = Array.isArray(stage?.logs?.stderr) ? stage.logs.stderr : [];
+    stdout.push(...stageStdout.map((line) => _toText(line)));
+    stderr.push(...stageStderr.map((line) => _toText(line)));
+  }
+  return { stdout, stderr };
+}
+
+function _extractSidecarError(payload, response) {
+  const detail = _toText(payload?.error || `${response.status} ${response.statusText}`);
+  const stderrLines = Array.isArray(payload?.logs?.stderr) ? payload.logs.stderr : [];
+  const stderrText = stderrLines.map((line) => _toText(line)).join('\n');
+  const combined = `${detail}\n${stderrText}`;
+  return combined;
+}
+
+function _isRecoverableSidecarParseError(errorText) {
+  const text = _toText(errorText).toLowerCase();
+  if (!text) return false;
+  return text.includes('more end-tags and than new-tags') || text.includes('failed to parse');
+}
+
+async function _tryNativeRvmTextMode(primaryFile, primaryBytes, secondaryFile, secondaryBytes, mode, expectedSuffix) {
+  const sourceName = _toText(primaryFile?.name).toLowerCase();
+  if (!sourceName.endsWith('.rvm')) {
+    throw new Error(`Unsupported input "${primaryFile?.name || ''}". Native RVM bridge accepts only .rvm files.`);
+  }
+  const requestBody = {
+    inputName: primaryFile.name,
+    inputBase64: _arrayBufferToBase64(primaryBytes),
+    mode: mode,
+  };
+  if (secondaryFile && secondaryBytes) {
+    requestBody.attributesName = secondaryFile.name;
+    requestBody.attributesBase64 = _arrayBufferToBase64(secondaryBytes);
+  }
+
+  let lastDetailedError = '';
+  for (const endpoint of NATIVE_RVM_ENDPOINT_CANDIDATES) {
+    let response;
+    try {
+      response = await fetch(endpoint, {
+        method: 'POST',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+      });
+    } catch {
+      continue;
+    }
+
+    if (response.status === 404 || response.status === 405) {
+      continue;
+    }
+
+    let payload = null;
+    try {
+      payload = await response.json();
+    } catch {
+      payload = null;
+    }
+
+    if (!response.ok) {
+      const detail = _extractSidecarError(payload, response);
+      lastDetailedError = `Native RVM bridge failed (${endpoint}): ${detail}`;
+      if (secondaryFile && secondaryBytes && _isRecoverableSidecarParseError(detail)) {
+        const retryBody = {
+          inputName: primaryFile.name,
+          inputBase64: _arrayBufferToBase64(primaryBytes),
+          mode: mode,
+        };
+        try {
+          const retryResponse = await fetch(endpoint, {
+            method: 'POST',
+            cache: 'no-store',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(retryBody),
+          });
+          let retryPayload = null;
+          try {
+            retryPayload = await retryResponse.json();
+          } catch {
+            retryPayload = null;
+          }
+          if (retryResponse.ok && retryPayload?.ok && typeof retryPayload.outputText === 'string') {
+            const retryStdout = Array.isArray(retryPayload.logs?.stdout) ? retryPayload.logs.stdout : [];
+            const retryStderr = Array.isArray(retryPayload.logs?.stderr) ? retryPayload.logs.stderr : [];
+            retryStderr.unshift('Recovered from sidecar parse failure by retrying without sidecar file.');
+            return {
+              outputs: [{
+                name: _toText(retryPayload.outputName || `${primaryFile.name.replace(/\.[^.]+$/, '')}${expectedSuffix}`),
+                text: retryPayload.outputText,
+                mime: mode === 'rvm_to_json' ? 'application/json;charset=utf-8' : 'text/plain;charset=utf-8',
+              }],
+              logs: {
+                stdout: retryStdout,
+                stderr: retryStderr,
+                argv: Array.isArray(retryPayload.logs?.argv) ? retryPayload.logs.argv : [],
+              },
+              nativeBridge: true,
+              endpoint: endpoint,
+            };
+          }
+        } catch {
+          // Continue normal endpoint probing.
+        }
+      }
+      continue;
+    }
+
+    if (!payload?.ok || typeof payload.outputText !== 'string') {
+      lastDetailedError = `Native RVM bridge returned invalid payload (${endpoint}).`;
+      continue;
+    }
+
+    return {
+      outputs: [{
+        name: _toText(payload.outputName || `${primaryFile.name.replace(/\.[^.]+$/, '')}${expectedSuffix}`),
+        text: payload.outputText,
+        mime: mode === 'rvm_to_json' ? 'application/json;charset=utf-8' : 'text/plain;charset=utf-8',
+      }],
+      logs: {
+        stdout: Array.isArray(payload.logs?.stdout) ? payload.logs.stdout : [],
+        stderr: Array.isArray(payload.logs?.stderr) ? payload.logs.stderr : [],
+        argv: Array.isArray(payload.logs?.argv) ? payload.logs.argv : [],
+      },
+      nativeBridge: true,
+      endpoint: endpoint,
+    };
+  }
+
+  if (lastDetailedError) {
+    throw new Error(lastDetailedError);
+  }
+  return null;
+}
+
+async function _tryNativeRvmToRev(primaryFile, primaryBytes, secondaryFile, secondaryBytes) {
+  return _tryNativeRvmTextMode(
+    primaryFile,
+    primaryBytes,
+    secondaryFile,
+    secondaryBytes,
+    'rvm_to_rev',
+    '_rvm_to_rev.rev',
+  );
+}
+
+async function _tryNativeRvmToJson(primaryFile, primaryBytes, secondaryFile, secondaryBytes) {
+  return _tryNativeRvmTextMode(
+    primaryFile,
+    primaryBytes,
+    secondaryFile,
+    secondaryBytes,
+    'rvm_to_json',
+    '_rvm_to_json.json',
+  );
+}
+
+async function _runManagedRvmAttributeToXml(
+  primaryFile,
+  primaryBytes,
+  secondaryFile,
+  secondaryBytes,
+  options,
+  ensureRuntime,
+) {
+  const runtime = await ensureRuntime();
+  const stem = _baseNameWithoutExtension(primaryFile.name);
+  const stages = [];
+
+  if (options?.preferJsonToXml !== false) {
+    try {
+      const nativeJson = await _tryNativeRvmToJson(primaryFile, primaryBytes, secondaryFile, secondaryBytes);
+      if (nativeJson) {
+        const jsonOutput = nativeJson.outputs?.[0];
+        if (jsonOutput && typeof jsonOutput.text === 'string') {
+          let usedJsonPath = false;
+          try {
+            const stagedResult = _buildXmlFromStagedJsonText(jsonOutput.text, jsonOutput.name, options);
+            stages.push({ title: `Native JSON bridge ${nativeJson.endpoint || ''}`.trim(), logs: nativeJson.logs });
+            stages.push({
+              title: 'StagedJSON -> XML',
+              logs: {
+                stdout: [
+                  `Staged hierarchy detected: ${stagedResult.branchCount} branch(es), ${stagedResult.nodeCount} node(s).`,
+                ],
+                stderr: stagedResult.skippedComponents > 0
+                  ? [`Skipped ${stagedResult.skippedComponents} component(s) with incomplete coordinates.`]
+                  : [],
+              },
+            });
+            return {
+              outputs: [
+                {
+                  name: `${stem}_rvmattr_to_xml.xml`,
+                  text: stagedResult.xmlText,
+                  mime: 'text/xml;charset=utf-8',
+                },
+                {
+                  name: `${stem}_managed_stage.json`,
+                  text: stagedResult.stageJsonText,
+                  mime: 'application/json;charset=utf-8',
+                },
+              ],
+              logs: _mergeStageLogs(stages),
+              endpoint: nativeJson.endpoint,
+            };
+          } catch {}
+
+          try {
+            const parsedPayload = JSON.parse(jsonOutput.text);
+            const bboxLeafCount = _collectBboxLeafCount(parsedPayload);
+            if (bboxLeafCount > 0) {
+              const jsonToXmlResponse = await runtime.runJob({
+                converterId: 'json_to_xml',
+                inputFiles: [{ role: 'primary', name: jsonOutput.name, bytes: _encodeTextUtf8(jsonOutput.text) }],
+                options: {
+                  coordFactor: options?.coordFactor,
+                  nodeStart: options?.nodeStart,
+                  nodeStep: options?.nodeStep,
+                  defaultDiameter: options?.defaultDiameter,
+                  defaultWallThickness: options?.defaultWallThickness,
+                  defaultCorrosionAllowance: options?.defaultCorrosionAllowance,
+                  defaultInsulationThickness: options?.defaultInsulationThickness,
+                },
+              });
+              const jsonXmlOutput = jsonToXmlResponse.outputs?.[0];
+              if (jsonXmlOutput && typeof jsonXmlOutput.text === 'string') {
+                usedJsonPath = true;
+                stages.push({ title: `Native JSON bridge ${nativeJson.endpoint || ''}`.trim(), logs: nativeJson.logs });
+                stages.push({ title: 'JSON -> XML', logs: jsonToXmlResponse.logs });
+                return {
+                  outputs: [
+                    {
+                      name: `${stem}_rvmattr_to_xml.xml`,
+                      text: jsonXmlOutput.text,
+                      mime: 'text/xml;charset=utf-8',
+                    },
+                    {
+                      name: `${stem}_managed_stage.json`,
+                      text: jsonOutput.text,
+                      mime: 'application/json;charset=utf-8',
+                    },
+                  ],
+                  logs: _mergeStageLogs(stages),
+                  endpoint: nativeJson.endpoint,
+                };
+              }
+            }
+          } catch {}
+
+          if (!usedJsonPath) {
+            stages.push({
+              title: 'JSON -> XML fallback note',
+              logs: {
+                stdout: [],
+                stderr: ['Native JSON payload did not match staged hierarchy or bbox-leaf JSON; falling back to REV -> XML.'],
+              },
+            });
+          }
+        }
+      }
+    } catch (error) {
+      stages.push({ title: 'JSON -> XML fallback note', logs: { stdout: [], stderr: [_toText(error?.message || error)] } });
+    }
+  }
+
+  const nativeRev = await _tryNativeRvmToRev(primaryFile, primaryBytes, secondaryFile, secondaryBytes);
+  if (!nativeRev) {
+    throw new Error(
+      'Native RVM bridge is not reachable. Start local server (node test_server.js) so /api/native/rvm-to-rev can run rvmparser-windows-bin.exe.',
+    );
+  }
+  const revOutput = nativeRev.outputs?.[0];
+  if (!revOutput || typeof revOutput.text !== 'string') {
+    throw new Error('Native bridge did not return REV text output.');
+  }
+  const revToXmlResponse = await runtime.runJob({
+    converterId: 'rev_to_xml',
+    inputFiles: [{ role: 'primary', name: revOutput.name, bytes: _encodeTextUtf8(revOutput.text) }],
+    options: {
+      coordFactor: options?.coordFactor,
+      nodeStart: options?.nodeStart,
+      nodeStep: options?.nodeStep,
+      nodeMergeTolerance: options?.nodeMergeTolerance,
+      source: options?.source,
+      purpose: options?.purpose,
+      titleLine: options?.titleLine,
+      enablePsiRigidLogic: !!options?.enablePsiRigidLogic,
+    },
+  });
+  const xmlOutput = revToXmlResponse.outputs?.[0];
+  if (!xmlOutput || typeof xmlOutput.text !== 'string') {
+    throw new Error('REV -> XML stage did not return XML text output.');
+  }
+  stages.push({ title: `Native REV bridge ${nativeRev.endpoint || ''}`.trim(), logs: nativeRev.logs });
+  stages.push({ title: 'REV -> XML', logs: revToXmlResponse.logs });
+  return {
+    outputs: [
+      {
+        name: `${stem}_rvmattr_to_xml.xml`,
+        text: xmlOutput.text,
+        mime: 'text/xml;charset=utf-8',
+      },
+      {
+        name: `${stem}_managed_stage.rev`,
+        text: revOutput.text,
+        mime: 'text/plain;charset=utf-8',
+      },
+    ],
+    logs: _mergeStageLogs(stages),
+    endpoint: nativeRev.endpoint,
+  };
+}
+
+export function renderModelConvertersTab(container) {
+  const { selectedConverter: initialConverter, defaultsByConverter } = _loadStoredState();
+  const enabledConverterDefs = ORDERED_CONVERTER_DEFS.filter((def) => def.disabled !== true);
+  const enabledConverterIds = new Set(enabledConverterDefs.map((def) => def.id));
+  let selectedConverter = enabledConverterIds.has(initialConverter)
+    ? initialConverter
+    : (enabledConverterDefs[0]?.id || ORDERED_CONVERTER_DEFS[0]?.id || 'rvm_to_rev');
+  let primaryFile = null;
+  let secondaryFile = null;
+  let runtime = null;
+  let disposed = false;
+
+  container.innerHTML = `
+    <div class="model-converters-root">
+      <aside class="model-converters-left">
+        <h2>3D Model Converters</h2>
+        <p class="model-converters-subtitle">GitHub Pages-safe in-browser conversion runtime (Pyodide worker).</p>
+
+        <label class="model-converters-label">
+          <span>Converter</span>
+          <select id="model-converters-select">
+            ${ORDERED_CONVERTER_DEFS.map((def) => `
+              <option value="${def.id}" ${def.id === selectedConverter ? 'selected' : ''} ${def.disabled ? 'disabled' : ''}>${_esc(def.label)}</option>
+            `).join('')}
+          </select>
+        </label>
+
+        <label class="model-converters-file">
+          <span id="model-converters-primary-label"></span>
+          <input type="file" id="model-converters-primary-input">
+          <small id="model-converters-primary-name">No file selected.</small>
+        </label>
+
+        <label class="model-converters-file" id="model-converters-secondary-wrap" style="display:none">
+          <span id="model-converters-secondary-label"></span>
+          <input type="file" id="model-converters-secondary-input">
+          <small id="model-converters-secondary-name">No file selected.</small>
+        </label>
+
+        <details class="model-converters-advanced">
+          <summary>Advanced options</summary>
+          <div id="model-converters-advanced-fields" class="model-converters-advanced-fields"></div>
+        </details>
+
+        <button id="model-converters-run" class="model-converters-run-btn">Run Conversion</button>
+      </aside>
+
+      <section class="model-converters-right">
+        <div class="model-converters-card">
+          <div class="model-converters-card-title">Status</div>
+          <div id="model-converters-status" class="model-converters-status">Idle</div>
+        </div>
+        <div class="model-converters-card">
+          <div class="model-converters-card-title">Output</div>
+          <div id="model-converters-output"></div>
+        </div>
+        <div class="model-converters-card model-converters-preview-card">
+          <div class="model-converters-card-title">3DModelConv Geometry Preview</div>
+          <div id="model-converters-preview-host" class="model-converters-preview-host"></div>
+          <div id="model-converters-preview-meta" class="model-converters-preview-meta">Preview not available yet.</div>
+        </div>
+        <div class="model-converters-card">
+          <div class="model-converters-card-title">Logs</div>
+          <pre id="model-converters-logs" class="model-converters-logs">(no logs)</pre>
+        </div>
+      </section>
+    </div>
+  `;
+
+  const selectEl = container.querySelector('#model-converters-select');
+  const primaryLabelEl = container.querySelector('#model-converters-primary-label');
+  const primaryInputEl = container.querySelector('#model-converters-primary-input');
+  const primaryNameEl = container.querySelector('#model-converters-primary-name');
+  const secondaryWrapEl = container.querySelector('#model-converters-secondary-wrap');
+  const secondaryLabelEl = container.querySelector('#model-converters-secondary-label');
+  const secondaryInputEl = container.querySelector('#model-converters-secondary-input');
+  const secondaryNameEl = container.querySelector('#model-converters-secondary-name');
+  const advancedFieldsEl = container.querySelector('#model-converters-advanced-fields');
+  const runBtnEl = container.querySelector('#model-converters-run');
+  const statusEl = container.querySelector('#model-converters-status');
+  const outputEl = container.querySelector('#model-converters-output');
+  const logsEl = container.querySelector('#model-converters-logs');
+  const previewHostEl = container.querySelector('#model-converters-preview-host');
+  const previewMetaEl = container.querySelector('#model-converters-preview-meta');
+
+  let previewRenderer = null;
+
+  if (previewHostEl) {
+    try {
+      previewRenderer = new ModelConverters_3DModelConv_PreviewRenderer(previewHostEl);
+    } catch (error) {
+      previewMetaEl.textContent = `Preview renderer init failed: ${_toText(error?.message || error)}`;
+    }
+  }
+
+  function activeDef() {
+    return CONVERTER_DEFS[selectedConverter];
+  }
+
+  function activeValues() {
+    if (!defaultsByConverter[selectedConverter]) {
+      defaultsByConverter[selectedConverter] = _clone(activeDef().defaults);
+    }
+    return defaultsByConverter[selectedConverter];
+  }
+
+  function persist() {
+    _saveStoredState(selectedConverter, defaultsByConverter);
+  }
+
+  function setStatus(text, tone) {
+    statusEl.textContent = text;
+    statusEl.className = `model-converters-status ${tone || ''}`.trim();
+  }
+
+  function setLogs(lines) {
+    const normalized = Array.isArray(lines) ? lines : [];
+    logsEl.textContent = normalized.length ? normalized.join('\n') : '(no logs)';
+  }
+
+  function _3DModelConv_setPreviewMeta(text) {
+    previewMetaEl.textContent = _toText(text);
+  }
+
+  function _3DModelConv_resetPreview(text) {
+    if (previewRenderer) {
+      try { previewRenderer._3DModelConv_renderProject(null); } catch {}
+    }
+    _3DModelConv_setPreviewMeta(text);
+  }
+
+  async function _3DModelConv_renderPreviewFromOutputs(outputs) {
+    if (!previewRenderer) {
+      _3DModelConv_setPreviewMeta('Preview renderer is not initialized.');
+      return;
+    }
+    _3DModelConv_setPreviewMeta('Building 3D topo preview...');
+    const previewResult = await _3DModelConv_buildPreviewFromOutputs(outputs);
+    if (!previewResult.ok) {
+      previewRenderer._3DModelConv_renderProject(null);
+      _3DModelConv_setPreviewMeta(`Preview unavailable: ${previewResult.reason}`);
+      return;
+    }
+    previewRenderer._3DModelConv_renderProject(previewResult.project);
+    _3DModelConv_setPreviewMeta(
+      _3DModelConv_buildPreviewMetaText(
+        previewResult.project,
+        previewResult.outputName,
+        previewResult.adapterName,
+      ),
+    );
+  }
+
+  function renderOutputs(outputs) {
+    const normalized = Array.isArray(outputs) ? outputs.filter((entry) => entry && entry.name) : [];
+    if (!normalized.length) {
+      outputEl.innerHTML = '<span class="model-converters-muted">No output generated.</span>';
+      return;
+    }
+    outputEl.innerHTML = normalized.map((output, index) => `
+      <div class="model-converters-output-row">
+        <strong>${_esc(output.name)}</strong>
+        <button type="button" class="model-converters-download-btn" data-output-index="${index}">Download</button>
+      </div>
+    `).join('');
+    for (const button of outputEl.querySelectorAll('[data-output-index]')) {
+      const outputIndex = Number(button.getAttribute('data-output-index'));
+      const output = normalized[outputIndex];
+      if (!output) continue;
+      button.addEventListener('click', () => _downloadOutput(output));
+    }
+  }
+
+  function renderAdvanced() {
+    const def = activeDef();
+    const values = activeValues();
+    advancedFieldsEl.innerHTML = _buildAdvancedFieldsHtml(def, values);
+    for (const field of def.fields) {
+      const input = advancedFieldsEl.querySelector(`[data-option-key="${field.key}"]`);
+      if (!input) continue;
+      const updateValue = () => {
+        values[field.key] = _readOptionValue(field, input);
+        persist();
+      };
+      input.addEventListener('input', updateValue);
+      input.addEventListener('change', updateValue);
+    }
+    for (const field of def.fields) {
+      if (field.type !== 'json-popup') continue;
+      const button = advancedFieldsEl.querySelector(`[data-json-popup-key="${field.key}"]`);
+      const input = advancedFieldsEl.querySelector(`[data-option-key="${field.key}"]`);
+      if (!button || !input) continue;
+      button.addEventListener('click', () => {
+        const popupHeaderFields = (def.id === 'inputxml_to_cii2019' && field.key === 'layoutConfigJson')
+          ? def.fields
+            .filter((entry) => INPUTXML2019_POPUP_HEADER_KEYS.includes(entry.key))
+            .map((entry) => ({
+              ...entry,
+              value: values[entry.key],
+            }))
+          : [];
+        _openJsonPopup({
+          title: `${def.label}: ${field.label}`,
+          value: input.value || '',
+          headerFields: popupHeaderFields,
+          onSave: ({ jsonText, headerValues }) => {
+            input.value = jsonText;
+            values[field.key] = jsonText;
+            for (const [headerKey, headerValue] of Object.entries(headerValues || {})) {
+              values[headerKey] = headerValue;
+            }
+            persist();
+            renderAdvanced();
+          },
+        });
+      });
+    }
+  }
+
+  function renderFileControls() {
+    const def = activeDef();
+    primaryLabelEl.textContent = `${def.primaryLabel} (${def.primaryAccept})`;
+    primaryInputEl.setAttribute('accept', def.primaryAccept);
+    primaryNameEl.textContent = primaryFile ? primaryFile.name : 'No file selected.';
+
+    const showSecondary = !!def.secondaryLabel;
+    secondaryWrapEl.style.display = showSecondary ? '' : 'none';
+    if (showSecondary) {
+      secondaryLabelEl.textContent = `${def.secondaryLabel} (${def.secondaryAccept})`;
+      secondaryInputEl.setAttribute('accept', def.secondaryAccept);
+      secondaryNameEl.textContent = secondaryFile ? secondaryFile.name : 'No file selected.';
+    }
+  }
+
+  function renderDescription() {
+    setStatus(activeDef().description, '');
+  }
+
+  function resetOutput() {
+    outputEl.innerHTML = '<span class="model-converters-muted">No output generated yet.</span>';
+    setLogs([]);
+    _3DModelConv_resetPreview('Preview not available yet.');
+  }
+
+  function renderAll() {
+    renderFileControls();
+    renderAdvanced();
+    renderDescription();
+  }
+
+  async function ensureRuntime() {
+    if (!runtime) runtime = _createWorkerRuntime();
+    return runtime;
+  }
+
+  selectEl.addEventListener('change', () => {
+    const nextValue = selectEl.value;
+    if (!enabledConverterIds.has(nextValue)) {
+      selectEl.value = selectedConverter;
+      return;
+    }
+    selectedConverter = nextValue;
+    primaryFile = null;
+    secondaryFile = null;
+    persist();
+    resetOutput();
+    renderAll();
+  });
+
+  primaryInputEl.addEventListener('change', () => {
+    primaryFile = primaryInputEl.files?.[0] || null;
+    primaryNameEl.textContent = primaryFile ? primaryFile.name : 'No file selected.';
+  });
+
+  secondaryInputEl.addEventListener('change', () => {
+    secondaryFile = secondaryInputEl.files?.[0] || null;
+    secondaryNameEl.textContent = secondaryFile ? secondaryFile.name : 'No file selected.';
+  });
+
+  runBtnEl.addEventListener('click', async () => {
+    const def = activeDef();
+    const attOnlyRvmAttrMode = selectedConverter === 'rvmattr_to_xml'
+      && !primaryFile
+      && !!secondaryFile
+      && _isAttOrTxtFileName(secondaryFile.name);
+
+    if (!primaryFile && !attOnlyRvmAttrMode) {
+      const msg = selectedConverter === 'rvmattr_to_xml' && secondaryFile
+        ? 'RVM input is required for this mode. Keep ATT/TXT as secondary sidecar.'
+        : 'Select a primary input file first.';
+      setStatus(`Failed: ${msg}`, 'bad');
+      outputEl.innerHTML = '<span class="model-converters-muted">No output generated.</span>';
+      setLogs([msg]);
+      notify({ level: 'warning', title: 'Converter', message: msg });
+      return;
+    }
+
+    if (primaryFile && (selectedConverter === 'rvm_to_rev' || selectedConverter === 'rvmattr_to_xml') && !_isRvmFileName(primaryFile.name)) {
+      notify({ level: 'error', title: 'Converter', message: `Selected file "${primaryFile.name}" is not .rvm. Use RVM input for ${def.label}.` });
+      return;
+    }
+    runBtnEl.disabled = true;
+    setStatus(selectedConverter === 'inputxml_to_cii2019' ? 'Preparing file-based config...' : 'Running converter...', 'running');
+    setLogs([]);
+    outputEl.innerHTML = '<span class="model-converters-muted">Working...</span>';
+    _3DModelConv_resetPreview('Running conversion...');
+    emit(RuntimeEvents.MODEL_CONVERTER_START, {
+      converterId: selectedConverter,
+      input: primaryFile?.name || secondaryFile?.name || 'input',
+    });
+
+    try {
+      const primaryBytes = primaryFile ? await primaryFile.arrayBuffer() : null;
+      const secondaryBytes = (def.secondaryLabel && secondaryFile) ? await secondaryFile.arrayBuffer() : null;
+      const runValues = activeValues();
+      const stagedJsonPreviewText = selectedConverter === 'stagedjson_to_inputxml' && primaryBytes
+        ? _decodeTextUtf8(primaryBytes)
+        : null;
+
+      if (selectedConverter === 'inputxml_to_cii2019') {
+        if (!primaryFile || !primaryBytes) {
+          throw new Error('Primary input file is required for InputXML->CII(2019).');
+        }
+        const proceed = await _openInputxml2019PreRunPopup(def, runValues, primaryFile.name, primaryBytes);
+        if (!proceed) {
+          const message = 'Cancelled: conversion aborted in file-based config popup.';
+          setStatus(message, '');
+          outputEl.innerHTML = '<span class="model-converters-muted">No output generated.</span>';
+          setLogs([message]);
+          _3DModelConv_resetPreview('Preview not available yet.');
+          return;
+        }
+        persist();
+        renderAdvanced();
+        setStatus('Running converter...', 'running');
+      }
+
+      const inputFiles = [];
+      if (primaryFile && primaryBytes) {
+        inputFiles.push({ role: 'primary', name: primaryFile.name, bytes: primaryBytes });
+      }
+      if (def.secondaryLabel && secondaryFile && secondaryBytes) {
+        inputFiles.push({ role: 'secondary', name: secondaryFile.name, bytes: secondaryBytes });
+      }
+      let response = null;
+      if (selectedConverter === 'rvm_to_rev') {
+        if (!primaryFile || !primaryBytes) {
+          throw new Error('RVM input is required for RVM -> REV conversion.');
+        }
+        response = await _tryNativeRvmToRev(primaryFile, primaryBytes, secondaryFile, secondaryBytes);
+        if (!response) {
+          throw new Error(
+            'Native RVM bridge is not reachable. Start local server (node test_server.js) so /api/native/rvm-to-rev can run rvmparser-windows-bin.exe.',
+          );
+        }
+      } else if (selectedConverter === 'rvmattr_to_xml') {
+        if (primaryFile && primaryBytes) {
+          response = await _runManagedRvmAttributeToXml(
+            primaryFile,
+            primaryBytes,
+            secondaryFile,
+            secondaryBytes,
+            runValues,
+            ensureRuntime,
+          );
+        } else if (secondaryFile && secondaryBytes) {
+          const attText = _decodeTextUtf8(secondaryBytes);
+          const hierarchy = parseRmssAttributes(attText, state.rvm?.routing);
+          const xmlFromAtt = _buildPsiXmlFromRmssHierarchy(hierarchy, secondaryFile.name, runValues);
+          response = {
+            outputs: [
+              {
+                name: `${_baseNameWithoutExtension(secondaryFile.name)}_rvmattr_to_xml.xml`,
+                text: xmlFromAtt.xmlText,
+                mime: 'text/xml;charset=utf-8',
+              },
+              {
+                name: `${_baseNameWithoutExtension(secondaryFile.name)}_managed_stage.json`,
+                text: JSON.stringify(hierarchy, null, 2),
+                mime: 'application/json;charset=utf-8',
+              },
+            ],
+            logs: {
+              stdout: [
+                `ATT/TXT parsed into ${xmlFromAtt.branchCount} branch(es).`,
+                `Generated ${xmlFromAtt.nodeCount} node(s) into PSI-style XML.`,
+              ],
+              stderr: xmlFromAtt.skippedComponents > 0
+                ? [`Skipped ${xmlFromAtt.skippedComponents} component(s) with incomplete coordinates.`]
+                : [],
+            },
+          };
+        } else {
+          throw new Error('Select RVM primary input, or provide ATT/TXT sidecar for ATT-only XML synthesis.');
+        }
+      } else if (selectedConverter === 'stagedjson_to_xml') {
+        if (!primaryFile || !primaryBytes) {
+          throw new Error('Primary staged JSON input is required for StagedJSON -> XML conversion.');
+        }
+        const stagedJsonText = _decodeTextUtf8(primaryBytes);
+        const stagedResult = _buildXmlFromStagedJsonText(stagedJsonText, primaryFile.name, runValues);
+        response = {
+          outputs: [
+            {
+              name: `${_baseNameWithoutExtension(primaryFile.name)}_stagedjson_to_xml.xml`,
+              text: stagedResult.xmlText,
+              mime: 'text/xml;charset=utf-8',
+            },
+          ],
+          logs: {
+            stdout: [
+              `Staged hierarchy parsed: ${stagedResult.branchCount} branch(es).`,
+              `Generated ${stagedResult.nodeCount} node(s) into PSI-style XML.`,
+            ],
+            stderr: stagedResult.skippedComponents > 0
+              ? [`Skipped ${stagedResult.skippedComponents} component(s) with incomplete coordinates.`]
+              : [],
+          },
+        };
+      } else {
+        if (!primaryFile || !primaryBytes) {
+          throw new Error('Primary input file is required for this converter.');
+        }
+        response = await (await ensureRuntime()).runJob({
+          converterId: selectedConverter,
+          inputFiles,
+          options: runValues,
+        });
+      }
+      const outputs = Array.isArray(response.outputs) ? response.outputs : [];
+      const output = outputs[0];
+      if (!output) throw new Error('Converter returned no output payload.');
+
+      renderOutputs(outputs);
+      const previewOutputs = selectedConverter === 'stagedjson_to_inputxml' && primaryFile && stagedJsonPreviewText
+        ? [
+            {
+              name: `${_baseNameWithoutExtension(primaryFile.name)}_managed_stage_preview.json`,
+              text: stagedJsonPreviewText,
+              mime: 'application/json;charset=utf-8',
+            },
+            ...outputs,
+          ]
+        : outputs;
+      await _3DModelConv_renderPreviewFromOutputs(previewOutputs);
+
+      const logLines = []
+        .concat(response.logs?.stdout || [])
+        .concat(response.logs?.stderr || []);
+      setLogs(logLines);
+      setStatus(`Completed: ${output.name}`, 'ok');
+      notify({ level: 'success', title: 'Converter', message: `${def.label} completed.` });
+      emit(RuntimeEvents.MODEL_CONVERTER_SUCCESS, { converterId: selectedConverter, output: output.name });
+    } catch (error) {
+      const message = _toText(error?.message || error);
+      setStatus(`Failed: ${message}`, 'bad');
+      outputEl.innerHTML = '<span class="model-converters-muted">No output generated.</span>';
+      setLogs([message]);
+      _3DModelConv_resetPreview(`Preview unavailable: ${message}`);
+      notify({ level: 'error', title: 'Converter', message });
+      emit(RuntimeEvents.MODEL_CONVERTER_ERROR, { converterId: selectedConverter, error: message });
+    } finally {
+      if (!disposed) runBtnEl.disabled = false;
+    }
+  });
+
+  resetOutput();
+  renderAll();
+
+  return () => {
+    disposed = true;
+    try { runtime?.dispose(); } catch {}
+    try { previewRenderer?._3DModelConv_destroy?.(); } catch {}
+  };
+}

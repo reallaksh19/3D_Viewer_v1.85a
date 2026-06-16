@@ -1,0 +1,43 @@
+[
+  {
+    "code": "GLB_METADATA_LOSS",
+    "severity": "info",
+    "sourceObjectId": "proj-123",
+    "sourceKind": "project",
+    "targetFormat": "GLB",
+    "preserved": [
+      "geometry",
+      "materials"
+    ],
+    "dropped": [
+      "rawAttributes",
+      "analyticalNodes"
+    ]
+  },
+  {
+    "code": "PCF_EXPORT_LOSS",
+    "severity": "warning",
+    "sourceObjectId": "seg-1",
+    "sourceKind": "segment",
+    "targetFormat": "PCF",
+    "preserved": [
+      "topology",
+      "lineRef",
+      "sKey"
+    ],
+    "dropped": []
+  },
+  {
+    "code": "XML_SEGMENT_EXPORT",
+    "severity": "info",
+    "sourceObjectId": "seg-1",
+    "sourceKind": "segment",
+    "targetFormat": "XML",
+    "preserved": [
+      "normalized",
+      "rawAttributes",
+      "lineRef"
+    ],
+    "dropped": []
+  }
+]

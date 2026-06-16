@@ -1,0 +1,348 @@
+{
+  "status": {
+    "kind": "ok",
+    "message": "CL1 workbench PASS. Components=38; Accepted=2812; Ready=YES."
+  },
+  "normalizer": {
+    "sourceCount": 1,
+    "mappingCount": 3,
+    "pipelineCount": 0,
+    "componentCount": 38,
+    "anchorCount": 152,
+    "portCount": 152,
+    "segmentCount": 38,
+    "supportCount": 0,
+    "lossCount": 0,
+    "diagnosticCount": 5
+  },
+  "validationStats": {
+    "strict": false,
+    "componentCount": 38,
+    "missingComponentIdCount": 0,
+    "missingComponentTypeCount": 0,
+    "unknownComponentTypeCount": 0,
+    "componentMissingSourceRefCount": 0,
+    "anchorCount": 152,
+    "invalidAnchorPointCount": 0,
+    "portCount": 152,
+    "supportPipeContinuityPorts": 0,
+    "segmentCount": 38,
+    "supportCount": 0,
+    "requiredAnchorMissingCount": 0,
+    "convertedBoreMissingCount": 38,
+    "branchBoreMissingCount": 0,
+    "pipeSegmentMissingCount": 0,
+    "fatalCount": 0,
+    "errorCount": 38,
+    "warningCount": 0,
+    "blockerCount": 38,
+    "warningItemCount": 0
+  },
+  "validationBlockersByCode": {
+    "UXML-COMPONENT-BORE-MISSING": 38
+  },
+  "validationWarningsByCode": {},
+  "firstValidationBlockers": [
+    {
+      "id": "VD-00001",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00001 type BEND is missing positive bore.",
+      "componentId": "IX-C-00001",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00002",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00002 type BEND is missing positive bore.",
+      "componentId": "IX-C-00002",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00003",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00003 type BEND is missing positive bore.",
+      "componentId": "IX-C-00003",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00004",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00004 type BEND is missing positive bore.",
+      "componentId": "IX-C-00004",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00005",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00005 type BEND is missing positive bore.",
+      "componentId": "IX-C-00005",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00006",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00006 type BEND is missing positive bore.",
+      "componentId": "IX-C-00006",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00007",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00007 type BEND is missing positive bore.",
+      "componentId": "IX-C-00007",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00008",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00008 type BEND is missing positive bore.",
+      "componentId": "IX-C-00008",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00009",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00009 type BEND is missing positive bore.",
+      "componentId": "IX-C-00009",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00010",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00010 type BEND is missing positive bore.",
+      "componentId": "IX-C-00010",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00011",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00011 type BEND is missing positive bore.",
+      "componentId": "IX-C-00011",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    },
+    {
+      "id": "VD-00012",
+      "severity": "ERROR",
+      "code": "UXML-COMPONENT-BORE-MISSING",
+      "message": "Component IX-C-00012 type BEND is missing positive bore.",
+      "componentId": "IX-C-00012",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "type": "BEND",
+        "bore": 0
+      }
+    }
+  ],
+  "faceSummary": {
+    "componentCount": 38,
+    "faceCount": 76,
+    "faceCountByKind": {
+      "ENDPOINT": 76
+    },
+    "pipeFaceCount": 0,
+    "teeBranchFaceCount": 0,
+    "oletHeaderFaceCount": 0,
+    "oletBranchFaceCount": 0,
+    "supportAssociationFaceCount": 0,
+    "supportInlineFaceCount": 0,
+    "branchVectorCount": 0,
+    "highConfidenceBranchVectorCount": 0,
+    "mediumConfidenceBranchVectorCount": 0,
+    "diagnosticCount": 1
+  },
+  "faceDiagnosticsByCode": {
+    "UXML-FACE-VALIDATION-PARTIAL": 1
+  },
+  "firstFaceDiagnostics": [
+    {
+      "id": "FD-00001",
+      "severity": "WARNING",
+      "code": "UXML-FACE-VALIDATION-PARTIAL",
+      "message": "UXML validation gate is not ready. Building partial face model because allowPartial=true.",
+      "componentId": "",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "",
+      "details": {
+        "blockerCount": 38,
+        "errorCount": 38,
+        "fatalCount": 0
+      }
+    }
+  ],
+  "universalSummary": {
+    "componentCount": 38,
+    "faceCount": 76,
+    "nodeCount": 1,
+    "portCount": 76,
+    "edgeCount": 2812,
+    "candidateEdgeCount": 2812,
+    "disconnectedCount": 0,
+    "connectedRequiredPortCount": 76,
+    "disconnectedRequiredPortCount": 0,
+    "pipeEndpointPortCount": 0,
+    "supportAssociationPortCount": 0,
+    "supportContinuityEdgeCount": 0,
+    "diagnosticCount": 0
+  },
+  "universalDiagnosticsByCode": {},
+  "raySummary": {
+    "componentCount": 38,
+    "faceCount": 76,
+    "faceSnapCandidateCount": 0,
+    "branchRaySourceCount": 0,
+    "rayCandidateCount": 0,
+    "rayConnectionCount": 0,
+    "branchConnectionCount": 0,
+    "safeCandidateCount": 0,
+    "blockedCandidateCount": 0,
+    "orphanCount": 0,
+    "ambiguousHitCount": 0,
+    "rejectedHitCount": 0,
+    "highConfidenceRayCount": 0,
+    "mediumConfidenceRayCount": 0,
+    "fallbackRayCandidateCount": 0,
+    "diagnosticCount": 0,
+    "maxRayLengthMm": 500,
+    "tubeToleranceMm": 50,
+    "pass0MaxGapMm": 6
+  },
+  "rayDiagnosticsByCode": {},
+  "firstRayDiagnostics": [],
+  "comparisonSummary": {
+    "agreementCount": 0,
+    "universalOnlyCount": 2812,
+    "rayOnlyCount": 0,
+    "promotionCandidateCount": 0,
+    "faceProximityCandidateCount": 0,
+    "rejectedRayCount": 0,
+    "manualReviewCount": 0,
+    "unresolvedUniversalDisconnectedCount": 0,
+    "universalEdgeCount": 2812,
+    "universalDisconnectedCount": 0,
+    "rayCandidateCount": 0,
+    "rayConnectionCount": 0,
+    "rayFaceSnapCandidateCount": 0,
+    "diagnosticCount": 0
+  },
+  "comparisonDiagnosticsByCode": {},
+  "decisionSummary": {
+    "acceptedConnectionCount": 2812,
+    "agreementAcceptedCount": 0,
+    "universalOnlyAcceptedCount": 2812,
+    "rayPromotionAcceptedCount": 0,
+    "faceProximityAcceptedCount": 0,
+    "manualReviewCount": 0,
+    "rejectedCount": 0,
+    "unresolvedCount": 0,
+    "exportAllowed": true,
+    "outputBridgeReady": true,
+    "diagnosticCount": 0
+  },
+  "decisionDiagnosticsByCode": {}
+}

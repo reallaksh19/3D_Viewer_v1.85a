@@ -1,0 +1,4208 @@
+[
+  {
+    "info": "AVEVA E3D Design Design Mk3.1.7.2[Z3172-003]  (WINDOWS-NT 0.0)  (21 Feb 2024 : 14:44)",
+    "note": "",
+    "date": "Sun Jun 15 07:33:44 2025",
+    "user": "muc1898@L221181",
+    "children": [
+      {
+        "project": "RBB",
+        "name": "/RBB1",
+        "children": [
+          {
+            "name": "/RHBG-1000-CU-EQ",
+            "material": 1,
+            "bbox": [
+              -0.1785,
+              0.0,
+              0.8404,
+              0.1785,
+              0.5,
+              1.1975
+            ],
+            "children": [
+              {
+                "name": "/RHBG-1000-CU-EQ-STAT",
+                "material": 1,
+                "bbox": [
+                  -0.1785,
+                  0.0,
+                  0.8404,
+                  0.1785,
+                  0.5,
+                  1.1975
+                ],
+                "children": [
+                  {
+                    "name": "/10000-RATING",
+                    "material": 1,
+                    "bbox": [
+                      -0.1785,
+                      0.0,
+                      0.8404,
+                      0.1785,
+                      0.5,
+                      1.1975
+                    ],
+                    "children": [
+                      {
+                        "name": "/10000-N1",
+                        "material": 1,
+                        "bbox": [
+                          -0.1785,
+                          0.0,
+                          0.8404,
+                          0.1785,
+                          0.5,
+                          1.1975
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "/RHBG-1000-CU-PI",
+            "material": 1,
+            "bbox": [
+              -38.1575,
+              -2.98,
+              0.7114,
+              189.1155,
+              178.2824,
+              103.4425
+            ],
+            "children": [
+              {
+                "name": "/RHBG-1000-CU-PI-P",
+                "material": 1,
+                "bbox": [
+                  165.4976,
+                  152.5825,
+                  101.1925,
+                  189.1155,
+                  178.2824,
+                  103.4425
+                ],
+                "children": [
+                  {
+                    "name": "PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                    "material": 1,
+                    "bbox": [
+                      168.8291,
+                      155.3072,
+                      101.3199,
+                      189.1155,
+                      178.2824,
+                      102.564
+                    ],
+                    "children": [
+                      {
+                        "name": "BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          168.8291,
+                          155.3072,
+                          101.3199,
+                          189.1155,
+                          178.2824,
+                          102.564
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              188.9218,
+                              155.3072,
+                              101.3199,
+                              189.1123,
+                              155.6671,
+                              101.68
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              185.9116,
+                              155.4031,
+                              101.416,
+                              186.2242,
+                              155.7158,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              185.9116,
+                              177.8739,
+                              101.416,
+                              186.0796,
+                              178.1865,
+                              101.7285
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              185.767,
+                              178.0184,
+                              102.1554,
+                              186.0796,
+                              178.1864,
+                              102.468
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              179.0196,
+                              178.0184,
+                              102.3,
+                              179.3756,
+                              178.1864,
+                              102.552
+                            ]
+                          },
+                          {
+                            "name": "TEE 2 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              174.0196,
+                              178.0184,
+                              102.3,
+                              174.3756,
+                              178.1864,
+                              102.552
+                            ]
+                          },
+                          {
+                            "name": "TEE 3 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              169.0196,
+                              178.0184,
+                              102.3,
+                              169.3756,
+                              178.1864,
+                              102.552
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              168.8291,
+                              177.9225,
+                              102.204,
+                              169.0196,
+                              178.2824,
+                              102.564
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 1 of PIPE 1 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                    "material": 1,
+                    "bbox": [
+                      175.4976,
+                      152.5825,
+                      101.1925,
+                      179.2816,
+                      178.1865,
+                      103.4425
+                    ],
+                    "children": [
+                      {
+                        "name": "BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          175.4976,
+                          152.5825,
+                          101.1925,
+                          179.2816,
+                          178.1865,
+                          103.4425
+                        ],
+                        "children": [
+                          {
+                            "name": "ELBOW 1 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              179.1136,
+                              177.8739,
+                              103.1299,
+                              179.2816,
+                              178.1865,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              178.969,
+                              176.8184,
+                              103.2745,
+                              179.2816,
+                              177.1311,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.8136,
+                              176.8184,
+                              103.1299,
+                              177.1262,
+                              176.9864,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.7176,
+                              176.7225,
+                              101.919,
+                              177.0776,
+                              177.0824,
+                              102.1095
+                            ]
+                          },
+                          {
+                            "name": "GASKET 1 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.7176,
+                              176.7225,
+                              101.7285,
+                              177.0776,
+                              177.0824,
+                              101.9191
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.8136,
+                              176.6739,
+                              101.416,
+                              176.9816,
+                              176.9865,
+                              101.7285
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.7401,
+                              171.5065,
+                              101.3424,
+                              177.0551,
+                              171.6739,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.4726,
+                              170.7245,
+                              101.1925,
+                              177.1479,
+                              171.5065,
+                              102.275
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.7401,
+                              170.669,
+                              101.3424,
+                              177.0551,
+                              170.8365,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.8136,
+                              170.0262,
+                              101.416,
+                              176.9816,
+                              170.3119,
+                              101.6301
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.7401,
+                              169.5016,
+                              101.3424,
+                              177.0551,
+                              169.669,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.4726,
+                              168.7196,
+                              101.1925,
+                              177.1479,
+                              169.5017,
+                              102.275
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.7401,
+                              168.6642,
+                              101.3424,
+                              177.0551,
+                              168.8317,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.669,
+                              153.8184,
+                              101.416,
+                              176.9816,
+                              154.1311,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              175.5244,
+                              153.6739,
+                              101.416,
+                              175.837,
+                              153.9865,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              175.5244,
+                              153.0612,
+                              101.416,
+                              175.837,
+                              153.3739,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              175.837,
+                              152.9877,
+                              101.3424,
+                              176.0044,
+                              153.3027,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "INSTRUMENT 1 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              175.4976,
+                              152.5825,
+                              101.3036,
+                              177.1069,
+                              153.4902,
+                              102.5459
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH 1 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.4074,
+                              152.9877,
+                              101.3424,
+                              176.5748,
+                              153.3027,
+                              101.6575
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          176.8406,
+                          170.112,
+                          101.5175,
+                          178.0674,
+                          173.5332,
+                          102.4425
+                        ],
+                        "children": [
+                          {
+                            "name": "ELBOW 1 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              176.8406,
+                              170.112,
+                              101.6301,
+                              177.05,
+                              170.2261,
+                              101.8395
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.55,
+                              170.1121,
+                              101.7255,
+                              177.7594,
+                              170.3215,
+                              101.8395
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.5874,
+                              170.3215,
+                              101.6675,
+                              177.8174,
+                              170.4519,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "GASKET 1 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.3986,
+                              170.4518,
+                              101.5175,
+                              178.0674,
+                              171.2203,
+                              102.4425
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.5874,
+                              171.0168,
+                              101.6675,
+                              177.8174,
+                              171.1472,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.5874,
+                              172.6343,
+                              101.6675,
+                              177.8174,
+                              172.7648,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.3986,
+                              172.7648,
+                              101.5175,
+                              178.0674,
+                              173.5332,
+                              102.4425
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH 2 of PIPE 2 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              177.5874,
+                              173.3297,
+                              101.6675,
+                              177.8174,
+                              173.4602,
+                              101.8975
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                    "material": 1,
+                    "bbox": [
+                      165.4976,
+                      152.5825,
+                      101.1925,
+                      169.2816,
+                      178.1865,
+                      103.4425
+                    ],
+                    "children": [
+                      {
+                        "name": "BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          165.4976,
+                          152.5825,
+                          101.1925,
+                          169.2816,
+                          178.1865,
+                          103.4425
+                        ],
+                        "children": [
+                          {
+                            "name": "ELBOW 1 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              169.1136,
+                              177.8739,
+                              103.1299,
+                              169.2816,
+                              178.1865,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              168.969,
+                              176.8184,
+                              103.2745,
+                              169.2816,
+                              177.1311,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.8136,
+                              176.8184,
+                              103.1299,
+                              167.1262,
+                              176.9864,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.7176,
+                              176.7225,
+                              101.919,
+                              167.0776,
+                              177.0824,
+                              102.1095
+                            ]
+                          },
+                          {
+                            "name": "GASKET 1 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.7176,
+                              176.7225,
+                              101.7285,
+                              167.0776,
+                              177.0824,
+                              101.9191
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.8136,
+                              176.6739,
+                              101.416,
+                              166.9816,
+                              176.9865,
+                              101.7285
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.7401,
+                              171.5065,
+                              101.3424,
+                              167.0551,
+                              171.6739,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.4726,
+                              170.7245,
+                              101.1925,
+                              167.1479,
+                              171.5065,
+                              102.275
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.7401,
+                              170.669,
+                              101.3424,
+                              167.0551,
+                              170.8365,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.8136,
+                              170.0262,
+                              101.416,
+                              166.9816,
+                              170.3119,
+                              101.6301
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.7401,
+                              169.5016,
+                              101.3424,
+                              167.0551,
+                              169.669,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.4726,
+                              168.7196,
+                              101.1925,
+                              167.1479,
+                              169.5017,
+                              102.275
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.7401,
+                              168.6642,
+                              101.3424,
+                              167.0551,
+                              168.8317,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.669,
+                              153.8184,
+                              101.416,
+                              166.9816,
+                              154.1311,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              165.5244,
+                              153.6739,
+                              101.416,
+                              165.837,
+                              153.9865,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              165.5244,
+                              153.0612,
+                              101.416,
+                              165.837,
+                              153.3739,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              165.837,
+                              152.9877,
+                              101.3424,
+                              166.0044,
+                              153.3027,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "INSTRUMENT 1 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              165.4976,
+                              152.5825,
+                              101.3036,
+                              167.1069,
+                              153.4902,
+                              102.5459
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH 1 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.4074,
+                              152.9877,
+                              101.3424,
+                              166.5748,
+                              153.3027,
+                              101.6575
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          166.8406,
+                          170.112,
+                          101.5175,
+                          168.0674,
+                          173.5332,
+                          102.4425
+                        ],
+                        "children": [
+                          {
+                            "name": "ELBOW 1 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              166.8406,
+                              170.112,
+                              101.6301,
+                              167.05,
+                              170.2261,
+                              101.8395
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.55,
+                              170.1121,
+                              101.7255,
+                              167.7594,
+                              170.3215,
+                              101.8395
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.5874,
+                              170.3215,
+                              101.6675,
+                              167.8174,
+                              170.4519,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "GASKET 1 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.3986,
+                              170.4518,
+                              101.5175,
+                              168.0674,
+                              171.2203,
+                              102.4425
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.5874,
+                              171.0168,
+                              101.6675,
+                              167.8174,
+                              171.1472,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.5874,
+                              172.6343,
+                              101.6675,
+                              167.8174,
+                              172.7648,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.3986,
+                              172.7648,
+                              101.5175,
+                              168.0674,
+                              173.5332,
+                              102.4425
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH 2 of PIPE 3 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              167.5874,
+                              173.3297,
+                              101.6675,
+                              167.8174,
+                              173.4602,
+                              101.8975
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                    "material": 1,
+                    "bbox": [
+                      170.4976,
+                      152.5825,
+                      101.1925,
+                      174.2816,
+                      178.1865,
+                      103.4425
+                    ],
+                    "children": [
+                      {
+                        "name": "BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          170.4976,
+                          152.5825,
+                          101.1925,
+                          174.2816,
+                          178.1865,
+                          103.4425
+                        ],
+                        "children": [
+                          {
+                            "name": "ELBOW 1 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              174.1136,
+                              177.8739,
+                              103.1299,
+                              174.2816,
+                              178.1865,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              173.969,
+                              176.8184,
+                              103.2745,
+                              174.2816,
+                              177.1311,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.8136,
+                              176.8184,
+                              103.1299,
+                              172.1262,
+                              176.9864,
+                              103.4425
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.7176,
+                              176.7225,
+                              101.919,
+                              172.0776,
+                              177.0824,
+                              102.1095
+                            ]
+                          },
+                          {
+                            "name": "GASKET 1 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.7176,
+                              176.7225,
+                              101.7285,
+                              172.0776,
+                              177.0824,
+                              101.9191
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.8136,
+                              176.6739,
+                              101.416,
+                              171.9816,
+                              176.9865,
+                              101.7285
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.7401,
+                              171.5065,
+                              101.3424,
+                              172.0551,
+                              171.6739,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.4726,
+                              170.7245,
+                              101.1925,
+                              172.1479,
+                              171.5065,
+                              102.275
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.7401,
+                              170.669,
+                              101.3424,
+                              172.0551,
+                              170.8365,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.8136,
+                              170.0262,
+                              101.416,
+                              171.9816,
+                              170.3119,
+                              101.6301
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.7401,
+                              169.5016,
+                              101.3424,
+                              172.0551,
+                              169.669,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.4726,
+                              168.7196,
+                              101.1925,
+                              172.1479,
+                              169.5017,
+                              102.275
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.7401,
+                              168.6642,
+                              101.3424,
+                              172.0551,
+                              168.8317,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.669,
+                              153.8184,
+                              101.416,
+                              171.9816,
+                              154.1311,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              170.5244,
+                              153.6739,
+                              101.416,
+                              170.837,
+                              153.9865,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              170.5244,
+                              153.0612,
+                              101.416,
+                              170.837,
+                              153.3739,
+                              101.5839
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              170.837,
+                              152.9877,
+                              101.3424,
+                              171.0044,
+                              153.3027,
+                              101.6575
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "INSTRUMENT 1 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              170.4976,
+                              152.5825,
+                              101.3036,
+                              172.1069,
+                              153.4902,
+                              102.5459
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH 1 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.4074,
+                              152.9877,
+                              101.3424,
+                              171.5748,
+                              153.3027,
+                              101.6575
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                        "material": 1,
+                        "bbox": [
+                          171.8406,
+                          170.112,
+                          101.5175,
+                          173.0674,
+                          173.5332,
+                          102.4425
+                        ],
+                        "children": [
+                          {
+                            "name": "ELBOW 1 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              171.8406,
+                              170.112,
+                              101.6301,
+                              172.05,
+                              170.2261,
+                              101.8395
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.55,
+                              170.1121,
+                              101.7255,
+                              172.7594,
+                              170.3215,
+                              101.8395
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.5874,
+                              170.3215,
+                              101.6675,
+                              172.8174,
+                              170.4519,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "GASKET 1 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.3986,
+                              170.4518,
+                              101.5175,
+                              173.0674,
+                              171.2203,
+                              102.4425
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.5874,
+                              171.0168,
+                              101.6675,
+                              172.8174,
+                              171.1472,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.5874,
+                              172.6343,
+                              101.6675,
+                              172.8174,
+                              172.7648,
+                              101.8975
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.3986,
+                              172.7648,
+                              101.5175,
+                              173.0674,
+                              173.5332,
+                              102.4425
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH 2 of PIPE 4 of ZONE /RHBG-1000-CU-PI-P",
+                            "material": 1,
+                            "bbox": [
+                              172.5874,
+                              173.3297,
+                              101.6675,
+                              172.8174,
+                              173.4602,
+                              101.8975
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "/RHBG-1000-CU-PI-W",
+                "material": 1,
+                "bbox": [
+                  -38.1575,
+                  -2.98,
+                  0.7114,
+                  7.1574,
+                  5.5282,
+                  3.168
+                ],
+                "children": [
+                  {
+                    "name": "/6\"-P11XXX1-1001503P1-01",
+                    "material": 1,
+                    "bbox": [
+                      -20.6574,
+                      -2.98,
+                      0.7114,
+                      0.1575,
+                      5.5282,
+                      3.168
+                    ],
+                    "children": [
+                      {
+                        "name": "/6\"-P11XXX1-1001503P1-01/B1",
+                        "material": 1,
+                        "bbox": [
+                          -20.6574,
+                          -2.98,
+                          0.7114,
+                          0.1575,
+                          5.5282,
+                          3.168
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -0.1575,
+                              -0.1674,
+                              0.8615,
+                              0.1575,
+                              0.0,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -0.1575,
+                              -2.5,
+                              0.8615,
+                              0.1575,
+                              -2.3326,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -0.1575,
+                              -2.6673,
+                              0.8615,
+                              0.1575,
+                              -2.5,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -0.2285,
+                              -2.98,
+                              0.935,
+                              0.084,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.0839,
+                              -2.98,
+                              0.935,
+                              -0.7713,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.1575,
+                              -2.3673,
+                              0.8615,
+                              -0.8424,
+                              -2.2,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.4249,
+                              -2.312,
+                              0.7114,
+                              -0.7497,
+                              -1.5299,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.1575,
+                              -1.53,
+                              0.8615,
+                              -0.8424,
+                              -1.3625,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.1575,
+                              -1.0626,
+                              0.8615,
+                              -0.8424,
+                              -0.8952,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.4249,
+                              -1.0072,
+                              0.7114,
+                              -0.7497,
+                              -0.2251,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.1575,
+                              -0.2252,
+                              0.8615,
+                              -0.8424,
+                              -0.0577,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.0839,
+                              -0.0577,
+                              0.9349,
+                              -0.916,
+                              0.2548,
+                              1.2475
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.0839,
+                              -0.0577,
+                              2.8554,
+                              -0.916,
+                              0.2548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -1.2286,
+                              -0.9132,
+                              3.0,
+                              -0.916,
+                              -0.6006,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -19.5839,
+                              -0.9132,
+                              3.0,
+                              -19.2714,
+                              -0.6006,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -19.7285,
+                              5.1421,
+                              3.0,
+                              -19.416,
+                              5.4548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 8 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -20.5839,
+                              5.2867,
+                              2.8554,
+                              -20.2714,
+                              5.4548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -20.6574,
+                              5.2133,
+                              1.3292,
+                              -20.3425,
+                              5.5282,
+                              1.4966
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 9 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -20.6574,
+                              5.2133,
+                              1.1618,
+                              -20.3425,
+                              5.5282,
+                              1.3292
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH /6\"-P11XXX1-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -20.5839,
+                              5.2279,
+                              0.935,
+                              -20.416,
+                              5.5136,
+                              1.1618
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "/6\"-P11XXX2-1001503P1-01",
+                    "material": 1,
+                    "bbox": [
+                      -24.1574,
+                      -2.98,
+                      0.7114,
+                      3.6575,
+                      5.5282,
+                      3.168
+                    ],
+                    "children": [
+                      {
+                        "name": "/6\"-P11XXX2-1001503P1-01/B1",
+                        "material": 1,
+                        "bbox": [
+                          -24.1574,
+                          -2.98,
+                          0.7114,
+                          3.6575,
+                          5.5282,
+                          3.168
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              3.3424,
+                              -0.1674,
+                              0.8615,
+                              3.6575,
+                              0.0,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              3.3424,
+                              -2.5,
+                              0.8615,
+                              3.6575,
+                              -2.3326,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              3.3424,
+                              -2.6673,
+                              0.8615,
+                              3.6575,
+                              -2.5,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              3.2713,
+                              -2.98,
+                              0.935,
+                              3.584,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.4159,
+                              -2.98,
+                              0.935,
+                              2.7286,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.3424,
+                              -2.3673,
+                              0.8615,
+                              2.6575,
+                              -2.2,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.0749,
+                              -2.312,
+                              0.7114,
+                              2.7502,
+                              -1.5299,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.3424,
+                              -1.53,
+                              0.8615,
+                              2.6575,
+                              -1.3625,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.3424,
+                              -1.0626,
+                              0.8615,
+                              2.6575,
+                              -0.8952,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.0749,
+                              -1.0072,
+                              0.7114,
+                              2.7502,
+                              -0.2251,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.3424,
+                              -0.2252,
+                              0.8615,
+                              2.6575,
+                              -0.0577,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.4159,
+                              -0.0577,
+                              0.9349,
+                              2.584,
+                              0.2548,
+                              1.2475
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.4159,
+                              -0.0577,
+                              2.8554,
+                              2.584,
+                              0.2548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              2.2713,
+                              -1.3131,
+                              3.0,
+                              2.584,
+                              -1.0005,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -23.0839,
+                              -1.3131,
+                              3.0,
+                              -22.7714,
+                              -1.0005,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -23.2285,
+                              5.1421,
+                              3.0,
+                              -22.916,
+                              5.4548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 8 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -24.0839,
+                              5.2867,
+                              2.8554,
+                              -23.7714,
+                              5.4548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -24.1574,
+                              5.2133,
+                              1.3292,
+                              -23.8425,
+                              5.5282,
+                              1.4966
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 9 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -24.1574,
+                              5.2133,
+                              1.1618,
+                              -23.8425,
+                              5.5282,
+                              1.3292
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH /6\"-P11XXX2-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -24.0839,
+                              5.2279,
+                              0.935,
+                              -23.916,
+                              5.5136,
+                              1.1618
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "/6\"-P11XXX3-1001503P1-01",
+                    "material": 1,
+                    "bbox": [
+                      -27.6574,
+                      -2.98,
+                      0.7114,
+                      7.1574,
+                      5.5282,
+                      3.168
+                    ],
+                    "children": [
+                      {
+                        "name": "/6\"-P11XXX3-1001503P1-01/B1",
+                        "material": 1,
+                        "bbox": [
+                          -27.6574,
+                          -2.98,
+                          0.7114,
+                          7.1574,
+                          5.5282,
+                          3.168
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              6.8425,
+                              -0.1674,
+                              0.8615,
+                              7.1574,
+                              0.0,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              6.8425,
+                              -2.5,
+                              0.8615,
+                              7.1574,
+                              -2.3326,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              6.8425,
+                              -2.6673,
+                              0.8615,
+                              7.1574,
+                              -2.5,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              6.7713,
+                              -2.98,
+                              0.935,
+                              7.084,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.9159,
+                              -2.98,
+                              0.935,
+                              6.2286,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.8425,
+                              -2.3673,
+                              0.8615,
+                              6.1574,
+                              -2.2,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.575,
+                              -2.312,
+                              0.7114,
+                              6.2502,
+                              -1.5299,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.8425,
+                              -1.53,
+                              0.8615,
+                              6.1574,
+                              -1.3625,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.8425,
+                              -1.0626,
+                              0.8615,
+                              6.1574,
+                              -0.8952,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.575,
+                              -1.0072,
+                              0.7114,
+                              6.2502,
+                              -0.2251,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.8425,
+                              -0.2252,
+                              0.8615,
+                              6.1574,
+                              -0.0577,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.9159,
+                              -0.0577,
+                              0.9349,
+                              6.084,
+                              0.2548,
+                              1.2475
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.9159,
+                              -0.0577,
+                              2.8554,
+                              6.084,
+                              0.2548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              5.7713,
+                              -1.7131,
+                              3.0,
+                              6.084,
+                              -1.4005,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -26.5839,
+                              -1.7131,
+                              3.0,
+                              -26.2714,
+                              -1.4005,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -26.7285,
+                              5.1421,
+                              3.0,
+                              -26.416,
+                              5.4548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 8 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -27.5839,
+                              5.2867,
+                              2.8554,
+                              -27.2714,
+                              5.4548,
+                              3.168
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -27.6574,
+                              5.2133,
+                              1.3292,
+                              -27.3425,
+                              5.5282,
+                              1.4966
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 9 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -27.6574,
+                              5.2133,
+                              1.1618,
+                              -27.3425,
+                              5.5282,
+                              1.3292
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH /6\"-P11XXX3-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -27.5839,
+                              5.2279,
+                              0.935,
+                              -27.416,
+                              5.5136,
+                              1.1618
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "/6\"-P11XXX4-1001503P1-01",
+                    "material": 1,
+                    "bbox": [
+                      -31.1574,
+                      -2.98,
+                      0.7114,
+                      -10.3424,
+                      5.5282,
+                      2.668
+                    ],
+                    "children": [
+                      {
+                        "name": "/6\"-P11XXX4-1001503P1-01/B1",
+                        "material": 1,
+                        "bbox": [
+                          -31.1574,
+                          -2.98,
+                          0.7114,
+                          -10.3424,
+                          5.5282,
+                          2.668
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -10.6575,
+                              -0.1674,
+                              0.8615,
+                              -10.3424,
+                              0.0,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -10.6575,
+                              -2.5,
+                              0.8615,
+                              -10.3424,
+                              -2.3326,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -10.6575,
+                              -2.6673,
+                              0.8615,
+                              -10.3424,
+                              -2.5,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -10.7285,
+                              -2.98,
+                              0.935,
+                              -10.4159,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.584,
+                              -2.98,
+                              0.935,
+                              -11.2714,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.6575,
+                              -2.3673,
+                              0.8615,
+                              -11.3424,
+                              -2.2,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.925,
+                              -2.312,
+                              0.7114,
+                              -11.2497,
+                              -1.5299,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.6575,
+                              -1.53,
+                              0.8615,
+                              -11.3424,
+                              -1.3625,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.6575,
+                              -1.0626,
+                              0.8615,
+                              -11.3424,
+                              -0.8952,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.925,
+                              -1.0072,
+                              0.7114,
+                              -11.2497,
+                              -0.2251,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.6575,
+                              -0.2252,
+                              0.8615,
+                              -11.3424,
+                              -0.0577,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.5839,
+                              -0.0577,
+                              0.9349,
+                              -11.416,
+                              0.2548,
+                              1.2475
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.5839,
+                              -0.0577,
+                              2.3554,
+                              -11.416,
+                              0.2548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -11.7285,
+                              -0.9132,
+                              2.5,
+                              -11.4159,
+                              -0.6006,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -30.0839,
+                              -0.9132,
+                              2.5,
+                              -29.7714,
+                              -0.6006,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -30.2285,
+                              5.1421,
+                              2.5,
+                              -29.916,
+                              5.4548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 8 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -31.0839,
+                              5.2867,
+                              2.3554,
+                              -30.7714,
+                              5.4548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -31.1574,
+                              5.2133,
+                              1.3292,
+                              -30.8425,
+                              5.5282,
+                              1.4966
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 9 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -31.1574,
+                              5.2133,
+                              1.1618,
+                              -30.8425,
+                              5.5282,
+                              1.3292
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH /6\"-P11XXX4-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -31.0839,
+                              5.2279,
+                              0.935,
+                              -30.916,
+                              5.5136,
+                              1.1618
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "/6\"-P11XXX5-1001503P1-01",
+                    "material": 1,
+                    "bbox": [
+                      -34.6575,
+                      -2.98,
+                      0.7114,
+                      -6.8425,
+                      5.5282,
+                      2.668
+                    ],
+                    "children": [
+                      {
+                        "name": "/6\"-P11XXX5-1001503P1-01/B1",
+                        "material": 1,
+                        "bbox": [
+                          -34.6575,
+                          -2.98,
+                          0.7114,
+                          -6.8425,
+                          5.5282,
+                          2.668
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -7.1574,
+                              -0.1674,
+                              0.8615,
+                              -6.8425,
+                              0.0,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -7.1574,
+                              -2.5,
+                              0.8615,
+                              -6.8425,
+                              -2.3326,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -7.1574,
+                              -2.6673,
+                              0.8615,
+                              -6.8425,
+                              -2.5,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -7.2286,
+                              -2.98,
+                              0.935,
+                              -6.9159,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.0839,
+                              -2.98,
+                              0.935,
+                              -7.7713,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.1575,
+                              -2.3673,
+                              0.8615,
+                              -7.8425,
+                              -2.2,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.425,
+                              -2.312,
+                              0.7114,
+                              -7.7497,
+                              -1.5299,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.1575,
+                              -1.53,
+                              0.8615,
+                              -7.8425,
+                              -1.3625,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.1575,
+                              -1.0626,
+                              0.8615,
+                              -7.8425,
+                              -0.8952,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.425,
+                              -1.0072,
+                              0.7114,
+                              -7.7497,
+                              -0.2251,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.1575,
+                              -0.2252,
+                              0.8615,
+                              -7.8425,
+                              -0.0577,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.0839,
+                              -0.0577,
+                              0.9349,
+                              -7.9159,
+                              0.2548,
+                              1.2475
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.0839,
+                              -0.0577,
+                              2.3554,
+                              -7.9159,
+                              0.2548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -8.2285,
+                              -1.3131,
+                              2.5,
+                              -7.9159,
+                              -1.0005,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -33.5839,
+                              -1.3131,
+                              2.5,
+                              -33.2714,
+                              -1.0005,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -33.7285,
+                              5.1421,
+                              2.5,
+                              -33.416,
+                              5.4548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 8 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -34.5839,
+                              5.2867,
+                              2.3554,
+                              -34.2714,
+                              5.4548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -34.6575,
+                              5.2133,
+                              1.3292,
+                              -34.3424,
+                              5.5282,
+                              1.4966
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 9 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -34.6575,
+                              5.2133,
+                              1.1618,
+                              -34.3424,
+                              5.5282,
+                              1.3292
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH /6\"-P11XXX5-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -34.5839,
+                              5.2279,
+                              0.935,
+                              -34.416,
+                              5.5136,
+                              1.1618
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "/6\"-P11XXX6-1001503P1-01",
+                    "material": 1,
+                    "bbox": [
+                      -38.1575,
+                      -2.98,
+                      0.7114,
+                      -3.3424,
+                      5.5282,
+                      2.668
+                    ],
+                    "children": [
+                      {
+                        "name": "/6\"-P11XXX6-1001503P1-01/B1",
+                        "material": 1,
+                        "bbox": [
+                          -38.1575,
+                          -2.98,
+                          0.7114,
+                          -3.3424,
+                          5.5282,
+                          2.668
+                        ],
+                        "children": [
+                          {
+                            "name": "GASKET 1 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 1 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -3.6575,
+                              -0.1674,
+                              0.8615,
+                              -3.3424,
+                              0.0,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 2 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -3.6575,
+                              -2.5,
+                              0.8615,
+                              -3.3424,
+                              -2.3326,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 2 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 3 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -3.6575,
+                              -2.6673,
+                              0.8615,
+                              -3.3424,
+                              -2.5,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 1 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -3.7286,
+                              -2.98,
+                              0.935,
+                              -3.4159,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 2 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.584,
+                              -2.98,
+                              0.935,
+                              -4.2713,
+                              -2.6673,
+                              1.103
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 4 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.6574,
+                              -2.3673,
+                              0.8615,
+                              -4.3425,
+                              -2.2,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 3 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 1 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.9249,
+                              -2.312,
+                              0.7114,
+                              -4.2497,
+                              -1.5299,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 4 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 5 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.6574,
+                              -1.53,
+                              0.8615,
+                              -4.3425,
+                              -1.3625,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 6 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.6574,
+                              -1.0626,
+                              0.8615,
+                              -4.3425,
+                              -0.8952,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "GASKET 5 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "VALVE 2 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.9249,
+                              -1.0072,
+                              0.7114,
+                              -4.2497,
+                              -0.2251,
+                              1.794
+                            ]
+                          },
+                          {
+                            "name": "GASKET 6 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 7 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.6574,
+                              -0.2252,
+                              0.8615,
+                              -4.3425,
+                              -0.0577,
+                              1.1765
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 3 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.584,
+                              -0.0577,
+                              0.9349,
+                              -4.4159,
+                              0.2548,
+                              1.2475
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 4 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.584,
+                              -0.0577,
+                              2.3554,
+                              -4.4159,
+                              0.2548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 5 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -4.7286,
+                              -1.7131,
+                              2.5,
+                              -4.4159,
+                              -1.4005,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 6 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -37.0839,
+                              -1.7131,
+                              2.5,
+                              -36.7714,
+                              -1.4005,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 7 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -37.2285,
+                              5.1421,
+                              2.5,
+                              -36.916,
+                              5.4548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "ELBOW 8 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -38.0839,
+                              5.2867,
+                              2.3554,
+                              -37.7714,
+                              5.4548,
+                              2.668
+                            ]
+                          },
+                          {
+                            "name": "FLANGE 8 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -38.1575,
+                              5.2133,
+                              1.3292,
+                              -37.8424,
+                              5.5282,
+                              1.4966
+                            ]
+                          },
+                          {
+                            "name": "GASKET 7 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1
+                          },
+                          {
+                            "name": "FLANGE 9 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -38.1575,
+                              5.2133,
+                              1.1618,
+                              -37.8424,
+                              5.5282,
+                              1.3292
+                            ]
+                          },
+                          {
+                            "name": "TEE 1 of BRANCH /6\"-P11XXX6-1001503P1-01/B1",
+                            "material": 1,
+                            "bbox": [
+                              -38.0839,
+                              5.2279,
+                              0.935,
+                              -37.916,
+                              5.5136,
+                              1.1618
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "/RHBG-1000-CU-CN",
+            "material": 1,
+            "bbox": [
+              -37.2999,
+              -2.0542,
+              -0.625,
+              1699.9246,
+              1106.1657,
+              100.05
+            ],
+            "children": [
+              {
+                "name": "/RHBG-1000-CU-CN-01-CS",
+                "material": 1,
+                "bbox": [
+                  1281.0,
+                  697.5,
+                  97.8999,
+                  1699.9246,
+                  1106.1657,
+                  100.05
+                ],
+                "children": [
+                  {
+                    "name": "/TRANCHE-2-ROAD",
+                    "material": 1,
+                    "bbox": [
+                      1281.0,
+                      697.5,
+                      97.8999,
+                      1699.9246,
+                      1106.1657,
+                      100.05
+                    ],
+                    "children": [
+                      {
+                        "name": "BOX 1 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1356.8535,
+                          707.5,
+                          98.0,
+                          1680.8535,
+                          716.5,
+                          98.1
+                        ]
+                      },
+                      {
+                        "name": "BOX 2 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1297.0,
+                          743.0,
+                          99.9499,
+                          1577.4851,
+                          749.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "BOX 3 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1297.0,
+                          834.0,
+                          99.9499,
+                          1577.5214,
+                          840.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "BOX 4 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1297.0,
+                          946.0,
+                          99.9499,
+                          1577.5214,
+                          952.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "BOX 5 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1479.1,
+                          978.0,
+                          99.9499,
+                          1680.5214,
+                          984.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "BOX 6 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1587.5164,
+                          759.0,
+                          99.9499,
+                          1593.5164,
+                          936.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "BOX 7 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1406.5164,
+                          759.0,
+                          99.9499,
+                          1412.5164,
+                          936.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "BOX 8 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1690.5214,
+                          726.6657,
+                          97.8999,
+                          1699.5214,
+                          1106.1657,
+                          98.0
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 1 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1680.5247,
+                          707.5,
+                          98.0,
+                          1699.9246,
+                          726.8999,
+                          98.1
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 2 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1577.5214,
+                          743.0,
+                          99.9499,
+                          1593.5214,
+                          759.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 3 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1396.5214,
+                          743.0,
+                          99.9499,
+                          1412.5214,
+                          759.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 4 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1577.5214,
+                          834.0,
+                          99.9499,
+                          1593.5214,
+                          850.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 5 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1680.5214,
+                          978.0,
+                          99.9499,
+                          1696.5214,
+                          994.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 6 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1396.5214,
+                          834.0,
+                          99.9499,
+                          1412.5214,
+                          850.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 7 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1577.5214,
+                          824.0,
+                          99.9499,
+                          1593.5214,
+                          840.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 8 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1680.5214,
+                          968.0,
+                          99.9499,
+                          1696.5214,
+                          984.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 9 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1396.5214,
+                          824.0,
+                          99.9499,
+                          1412.5214,
+                          840.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 10 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1577.5214,
+                          936.0,
+                          99.9499,
+                          1593.5214,
+                          952.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 11 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1396.5214,
+                          936.0,
+                          99.9499,
+                          1412.5214,
+                          952.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 12 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1337.5,
+                          697.5,
+                          97.9007,
+                          1356.5,
+                          716.5,
+                          98.0007
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 13 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1406.5214,
+                          936.0,
+                          99.9499,
+                          1422.5214,
+                          952.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 14 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1281.0,
+                          936.0,
+                          99.9499,
+                          1297.0,
+                          952.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 15 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1406.5214,
+                          824.0,
+                          99.9499,
+                          1422.5214,
+                          840.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 16 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1281.0,
+                          824.0,
+                          99.9499,
+                          1297.0,
+                          840.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 17 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1281.0,
+                          733.0,
+                          99.9499,
+                          1297.0,
+                          749.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 18 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1406.5214,
+                          834.0,
+                          99.9499,
+                          1422.5214,
+                          850.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 19 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1281.0,
+                          834.0,
+                          99.9499,
+                          1297.0,
+                          850.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 20 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1281.0,
+                          946.0,
+                          99.9499,
+                          1297.0,
+                          962.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 21 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1406.5214,
+                          743.0,
+                          99.9499,
+                          1422.5214,
+                          759.0,
+                          100.05
+                        ]
+                      },
+                      {
+                        "name": "RTORUS 22 of EQUIPMENT /TRANCHE-2-ROAD",
+                        "material": 1,
+                        "bbox": [
+                          1281.0,
+                          743.0,
+                          99.9499,
+                          1297.0,
+                          759.0,
+                          100.05
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "/RHBG-1000-CU-CN-04-CS",
+                "material": 1,
+                "bbox": [
+                  -37.2999,
+                  -2.0542,
+                  -0.625,
+                  4.125,
+                  3.4958,
+                  3.0
+                ],
+                "children": [
+                  {
+                    "name": "/RRIMS-PIPESUPP",
+                    "material": 1,
+                    "bbox": [
+                      -37.2999,
+                      -2.0542,
+                      -0.625,
+                      4.125,
+                      3.4958,
+                      3.0
+                    ],
+                    "children": [
+                      {
+                        "name": "SUBEQUIPMENT 1 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          3.875,
+                          -1.9291,
+                          -0.125,
+                          4.125,
+                          -1.3292,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 1 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              3.875,
+                              -1.7541,
+                              -0.125,
+                              4.125,
+                              -1.5041,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 1 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              3.875,
+                              -1.9291,
+                              2.75,
+                              4.125,
+                              -1.3292,
+                              3.0
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 2 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -3.125,
+                          -1.9292,
+                          -0.125,
+                          -2.875,
+                          -0.5291,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 2 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -3.125,
+                              -1.3542,
+                              -0.125,
+                              -2.875,
+                              -1.1042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 2 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -3.125,
+                              -1.9292,
+                              2.75,
+                              -2.875,
+                              -0.5291,
+                              3.0
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 3 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -10.125,
+                          -2.0542,
+                          -0.125,
+                          -9.875,
+                          -0.4041,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 3 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -10.125,
+                              -2.0542,
+                              -0.125,
+                              -9.875,
+                              -1.8042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 3 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -10.125,
+                              -0.6542,
+                              -0.125,
+                              -9.875,
+                              -0.4042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 3 of SUBEQUIPMENT 3 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -10.125,
+                              -2.0542,
+                              2.75,
+                              -9.875,
+                              -0.4041,
+                              3.0
+                            ]
+                          },
+                          {
+                            "name": "BOX 4 of SUBEQUIPMENT 3 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -10.125,
+                              -2.0542,
+                              2.25,
+                              -9.875,
+                              -0.4041,
+                              2.5
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 4 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -18.875,
+                          -2.0542,
+                          -0.125,
+                          -18.625,
+                          -0.4041,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 4 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -18.875,
+                              -2.0542,
+                              -0.125,
+                              -18.625,
+                              -1.8042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 4 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -18.875,
+                              -0.6542,
+                              -0.125,
+                              -18.625,
+                              -0.4042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 3 of SUBEQUIPMENT 4 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -18.875,
+                              -2.0542,
+                              2.75,
+                              -18.625,
+                              -0.4041,
+                              3.0
+                            ]
+                          },
+                          {
+                            "name": "BOX 4 of SUBEQUIPMENT 4 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -18.875,
+                              -2.0542,
+                              2.25,
+                              -18.625,
+                              -0.4041,
+                              2.5
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 5 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -25.875,
+                          -2.0542,
+                          -0.125,
+                          -25.625,
+                          -0.4041,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 5 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -25.875,
+                              -2.0542,
+                              -0.125,
+                              -25.625,
+                              -1.8042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 5 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -25.875,
+                              -0.6542,
+                              -0.125,
+                              -25.625,
+                              -0.4042,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 3 of SUBEQUIPMENT 5 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -25.875,
+                              -2.0542,
+                              2.75,
+                              -25.625,
+                              -0.4041,
+                              3.0
+                            ]
+                          },
+                          {
+                            "name": "BOX 4 of SUBEQUIPMENT 5 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -25.875,
+                              -2.0542,
+                              2.25,
+                              -25.625,
+                              -0.4041,
+                              2.5
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 6 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -32.875,
+                          -1.9292,
+                          -0.625,
+                          -32.625,
+                          -0.5291,
+                          2.5
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 6 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -32.875,
+                              -1.3542,
+                              -0.625,
+                              -32.625,
+                              -1.1042,
+                              2.375
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 6 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -32.875,
+                              -1.9292,
+                              2.25,
+                              -32.625,
+                              -0.5291,
+                              2.5
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 7 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -19.7999,
+                          3.2458,
+                          -0.125,
+                          -19.2,
+                          3.4958,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 7 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -19.625,
+                              3.2458,
+                              -0.125,
+                              -19.375,
+                              3.4958,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 7 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -19.7999,
+                              3.2458,
+                              2.75,
+                              -19.2,
+                              3.4958,
+                              3.0
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 8 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -23.2999,
+                          3.2458,
+                          -0.125,
+                          -22.7,
+                          3.4958,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 8 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -23.125,
+                              3.2458,
+                              -0.125,
+                              -22.875,
+                              3.4958,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 8 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -23.2999,
+                              3.2458,
+                              2.75,
+                              -22.7,
+                              3.4958,
+                              3.0
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 9 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -26.7999,
+                          3.2458,
+                          -0.125,
+                          -26.2,
+                          3.4958,
+                          3.0
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 9 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -26.625,
+                              3.2458,
+                              -0.125,
+                              -26.375,
+                              3.4958,
+                              2.875
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 9 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -26.7999,
+                              3.2458,
+                              2.75,
+                              -26.2,
+                              3.4958,
+                              3.0
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 10 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -30.2999,
+                          3.2458,
+                          -0.625,
+                          -29.7,
+                          3.4958,
+                          2.5
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 10 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -30.125,
+                              3.2458,
+                              -0.625,
+                              -29.875,
+                              3.4958,
+                              2.375
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 10 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -30.2999,
+                              3.2458,
+                              2.25,
+                              -29.7,
+                              3.4958,
+                              2.5
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 11 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -33.7999,
+                          3.2458,
+                          -0.625,
+                          -33.2,
+                          3.4958,
+                          2.5
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 11 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -33.625,
+                              3.2458,
+                              -0.625,
+                              -33.375,
+                              3.4958,
+                              2.375
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 11 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -33.7999,
+                              3.2458,
+                              2.25,
+                              -33.2,
+                              3.4958,
+                              2.5
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SUBEQUIPMENT 12 of EQUIPMENT /RRIMS-PIPESUPP",
+                        "material": 1,
+                        "bbox": [
+                          -37.2999,
+                          3.2458,
+                          -0.625,
+                          -36.7,
+                          3.4958,
+                          2.5
+                        ],
+                        "children": [
+                          {
+                            "name": "BOX 1 of SUBEQUIPMENT 12 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -37.125,
+                              3.2458,
+                              -0.625,
+                              -36.875,
+                              3.4958,
+                              2.375
+                            ]
+                          },
+                          {
+                            "name": "BOX 2 of SUBEQUIPMENT 12 of EQUIPMENT /RRIMS-PIPESUPP",
+                            "material": 1,
+                            "bbox": [
+                              -37.2999,
+                              3.2458,
+                              2.25,
+                              -36.7,
+                              3.4958,
+                              2.5
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,4742 @@
+{
+  "ok": false,
+  "profile": "cii2019",
+  "inputFile": "C:\\Users\\reall\\Downloads\\RMSS_ATTRIBUTE_managed_stage (1)_gitcheckout_inputxml_to_cii2019.cii",
+  "sectionsFound": [
+    "VERSION",
+    "CONTROL",
+    "ELEMENTS",
+    "AUX_DATA",
+    "BEND",
+    "RIGID",
+    "EXPJT",
+    "RESTRANT",
+    "DISPLMNT",
+    "FORCMNT",
+    "UNIFORM",
+    "WIND",
+    "OFFSETS",
+    "ALLOWBLS",
+    "SIF&TEES",
+    "REDUCERS",
+    "FLANGES",
+    "EQUIPMNT",
+    "MISCEL_1",
+    "UNITS",
+    "COORDS"
+  ],
+  "metrics": {
+    "elements": 383,
+    "nozzles": 0,
+    "hangers": 0,
+    "nodename_blocks": 0,
+    "reducers": 17,
+    "flanges": 0,
+    "bends": 38,
+    "rigids": 127,
+    "expjts": 0,
+    "restraints": 5,
+    "displmnt": 0,
+    "forcmnt": 0,
+    "uniform": 0,
+    "wind": 0,
+    "offsets": 0,
+    "allowbls": 1,
+    "sif_tees": 47,
+    "control_line3_field6": 0,
+    "equipmnt": 0,
+    "vertical_axis_flag": 0
+  },
+  "derivedBlockCounts": {
+    "BEND": {
+      "rows": 114,
+      "linesPerBlock": 3,
+      "derivedBlocks": 38,
+      "remainderRows": 0
+    },
+    "RIGID": {
+      "rows": 127,
+      "linesPerBlock": 1,
+      "derivedBlocks": 127,
+      "remainderRows": 0
+    },
+    "EXPJT": {
+      "rows": 0,
+      "linesPerBlock": 1,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "RESTRANT": {
+      "rows": 120,
+      "linesPerBlock": 24,
+      "derivedBlocks": 5,
+      "remainderRows": 0
+    },
+    "DISPLMNT": {
+      "rows": 0,
+      "linesPerBlock": 20,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "FORCMNT": {
+      "rows": 0,
+      "linesPerBlock": 13,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "UNIFORM": {
+      "rows": 0,
+      "linesPerBlock": 6,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "WIND": {
+      "rows": 0,
+      "linesPerBlock": 1,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "OFFSETS": {
+      "rows": 0,
+      "linesPerBlock": 1,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "ALLOWBLS": {
+      "rows": 26,
+      "linesPerBlock": 26,
+      "derivedBlocks": 1,
+      "remainderRows": 0
+    },
+    "SIF&TEES": {
+      "rows": 470,
+      "linesPerBlock": 10,
+      "derivedBlocks": 47,
+      "remainderRows": 0
+    },
+    "REDUCERS": {
+      "rows": 17,
+      "linesPerBlock": 1,
+      "derivedBlocks": 17,
+      "remainderRows": 0
+    },
+    "FLANGES": {
+      "rows": 0,
+      "linesPerBlock": 11,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    },
+    "EQUIPMNT": {
+      "rows": 0,
+      "linesPerBlock": 6,
+      "derivedBlocks": 0,
+      "remainderRows": 0
+    }
+  },
+  "errors": [
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 78,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 79,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 93,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 94,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 108,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 109,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 123,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 124,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 138,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 139,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 153,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 154,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 168,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 169,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 183,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 184,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 198,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 199,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 213,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 214,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 228,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 229,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 243,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 244,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 258,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 259,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 273,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 274,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 288,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 289,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 303,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 304,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 318,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 319,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 333,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 334,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 348,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 349,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 363,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 364,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 378,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 379,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 393,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 394,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 408,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 409,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 423,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 424,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 438,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 439,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 453,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 454,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 468,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 469,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 483,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 484,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 498,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 499,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 513,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 514,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 528,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 529,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 543,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 544,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 558,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 559,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 573,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 574,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 588,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 589,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 603,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 604,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 618,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 619,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 633,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 634,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 648,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 649,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 663,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 664,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 678,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 679,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 693,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 694,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 708,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 709,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 723,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 724,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 738,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 739,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 753,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 754,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 768,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 769,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 783,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 784,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 798,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 799,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 813,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 814,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 828,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 829,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 843,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 844,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 858,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 859,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 873,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 874,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 888,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 889,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 903,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 904,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 918,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 919,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 933,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 934,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 948,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 949,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 963,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 964,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 978,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 979,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 993,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 994,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1008,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1009,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1023,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1024,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1038,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1039,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1053,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1054,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1068,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1069,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1083,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1084,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1098,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1099,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1113,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1114,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1128,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1129,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1143,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1144,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1158,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1159,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1173,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1174,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1188,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1189,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1203,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1204,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1218,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1219,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1233,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1234,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1248,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1249,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1263,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1264,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1278,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1279,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1293,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1294,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1308,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1309,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1323,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1324,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1338,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1339,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1353,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1354,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1368,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1369,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1383,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1384,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1398,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1399,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1413,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1414,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1428,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1429,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1443,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1444,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1458,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1459,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1473,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1474,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1488,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1489,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1503,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1504,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1518,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1519,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1533,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1534,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1548,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1549,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1563,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1564,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1578,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1579,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1593,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1594,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1608,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1609,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1623,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1624,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1638,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1639,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1653,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1654,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1668,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1669,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1683,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1684,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1698,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1699,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1713,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1714,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1728,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1729,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1743,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1744,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1758,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1759,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1773,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1774,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1788,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1789,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1803,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1804,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1818,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1819,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1833,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1834,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1848,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1849,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1863,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1864,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1878,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1879,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1893,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1894,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1908,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1909,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1923,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1924,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1938,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1939,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1953,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1954,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1968,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1969,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1983,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1984,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1998,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 1999,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2013,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2014,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2028,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2029,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2043,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2044,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2058,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2059,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2073,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2074,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2088,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2089,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2103,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2104,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2118,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2119,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2133,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2134,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2148,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2149,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2163,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2164,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2178,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2179,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2193,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2194,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2208,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2209,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2223,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2224,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2238,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2239,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2253,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2254,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2268,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2269,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2283,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2284,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2298,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2299,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2313,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2314,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2328,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2329,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2343,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2344,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2358,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2359,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2373,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2374,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2388,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2389,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2403,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2404,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2418,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2419,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2433,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2434,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2448,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2449,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2463,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2464,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2478,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2479,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2493,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2494,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2508,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2509,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2523,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2524,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2538,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2539,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2553,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2554,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2568,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2569,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2583,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2584,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2598,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2599,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2613,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2614,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2628,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2629,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2643,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2644,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2658,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2659,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2673,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2674,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2688,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2689,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2703,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2704,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2718,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2719,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2733,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2734,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2748,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2749,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2763,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2764,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2778,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2779,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2793,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2794,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2808,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2809,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2823,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2824,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2838,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2839,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2853,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2854,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2868,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2869,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2883,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2884,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2898,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2899,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2913,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2914,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2928,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2929,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2943,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2944,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2958,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2959,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2973,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2974,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2988,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 2989,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3003,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3004,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3018,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3019,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3033,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3034,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3048,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3049,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3063,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3064,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3078,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3079,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3093,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3094,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3108,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3109,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3123,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3124,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3138,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3139,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3153,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3154,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3168,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3169,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3183,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3184,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3198,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3199,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3213,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3214,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3228,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3229,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3243,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3244,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3258,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3259,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3273,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3274,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3288,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3289,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3303,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3304,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3318,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3319,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3333,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3334,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3348,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3349,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3363,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3364,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3378,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3379,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3393,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3394,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3408,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3409,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3423,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3424,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3438,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3439,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3453,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3454,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3468,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3469,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3483,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3484,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3498,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3499,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3513,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3514,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3528,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3529,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3543,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3544,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3558,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3559,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3573,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3574,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3588,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3589,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3603,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3604,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3618,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3619,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3633,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3634,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3648,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3649,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3663,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3664,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3678,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3679,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3693,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3694,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3708,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3709,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3723,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3724,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3738,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3739,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3753,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3754,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3768,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3769,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3783,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3784,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3798,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3799,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3813,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3814,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3828,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3829,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3843,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3844,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3858,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3859,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3873,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3874,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3888,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3889,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3903,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3904,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3918,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3919,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3933,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3934,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3948,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3949,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3963,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3964,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3978,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3979,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3993,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 3994,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4008,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4009,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4023,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4024,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4038,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4039,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4053,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4054,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4068,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4069,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4083,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4084,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4098,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4099,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4113,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4114,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4128,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4129,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4143,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4144,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4158,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4159,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4173,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4174,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4188,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4189,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4203,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4204,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4218,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4219,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4233,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4234,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4248,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4249,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4263,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4264,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4278,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4279,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4293,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4294,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4308,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4309,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4323,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4324,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4338,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4339,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4353,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4354,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4368,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4369,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4383,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4384,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4398,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4399,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4413,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4414,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4428,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4429,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4443,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4444,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4458,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4459,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4473,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4474,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4488,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4489,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4503,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4504,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4518,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4519,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4533,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4534,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4548,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4549,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4563,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4564,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4578,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4579,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4593,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4594,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4608,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4609,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4623,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4624,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4638,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4639,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4653,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4654,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4668,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4669,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4683,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4684,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4698,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4699,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4713,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4714,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4728,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4729,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4743,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4744,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4758,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4759,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4773,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4774,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4788,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4789,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4803,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4804,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4818,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4819,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4833,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4834,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4848,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4849,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4863,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4864,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4878,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4879,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4893,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4894,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4908,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4909,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4923,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4924,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4938,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4939,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4953,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4954,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4968,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4969,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4983,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4984,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4998,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 4999,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5013,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5014,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5028,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5029,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5043,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5044,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5058,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5059,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5073,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5074,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5088,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5089,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5103,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5104,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5118,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5119,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5133,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5134,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5148,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5149,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5163,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5164,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5178,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5179,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5193,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5194,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5208,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5209,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5223,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5224,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5238,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5239,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5253,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5254,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5268,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5269,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5283,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5284,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5298,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5299,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5313,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5314,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5328,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5329,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5343,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5344,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5358,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5359,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5373,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5374,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5388,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5389,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5403,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5404,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5418,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5419,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5433,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5434,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5448,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5449,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5463,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5464,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5478,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5479,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5493,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5494,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5508,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5509,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5523,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5524,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5538,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5539,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5553,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5554,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5568,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5569,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5583,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5584,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5598,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5599,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5613,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5614,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5628,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5629,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5643,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5644,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5658,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5659,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5673,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5674,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5688,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5689,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5703,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5704,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5718,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5719,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5733,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5734,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5748,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5749,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5763,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5764,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5778,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5779,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5793,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5794,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "element_name_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5808,
+      "message": "Element-name row must use a 12-character integer pointer field followed by a separator space."
+    },
+    {
+      "code": "line_label_fixed_width",
+      "section": "ELEMENTS",
+      "line": 5809,
+      "message": "Line-number row must use a 12-character integer pointer field followed by a separator space."
+    }
+  ],
+  "warnings": [
+    {
+      "code": "optional_section_missing",
+      "section": "NODENAME",
+      "line": 0,
+      "message": "Optional section '#$ NODENAME' is missing."
+    }
+  ]
+}

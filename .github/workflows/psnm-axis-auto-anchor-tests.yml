@@ -1,0 +1,47 @@
+name: PSNM Axis Auto Anchor Tests
+
+on:
+  pull_request:
+    paths:
+      - 'viewer/tabs/psnm-utility/**'
+      - 'viewer/tabs/psnm-utility-tab*.js'
+      - 'scripts/test-psnm-axis-auto-anchor-defaults.mjs'
+      - 'scripts/test-psnm-ui-smoke.mjs'
+      - '.github/workflows/psnm-axis-auto-anchor-tests.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'viewer/tabs/psnm-utility/**'
+      - 'viewer/tabs/psnm-utility-tab*.js'
+      - 'scripts/test-psnm-axis-auto-anchor-defaults.mjs'
+      - 'scripts/test-psnm-ui-smoke.mjs'
+      - '.github/workflows/psnm-axis-auto-anchor-tests.yml'
+  workflow_dispatch:
+
+jobs:
+  psnm-axis-auto-anchor-tests:
+    name: PSNM axis auto-anchor and UI smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Syntax check benchmark
+        run: node --check scripts/test-psnm-axis-auto-anchor-defaults.mjs
+
+      - name: Syntax check UI smoke
+        run: node --check scripts/test-psnm-ui-smoke.mjs
+
+      - name: Run PSNM UI smoke
+        run: node scripts/test-psnm-ui-smoke.mjs
+
+      - name: Run default auto-anchor benchmark
+        run: node scripts/test-psnm-axis-auto-anchor-defaults.mjs

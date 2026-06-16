@@ -1,0 +1,92 @@
+<USER_REQUEST>
+You are assigned to refactor the 3D_Viewer Model Converters tab.
+
+Primary target: viewer/tabs/model-converters-tab.js
+
+Current issue: model-converters-tab.js is approximately 8k lines and mixes converter registry, UI rendering, workflow tabs, XML→CII-specific mapping, preview, master loading, weight matching, support mapping, run orchestration, output download, and multiple hotfix-style DOM patches. This has caused repeated regressions such as shifted preview columns, duplicate hydro UI, invalid regex preview samples, fake node -1 rows, and inconsistent XML→CII enriched output.
+
+Goal: Modularize the Model Converters code so every dropdown converter item is an independent module and XML→CII2019 workflow can be reused by other components without depending on the full Model Converters tab.
+
+Strict rules:
+
+Preserve current behavior first.
+Do not introduce functional changes during initial extraction.
+Do not use global DOM MutationObserver patches for core behavior.
+Each converter must be registered through a converter registry.
+model-converters-tab.js must become a compatibility wrapper only.
+XML→CII must be split into reusable modules:
+regex-line-key
+linelist-mapping
+masters
+preview-model
+preview-renderer
+dtxr-resolver
+weight-match-model
+weight-match-renderer
+support-types
+element-length
+output-normalizer
+Remove duplicate support mapping workflow; support mapping remains only in existing Support Types workflow.
+Hydro mapping must not inject random dropdowns into the page.
+Preview must render from a fixed column model, not by post-render index mutation.
+Node weight preview rows must be anchored to XML nodes only. Candidate rows must never create fake Node -1 rows.
+4A Weight Match must appear before 5 Run.
+ElementLengthMm in enriched XML must use SRSS of the same DX/DY/DZ values emitted into CII ELEMENT fields 3,4,5.
+Required architecture: Create: viewer/tabs/model-converters/ index.js ModelConvertersTab.js ConverterSelector.js ConverterRunner.js WorkflowShell.js
+<truncated 22289 bytes>
+s:
+
+Hydro mapping dropdown appears 0 times outside field mapping area. 
+No “9 CII Support Mapping.” 
+4A Weight Match appears before 5 Run. 
+No repeated preview refresh loop. 
+9. Expected Deliverables
+The expert must provide:
+
+1. Refactored file/module structure. 
+2. Compatibility wrapper for old model-converters-tab.js import. 
+3. Converter registry. 
+4. Independent module per converter. 
+5. Reusable XML→CII workflow module. 
+6. Unit tests for line-key, mapping, DTXR, preview model, element length. 
+7. UI smoke test or manual test report. 
+8. Golden-output comparison report. 
+9. Migration note: which old patch files are removed, retained, or deprecated. 
+10. README explaining how to add a new converter module. 
+10. Required README
+Create:
+
+viewer/tabs/model-converters/README.md 
+Must include:
+
+How converter registry works 
+How to add a new converter 
+How to add converter options 
+How to add a workflow phase 
+How XML→CII workflow is reused 
+How to run tests 
+Known boundaries between browser UI and Python worker 
+11. Practical Acceptance Criteria
+Final acceptance should be strict:
+
+model-converters-tab.js <= 300 lines 
+No module > 500 lines unless justified 
+All converter IDs registered once 
+No duplicate UI workflow phases 
+No post-render column mutation for Preview 
+No global Hydro UI injection 
+XML→CII workflow usable outside Model Converters 
+All pass tests green 
+The safest path is not to fix every XML→CII bug during the first extraction. First isolate the modules. Then fix XML→CII inside its own module with targeted tests.
+
+
+
+FIRST MAKE PHASEWISE PLAN
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-08T19:00:38+04:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.5 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

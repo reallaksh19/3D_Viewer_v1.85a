@@ -1,0 +1,110 @@
+{
+  "parsed": {
+    "mock": "data"
+  },
+  "errors": [],
+  "calcHistory": [
+    {
+      "ok": true,
+      "metadata": {
+        "name": "Slug Loads",
+        "unitMode": "Native"
+      },
+      "inputs": {
+        "resolutionLog": [],
+        "basis": {},
+        "assumptions": [],
+        "resolved": {
+          "od": 200,
+          "wall": 10,
+          "id": 180,
+          "area": 0.025,
+          "runLength": 10,
+          "bendAngle": 90,
+          "fluidDensity": 1000,
+          "velocity": 10,
+          "slugLength": 5,
+          "daf": 2
+        },
+        "unitMode": "Native"
+      },
+      "outputs": {
+        "f_amp": 7071.067811865475,
+        "baseForce": 3535.5339059327375,
+        "steadyForce": 2500,
+        "slugMass": 125
+      },
+      "warnings": [],
+      "steps": [
+        "Normalize inputs. Note: Slug inputs are pre-resolved via slug-input-resolver.",
+        "Calculate Internal Diameter: ID = OD - 2*wall = 200 - 2*10 = 180.000 mm",
+        "Calculate Area: A = pi/4 * ID^2 = pi/4 * (0.18)^2 = 0.02500 m2",
+        "Calculate Slug Mass: m_slug = rho * A * L_slug = 1000 * 0.02500 * 5 = 125.00 kg",
+        "Calculate Steady Flow Force: F = rho * A * v^2 = 1000 * 0.02500 * 10^2 = 2500.00 N",
+        "Calculate Bend Force: F_bend = 2 * F * sin(theta/2) = 2 * 2500.00 * sin(90/2) = 3535.53 N",
+        "Calculate Amplified Force: F_amp = DAF * BaseForce = 2 * 3535.53 = 7071.07 N"
+      ],
+      "benchmark": {
+        "durationMs": 0.36234199999999817
+      },
+      "ts": "2026-04-23T11:02:50.158Z"
+    }
+  ],
+  "reportData": {
+    "meta": {
+      "docNumber": "XX-XX-PFEED-",
+      "title": "Pipe Stress Calculation Summary Report",
+      "project": "Petroleum Development Oman-PDO",
+      "facility": "Inlet Separation and Boosting Facility, Ohanet",
+      "system": "SYS-177A",
+      "projNumber": "JI-2043",
+      "designCode": "ASME B31.3 - 2016",
+      "software": "CAESAR-II 2018 (Ver 10.0)",
+      "revision": "Rev 0",
+      "date": "—"
+    },
+    "designParams": {
+      "T1": {
+        "value": 150,
+        "unit": "°C",
+        "label": "Max Design Temperature"
+      },
+      "T2": {
+        "value": 72.2,
+        "unit": "°C",
+        "label": "Normal Operating Temperature"
+      },
+      "T3": {
+        "value": -35,
+        "unit": "°C",
+        "label": "Min Design Temperature"
+      },
+      "P1": {
+        "value": 78,
+        "unit": "bar",
+        "label": "Design Pressure"
+      },
+      "plantLife": {
+        "value": 25,
+        "unit": "years",
+        "label": "Plant Life"
+      },
+      "operatingHours": {
+        "value": 7000,
+        "unit": "hrs",
+        "label": "Operating Hours"
+      },
+      "thermalCycles": {
+        "value": 25,
+        "unit": "",
+        "label": "Thermal Cycles"
+      },
+      "maxVerticalDeflection": {
+        "value": 10,
+        "unit": "mm",
+        "label": "Max Sustained Vertical Mid-span Deflection"
+      }
+    },
+    "extractedAt": "2026-04-23T11:02:50.158Z"
+  }
+}

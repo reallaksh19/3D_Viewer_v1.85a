@@ -1,0 +1,19 @@
+--- a/src/parse/fromUxmlXml.js
++++ b/src/parse/fromUxmlXml.js
+@@ -48,14 +48,14 @@
+ function readArray(text, tag) {
+   const body = readElementBody(text, tag);
+   if (!body) return [];
+-  return [...body.matchAll(/<Item\b([^/>]*?)\/>/gi)]
++  return [...body.matchAll(/<Item\b([^>]*?)\/>/gi)]
+     .map((match) => parseAttributes(match[1]).data)
+     .filter((data) => data != null)
+     .map((data) => JSON.parse(unescapeXml(data)));
+ }
+ 
+ function readLegacyComponents(text) {
+-  return [...text.matchAll(/<Component\b([^/>]*?)\/>/gi)].map((match) => {
++  return [...text.matchAll(/<Component\b([^>]*?)\/>/gi)].map((match) => {
+     const attrs = parseAttributes(match[1]);
+     return {
+       id: attrs.id || '',

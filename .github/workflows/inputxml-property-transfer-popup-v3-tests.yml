@@ -1,0 +1,31 @@
+name: InputXML Property Transfer Popup Check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v3.js'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v4.js'
+      - '.github/workflows/inputxml-property-transfer-popup-v3-tests.yml'
+  pull_request:
+    paths:
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v3.js'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v4.js'
+      - '.github/workflows/inputxml-property-transfer-popup-v3-tests.yml'
+
+jobs:
+  popup-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Syntax check popup v3/v4
+        run: |
+          node --check viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v3.js
+          node --check viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v4.js

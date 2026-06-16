@@ -1,0 +1,48 @@
+name: GLB Validation
+
+on:
+  pull_request:
+    paths:
+      - 'viewer/converters/inputxml-glb/**'
+      - 'viewer/js/pcf2glb/**'
+      - 'viewer/validators/**'
+      - 'viewer/tests/inputxml-glb-rich-model.test.js'
+      - 'viewer/tests/glb-validation-report.test.js'
+      - 'tools/gltf-validator/**'
+      - '.github/workflows/glb-validation.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'viewer/converters/inputxml-glb/**'
+      - 'viewer/js/pcf2glb/**'
+      - 'viewer/validators/**'
+      - 'tools/gltf-validator/**'
+      - '.github/workflows/glb-validation.yml'
+
+jobs:
+  validate-inputxml-glb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install validation dependencies
+        run: npm install --no-save three gltf-validator
+      - name: Run GLB model tests
+        run: node viewer/tests/inputxml-glb-rich-model.test.js
+      - name: Run GLB validation report tests
+        run: node viewer/tests/glb-validation-report.test.js
+      - name: Generate sample InputXML GLB
+        run: node tools/gltf-validator/generate-inputxml-glb-sample.mjs
+      - name: Validate generated GLB
+        run: node tools/gltf-validator/validate-glb.mjs artifacts/inputxml-glb/sample-inputxml.glb
+      - name: Upload GLB validation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: inputxml-glb-validation
+          path: |
+            artifacts/inputxml-glb/sample-inputxml.glb
+            artifacts/inputxml-glb/sample-inputxml.glb.sidecar.json
+            artifacts/inputxml-glb/sample-inputxml.glb.logs.json
+            artifacts/inputxml-glb/sample-inputxml.glb.validation.json

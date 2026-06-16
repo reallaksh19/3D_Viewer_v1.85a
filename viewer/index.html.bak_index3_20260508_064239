@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCF-GLB-3D viewer</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/tabs.css">
+  <link rel="stylesheet" href="styles/tables.css">
+  <link rel="stylesheet" href="styles/debug.css">
+  <link rel="stylesheet" href="styles/viewer3d.css">
+  <link rel="stylesheet" href="styles/print.css">
+  <link rel="stylesheet" href="tabs/model-exchange-tab.css">
+  <link rel="stylesheet" href="tabs/interchange-config-tab.css">
+  <link rel="stylesheet" href="tabs/model-converters-tab.css">
+  <link rel="stylesheet" href="tabs/viewer3d-rvm-tab.css">
+
+  <!-- Import map - CDN libraries, no build step required -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three":        "https://unpkg.com/three@0.160.1/build/three.module.js",
+      "three/addons/":"https://unpkg.com/three@0.160.1/examples/jsm/",
+      "gltf-exporter": "https://unpkg.com/three@0.160.1/examples/jsm/exporters/GLTFExporter.js",
+      "mdb-reader":   "https://esm.sh/mdb-reader@2",
+      "buffer":       "https://esm.sh/buffer@6"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<div id="app-layout">
+  <nav id="tab-bar"></nav>
+  <main id="tab-content">
+    <!-- Rendered by active tab module -->
+  </main>
+</div>
+
+<div id="print-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; padding:20px; border-radius:4px; max-width:500px; width:100%; max-height:80vh; display:flex; flex-direction:column;">
+    <h3 style="margin-top:0; border-bottom:1px solid #ccc; padding-bottom:10px;">Select Sections to Print</h3>
+    <div id="print-modal-list" style="overflow-y:auto; flex:1; margin:10px 0;"></div>
+    <div style="text-align:right; border-top:1px solid #ccc; padding-top:10px;">
+      <button id="print-modal-cancel" class="btn-secondary">Cancel</button>
+      <button id="print-modal-confirm" class="btn-primary">Print Selected</button>
+    </div>
+  </div>
+</div>
+
+<div class="print-only" id="print-sections-extra"></div>
+
+<script type="module">
+  import './rvm-viewer/RvmSupportSymbols.js';
+  import './rvm-viewer/RvmSupportBoreAnchorPatch.js';
+  import './rvm-viewer/RvmSupportSourceOverlayPatch.js';
+  import './converters/stagedjson-xml-preserve-fittings.js';
+  import { init } from './core/app.js?v=20260508-preview-geometry';
+  init().catch((error) => {
+    console.error('Viewer bootstrap failed.', error);
+  });
+</script>
+
+</body>
+</html>

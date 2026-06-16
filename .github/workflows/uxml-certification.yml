@@ -1,0 +1,142 @@
+name: UXML Certification
+
+on:
+  pull_request:
+    paths:
+      - "viewer/uxml/**"
+      - "viewer/converters/inputxml-dxf/**"
+      - "viewer/converters/inputxml-glb/**"
+      - "viewer/js/pcf2glb/glb/enhanceSupportDirectionProxy.js"
+      - "viewer/js/pcf2glb/glb/buildExportScene.js"
+      - "viewer/tabs/model-converters-tab.js"
+      - "viewer/tabs/model-converters/inputxml-dxf-branch-picker.js"
+      - "viewer/tabs/model-converters/inputxml-dxf-symbol-option.js"
+      - "viewer/tabs/model-converters/inputxml-dxf-projection-option.js"
+      - "viewer/tabs/model-converters/inputxml-glb-legacy-bridge.js"
+      - "viewer/tabs/model-converters/converters/inputxml-to-glb.js"
+      - "viewer/vendor/dxf-lines.js"
+      - "viewer/tests/uxml-*.test.js"
+      - "viewer/tests/rvm-pcf-*.test.js"
+      - "viewer/tests/inputxml-to-dxf.test.js"
+      - "viewer/tests/inputxml-dxf-branch-picker.test.js"
+      - "viewer/tests/inputxml-dxf-symbol-option.test.js"
+      - "viewer/tests/inputxml-dxf-projection-option.test.js"
+      - "viewer/tests/inputxml-dxf-pipe-symbol-renderer.test.js"
+      - "viewer/tests/inputxml-glb-rich-model.test.js"
+      - "viewer/tests/inputxml-glb-directional-restraints.test.js"
+      - "tools/uxml-certification.mjs"
+      - ".github/workflows/uxml-certification.yml"
+      - "Benchmarks/RVM JSON to PCF UXML Topology/**"
+      - "Benchmarks/INPUT XML to CII 2019/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "viewer/uxml/**"
+      - "viewer/converters/inputxml-dxf/**"
+      - "viewer/converters/inputxml-glb/**"
+      - "viewer/js/pcf2glb/glb/enhanceSupportDirectionProxy.js"
+      - "viewer/js/pcf2glb/glb/buildExportScene.js"
+      - "viewer/tabs/model-converters-tab.js"
+      - "viewer/tabs/model-converters/inputxml-dxf-branch-picker.js"
+      - "viewer/tabs/model-converters/inputxml-dxf-symbol-option.js"
+      - "viewer/tabs/model-converters/inputxml-dxf-projection-option.js"
+      - "viewer/tabs/model-converters/inputxml-glb-legacy-bridge.js"
+      - "viewer/tabs/model-converters/converters/inputxml-to-glb.js"
+      - "viewer/vendor/dxf-lines.js"
+      - "viewer/tests/uxml-*.test.js"
+      - "viewer/tests/rvm-pcf-*.test.js"
+      - "viewer/tests/inputxml-to-dxf.test.js"
+      - "viewer/tests/inputxml-dxf-branch-picker.test.js"
+      - "viewer/tests/inputxml-dxf-symbol-option.test.js"
+      - "viewer/tests/inputxml-dxf-projection-option.test.js"
+      - "viewer/tests/inputxml-dxf-pipe-symbol-renderer.test.js"
+      - "viewer/tests/inputxml-glb-rich-model.test.js"
+      - "viewer/tests/inputxml-glb-directional-restraints.test.js"
+      - "tools/uxml-certification.mjs"
+      - ".github/workflows/uxml-certification.yml"
+      - "Benchmarks/RVM JSON to PCF UXML Topology/**"
+      - "Benchmarks/INPUT XML to CII 2019/**"
+  workflow_dispatch:
+
+jobs:
+  certify:
+    name: certify
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install test runner
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -f package.json ]; then
+            echo "package.json found. Installing project dependencies with pnpm."
+            pnpm install --frozen-lockfile || pnpm install --no-frozen-lockfile
+          else
+            echo "package.json not found. Installing Vitest, jsdom, and Three as temporary CI dependencies."
+            npm install --no-save vitest jsdom three
+          fi
+
+      - name: Run UXML static certification
+        run: node tools/uxml-certification.mjs
+
+      - name: Run InputXML DXF smoke certification
+        run: node viewer/tests/inputxml-to-dxf.test.js
+
+      - name: Run InputXML DXF branch picker certification
+        run: node viewer/tests/inputxml-dxf-branch-picker.test.js
+
+      - name: Run InputXML DXF symbol option certification
+        run: node viewer/tests/inputxml-dxf-symbol-option.test.js
+
+      - name: Run InputXML DXF projection option certification
+        run: node viewer/tests/inputxml-dxf-projection-option.test.js
+
+      - name: Run InputXML DXF pipe renderer certification
+        run: node viewer/tests/inputxml-dxf-pipe-symbol-renderer.test.js
+
+      - name: Run InputXML GLB rich model certification
+        run: node viewer/tests/inputxml-glb-rich-model.test.js
+
+      - name: Run InputXML GLB directional restraint certification
+        run: node viewer/tests/inputxml-glb-directional-restraints.test.js
+
+      - name: Run UXML Vitest certification
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -f package.json ]; then
+            pnpm vitest run \
+              viewer/tests/uxml-contracts.test.js \
+              viewer/tests/uxml-profile-detector.test.js \
+              viewer/tests/uxml-normalizer.test.js \
+              viewer/tests/uxml-inputxml-schema-mapper.test.js \
+              viewer/tests/rvm-pcf-topology-roundtrip.test.js \
+              viewer/tests/rvm-pcf-consistency-guards.test.js \
+              viewer/tests/rvm-pcf-adapter-preview.test.js
+          else
+            npx vitest run \
+              viewer/tests/uxml-contracts.test.js \
+              viewer/tests/uxml-profile-detector.test.js \
+              viewer/tests/uxml-normalizer.test.js \
+              viewer/tests/uxml-inputxml-schema-mapper.test.js \
+              viewer/tests/rvm-pcf-topology-roundtrip.test.js \
+              viewer/tests/rvm-pcf-consistency-guards.test.js \
+              viewer/tests/rvm-pcf-adapter-preview.test.js
+          fi

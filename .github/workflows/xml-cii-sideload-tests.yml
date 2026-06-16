@@ -1,0 +1,60 @@
+name: XML CII Sideload Tests
+
+on:
+  pull_request:
+    paths:
+      - 'viewer/converters/xml-cii2019-core/**'
+      - 'viewer/tabs/model-converters/**'
+      - 'viewer/tabs/model-converters-tab.js'
+      - 'Benchmarks/XML-CII-2019/sideload/**'
+      - 'scripts/test-xml-cii-*.mjs'
+      - 'scripts/test-model-converters-tab-responsive.mjs'
+      - '.github/workflows/xml-cii-sideload-tests.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'viewer/converters/xml-cii2019-core/**'
+      - 'viewer/tabs/model-converters/**'
+      - 'viewer/tabs/model-converters-tab.js'
+      - 'Benchmarks/XML-CII-2019/sideload/**'
+      - 'scripts/test-xml-cii-*.mjs'
+      - 'scripts/test-model-converters-tab-responsive.mjs'
+      - '.github/workflows/xml-cii-sideload-tests.yml'
+  workflow_dispatch:
+
+jobs:
+  xml-cii-sideload-tests:
+    name: XML CII sideload/workflow regression
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: JSON config aliases
+        run: node scripts/test-xml-cii-json-config.mjs
+
+      - name: Sideload benchmark
+        run: node scripts/test-xml-cii-sideload-benchmark.mjs
+
+      - name: Matched preview publish contract
+        run: node scripts/test-xml-cii-matched-preview-publish.mjs
+
+      - name: Sideload preview chain
+        run: node scripts/test-xml-cii-sideload-preview-chain.mjs
+
+      - name: Lean workflow popup shell
+        run: node scripts/test-xml-cii-conversion-workflow-popup.mjs
+
+      - name: Model Converter responsiveness
+        run: node scripts/test-model-converters-tab-responsive.mjs
+
+      - name: Aggregate runner sanity
+        run: node scripts/test-xml-cii-all.mjs

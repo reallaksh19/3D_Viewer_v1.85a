@@ -1,0 +1,1649 @@
+@import url("../styles/shared-viewer-tokens.css?v=20260518-statusbar-theme-12");
+
+/* RVM Viewer tab - overrides on top of viewer3d.css structural classes */
+
+.rvm-tab-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--geo-bg, #1a1c21);
+  color: var(--geo-text, #d4d4d4);
+}
+
+/* ── Capability banner ─────────────────────────────────────────────────── */
+
+.rvm-capability-banner {
+  padding: 3px 12px;
+  font-size: 11px;
+  background: var(--geo-banner-bg, #252830);
+  border-bottom: 1px solid var(--geo-border, #333);
+  color: var(--geo-text-muted, #888);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rvm-capability-banner[data-mode="assisted"] {
+  color: #6fcf97;
+}
+
+/* ── Top ribbon ────────────────────────────────────────────────────────── */
+
+.geo-top-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--geo-ribbon-bg, #22242a);
+  border-bottom: 1px solid var(--geo-border, #333);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.rvm-ribbon-section {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rvm-ribbon-search {
+  flex: 1;
+  min-width: 120px;
+}
+
+.rvm-ribbon-search input {
+  width: 100%;
+  background: var(--geo-input-bg, #1a1c21);
+  border: 1px solid var(--geo-border, #444);
+  color: var(--geo-text, #d4d4d4);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.rvm-ribbon-search input:focus {
+  outline: none;
+  border-color: var(--geo-accent, #4a9eff);
+}
+
+.rvm-theme-shell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font-size: 11px;
+  border: 1px solid var(--geo-border, #444);
+  border-radius: 4px;
+  background: var(--geo-btn-bg, #2d3038);
+  color: var(--geo-text, #d4d4d4);
+  white-space: nowrap;
+}
+
+.rvm-theme-shell--prominent {
+  min-width: 182px;
+  background: linear-gradient(180deg, rgba(74, 158, 255, 0.18), rgba(74, 158, 255, 0.08));
+  border-color: rgba(126, 182, 246, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.rvm-theme-label {
+  color: var(--geo-text-dim, #8da2bc);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rvm-theme-select {
+  min-width: 124px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 4px 26px 4px 8px;
+  font: inherit;
+  font-size: 11px;
+  background-color: var(--geo-panel-bg, #1a1c21);
+  border: 1px solid var(--geo-border, #444);
+  border-radius: 4px;
+  color: var(--geo-text, #d4d4d4);
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 14px) 55%, calc(100% - 9px) 55%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.rvm-theme-select:focus {
+  outline: none;
+  border-color: var(--geo-accent, #4a9eff);
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+
+.rvm-btn,
+.rvm-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  background: var(--geo-btn-bg, #2d3038);
+  border: 1px solid var(--geo-border, #444);
+  border-radius: 4px;
+  color: var(--geo-text, #d4d4d4);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s;
+}
+
+.rvm-btn:hover:not(:disabled),
+.rvm-tool-btn:hover {
+  background: var(--geo-btn-hover, #3a3d47);
+}
+
+.rvm-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rvm-tool-btn svg,
+.rvm-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.rvm-tool-btn.is-active {
+  background: var(--geo-accent, #4a9eff);
+  color: #fff;
+  border-color: var(--geo-accent, #4a9eff);
+}
+
+/* ── Professional icon-only view buttons ──────────────────────────────── */
+
+.rvm-tool-btn.is-icon-only {
+  width: 32px;
+  min-width: 32px;
+  height: 30px;
+  padding: 4px;
+  justify-content: center;
+}
+
+.rvm-tool-btn.is-icon-only svg {
+  width: 19px;
+  height: 19px;
+}
+
+.rvm-svg-view {
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rvm-svg-view .rvm-svg-soft {
+  fill: currentColor;
+  fill-opacity: 0.12;
+  stroke: currentColor;
+  stroke-opacity: 0.85;
+}
+
+.rvm-tool-btn.is-icon-only:hover .rvm-svg-soft {
+  fill-opacity: 0.18;
+}
+
+/* ── Consistent blue clicked / active state for every toolbar action ───── */
+
+.rvm-tool-btn.is-active,
+.rvm-btn.is-active,
+.rvm-tool-btn.is-pressed,
+.rvm-btn.is-pressed {
+  background: var(--geo-accent, #4a9eff) !important;
+  border-color: var(--geo-accent, #4a9eff) !important;
+  color: #ffffff !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 0 0 1px rgba(74, 158, 255, 0.25);
+}
+
+.rvm-tool-btn.is-active svg,
+.rvm-btn.is-active svg,
+.rvm-tool-btn.is-pressed svg,
+.rvm-btn.is-pressed svg {
+  stroke: #ffffff;
+  color: #ffffff;
+}
+
+/* Existing SECTION_* style appears after active style; this restores blue active state. */
+.rvm-tool-btn.is-active[data-action^="SECTION_"],
+.rvm-tool-btn.is-pressed[data-action^="SECTION_"] {
+  background: var(--geo-accent, #4a9eff) !important;
+  border-color: var(--geo-accent, #4a9eff) !important;
+  color: #ffffff !important;
+}
+
+/* View orientation buttons should look crisp on dark Navis theme. */
+.rvm-tool-btn[data-action="NAV_PLAN_X"],
+.rvm-tool-btn[data-action="NAV_ROTATE_Y"],
+.rvm-tool-btn[data-action="NAV_ROTATE_Z"],
+.rvm-tool-btn[data-action="SNAP_ISO_NW"],
+.rvm-tool-btn[data-action="SNAP_ISO_NE"],
+.rvm-tool-btn[data-action="SNAP_ISO_SW"],
+.rvm-tool-btn[data-action="SNAP_ISO_SE"] {
+  border-color: rgba(126, 182, 246, 0.45);
+  background: rgba(19, 58, 106, 0.18);
+}
+
+.rvm-tool-btn[data-action="NAV_PLAN_X"]:hover,
+.rvm-tool-btn[data-action="NAV_ROTATE_Y"]:hover,
+.rvm-tool-btn[data-action="NAV_ROTATE_Z"]:hover,
+.rvm-tool-btn[data-action="SNAP_ISO_NW"]:hover,
+.rvm-tool-btn[data-action="SNAP_ISO_NE"]:hover,
+.rvm-tool-btn[data-action="SNAP_ISO_SW"]:hover,
+.rvm-tool-btn[data-action="SNAP_ISO_SE"]:hover {
+  background: rgba(74, 158, 255, 0.28);
+}
+
+.rvm-tool-btn[data-action^="SECTION_"] {
+  color: #c4dbff;
+  border-color: rgba(126, 182, 246, 0.45);
+  background: rgba(19, 58, 106, 0.2);
+}
+
+.rvm-tool-btn[data-action^="SECTION_"] svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.4;
+  filter: drop-shadow(0 0 1px rgba(8, 18, 32, 0.9));
+}
+
+.rvm-tool-btn.is-pressed {
+  transform: translateY(1px);
+  filter: brightness(1.1);
+}
+
+.rvm-btn-file {
+  cursor: pointer;
+}
+
+.rvm-btn-assisted {
+  border-color: #6fcf97;
+  color: #6fcf97;
+}
+
+/* ── Body layout ───────────────────────────────────────────────────────── */
+
+.rvm-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Left panel (hierarchy + search) ──────────────────────────────────── */
+
+.rvm-left-panel {
+  width: 220px;
+  min-width: 160px;
+  max-width: 320px;
+  background: var(--geo-panel-bg, #1e2026);
+  border-right: 1px solid var(--geo-border, #333);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rvm-panel-header {
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--geo-text-muted, #888);
+  border-bottom: 1px solid var(--geo-border, #333);
+  flex-shrink: 0;
+}
+
+.rvm-panel-control-btn {
+  padding: 2px 6px;
+  background: var(--vc-button-bg, #2a3547);
+  border: 1px solid var(--vc-border, #3d4a61);
+  border-radius: 3px;
+  color: var(--vc-text-dim, #b0c8f0);
+  cursor: pointer;
+  font: 10px var(--vc-font-body);
+}
+
+.rvm-panel-control-btn:hover {
+  background: var(--vc-button-hover-bg, #33445f);
+  color: var(--vc-text, #e8f3ff);
+}
+
+.rvm-panel-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 7px;
+  border-top: 1px solid var(--vc-border-soft);
+  border-bottom: 1px solid var(--vc-border-soft);
+  background: rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.rvm-panel-filter-row svg {
+  width: 12px;
+  height: 12px;
+  color: var(--vc-text-muted);
+  flex-shrink: 0;
+}
+
+.rvm-panel-filter,
+.rvm-tag-severity-filter {
+  flex: 1;
+  min-width: 0;
+  background: var(--vc-input-bg, #0f1726);
+  border: 1px solid var(--vc-border);
+  border-radius: 3px;
+  color: var(--vc-text);
+  font: 10.5px var(--vc-font-body);
+  padding: 3px 6px;
+  outline: none;
+}
+
+.rvm-panel-filter:focus,
+.rvm-tag-severity-filter:focus {
+  border-color: var(--vc-accent);
+}
+
+.rvm-tag-filter-row,
+.rvm-tag-file-row {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--vc-border-soft);
+}
+
+.rvm-tag-file-btn {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.rvm-selection-hud {
+  right: 270px;
+  bottom: 42px;
+}
+
+/* ── Tree ──────────────────────────────────────────────────────────────── */
+
+.rvm-tree {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 12px;
+}
+
+.rvm-tree li {
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rvm-tree li:hover {
+  background: var(--geo-btn-hover, #3a3d47);
+}
+
+.rvm-tree li.is-selected {
+  background: var(--geo-accent, #4a9eff);
+  color: #fff;
+}
+
+.rvm-search-item.is-selected {
+  background: var(--geo-accent, #4a9eff);
+  color: #fff;
+}
+
+/* ── Viewport ──────────────────────────────────────────────────────────── */
+
+.rvm-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #0d0e11;
+}
+
+.rvm-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rvm-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--geo-text-muted, #666);
+  text-align: center;
+  padding: 16px;
+}
+
+/* ── Right panel (attributes + tags) ──────────────────────────────────── */
+
+.rvm-right-panel {
+  width: 240px;
+  min-width: 160px;
+  max-width: 600px;
+  background: var(--geo-panel-bg, #1e2026);
+  border-left: 1px solid var(--geo-border, #333);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.rvm-right-panel-resize-handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  cursor: col-resize;
+  background: transparent;
+  z-index: 10;
+  transition: background 0.15s;
+}
+
+.rvm-right-panel-resize-handle:hover,
+.rvm-right-panel-resize-handle.is-dragging {
+  background: rgba(74, 158, 255, 0.35);
+}
+
+.rvm-attributes-panel {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.rvm-attr-row {
+  display: flex;
+  padding: 3px 10px;
+  gap: 8px;
+  border-bottom: 1px solid var(--geo-border, #2a2d35);
+}
+
+.rvm-attr-key {
+  color: var(--geo-text-muted, #888);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.rvm-attr-value {
+  color: var(--geo-text, #d4d4d4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rvm-attr-key.rvm-attr-pdms {
+  color: #6fcf97;
+  font-weight: 600;
+}
+
+/* ── Tag list ──────────────────────────────────────────────────────────── */
+
+.rvm-tag-list {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.rvm-tag-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--geo-border, #2a2d35);
+  gap: 4px;
+}
+
+.rvm-tag-item.is-unresolved {
+  color: #e2994a;
+}
+
+.rvm-tag-item.severity-high { border-left: 3px solid #e74c3c; }
+.rvm-tag-item.severity-medium { border-left: 3px solid #e2994a; }
+.rvm-tag-item.severity-low { border-left: 3px solid #27ae60; }
+
+.rvm-tag-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rvm-tag-actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.rvm-tag-jump,
+.rvm-tag-delete {
+  background: none;
+  border: none;
+  color: var(--geo-text-muted, #888);
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.rvm-tag-jump:hover { color: var(--geo-accent, #4a9eff); }
+.rvm-tag-delete:hover { color: #e74c3c; }
+
+/* ── Add tag button ────────────────────────────────────────────────────── */
+
+#rvm-add-tag-btn {
+  margin: 6px 10px;
+  justify-content: center;
+}
+
+/* ── CSS2D tag labels (Three.js overlay) ──────────────────────────────── */
+
+.rvm-tag-label {
+  background: rgba(30, 32, 38, 0.9);
+  border: 1px solid var(--geo-accent, #4a9eff);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  color: #d4d4d4;
+  cursor: pointer;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.rvm-tag-label.severity-high { border-color: #e74c3c; }
+.rvm-tag-label.severity-medium { border-color: #e2994a; }
+.rvm-tag-label.severity-low { border-color: #27ae60; }
+
+.rvm-tag-modal {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.rvm-tag-modal.is-open {
+  display: flex;
+}
+
+.rvm-tag-modal-card {
+  width: min(420px, 92vw);
+  background: #1f2430;
+  border: 1px solid #394255;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rvm-tag-modal-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #dce6ff;
+}
+
+.rvm-tag-modal-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11px;
+  color: #9fb0d8;
+}
+
+.rvm-tag-modal-row input,
+.rvm-tag-modal-row select {
+  background: #131922;
+  border: 1px solid #44506a;
+  color: #dbe6ff;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.rvm-tag-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* ── Tree Checkbox Multi-select ──────────────────────────────────────────── */
+
+.rvm-tree-checkbox {
+  width: 14px;
+  height: 14px;
+  margin: 0 4px 0 2px;
+  cursor: pointer;
+  accent-color: #4a9eff;
+  flex-shrink: 0;
+}
+
+.rvm-tree-node.is-checked > .rvm-tree-label .rvm-tree-checkbox {
+  accent-color: #4a9eff;
+}
+
+.rvm-tree-node.is-indeterminate > .rvm-tree-label .rvm-tree-checkbox {
+  opacity: 0.6;
+}
+
+/* ── RVM status strip ─────────────────────────────────────────────────── */
+
+.rvm-status-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #171b22;
+  border-bottom: 1px solid var(--geo-border, #333);
+  color: #9fb0c8;
+  font-size: 11px;
+  line-height: 1.2;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.rvm-status-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+  padding: 2px 7px;
+  border: 1px solid rgba(116, 139, 171, 0.28);
+  border-radius: 999px;
+  background: rgba(38, 45, 56, 0.72);
+  color: #9fb0c8;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.rvm-status-chip.is-active {
+  color: #d9e7ff;
+  border-color: rgba(74, 158, 255, 0.42);
+  background: rgba(74, 158, 255, 0.16);
+}
+
+.rvm-status-chip.is-warn {
+  color: #ffd59a;
+  border-color: rgba(226, 153, 74, 0.65);
+  background: rgba(226, 153, 74, 0.16);
+}
+
+/* ── Empty states ─────────────────────────────────────────────────────── */
+
+.rvm-empty-state {
+  margin: 8px;
+  padding: 12px;
+  border: 1px dashed rgba(117, 139, 170, 0.32);
+  border-radius: 8px;
+  background: rgba(18, 23, 31, 0.72);
+  color: #9fb0c8;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.rvm-empty-state[hidden] {
+  display: none !important;
+}
+
+.rvm-empty-state.is-compact {
+  margin: 6px;
+  padding: 8px;
+  font-size: 11px;
+}
+
+.rvm-empty-title {
+  color: #d9e7ff;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rvm-empty-body {
+  color: #91a1ba;
+  font-size: 11px;
+}
+
+/* Empty states inside tree/list containers should not look like selectable rows. */
+.rvm-tree .rvm-empty-state,
+.rvm-tag-list .rvm-empty-state {
+  cursor: default;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+}
+
+/* ── Tag panel actions ────────────────────────────────────────────────── */
+
+.rvm-tag-panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 9px;
+  border-bottom: 1px solid var(--geo-border, #333);
+  background: rgba(28, 34, 44, 0.94);
+  flex-shrink: 0;
+}
+
+.rvm-tag-panel-title {
+  color: #d9e7ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rvm-tag-panel-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.rvm-tag-panel-btn {
+  min-height: 24px;
+  padding: 3px 7px;
+  font-size: 10.5px;
+  line-height: 1.1;
+}
+
+.rvm-tag-panel-file {
+  cursor: pointer;
+}
+
+.rvm-tag-panel-btn:hover {
+  border-color: rgba(74, 158, 255, 0.62);
+}
+
+/* Make tag actions readable in narrow right panel. */
+@media (max-width: 1150px) {
+  .rvm-tag-panel-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rvm-tag-panel-buttons {
+    justify-content: flex-start;
+  }
+}
+
+
+/* ── RVM support symbol scale settings ────────────────────────────────── */
+
+.rvm-support-settings-card {
+  flex-shrink: 0;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--geo-border, #333);
+  background: rgba(24, 30, 40, 0.92);
+}
+
+.rvm-support-settings-title {
+  color: #d9e7ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.rvm-support-scale-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rvm-support-scale-row label {
+  color: #9fb0c8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.rvm-support-scale-controls {
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) 58px auto;
+  gap: 6px;
+  align-items: center;
+}
+
+.rvm-support-scale-controls input[type="range"] {
+  width: 100%;
+  accent-color: var(--geo-accent, #4a9eff);
+}
+
+.rvm-support-scale-controls input[type="number"] {
+  width: 58px;
+  background: var(--geo-input-bg, #1a1c21);
+  border: 1px solid var(--geo-border, #444);
+  border-radius: 4px;
+  color: var(--geo-text, #d4d4d4);
+  font-size: 11px;
+  padding: 3px 5px;
+}
+
+.rvm-support-scale-reset {
+  min-height: 24px;
+  padding: 3px 7px;
+  font-size: 10.5px;
+}
+
+.rvm-support-scale-hint {
+  color: #91a1ba;
+  font-size: 10.5px;
+}
+
+.rvm-support-scale-hint b {
+  color: #7ddc9a;
+}
+
+/* NavisDark refresh: shared viewer chrome tokens */
+.rvm-tab-root {
+  background: var(--vc-shell-bg);
+  color: var(--vc-text);
+  font-family: var(--vc-font-body);
+  font-size: 12px;
+}
+
+.rvm-tab-root .geo-top-ribbon,
+.rvm-tab-root #rvm-top-ribbon {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  min-height: 58px;
+  padding: 5px 8px 4px;
+  background: var(--vc-ribbon-bg);
+  border-bottom: 1px solid var(--vc-border);
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 177, 214, 0.35) transparent;
+}
+
+.rvm-tab-root #rvm-top-ribbon::-webkit-scrollbar {
+  height: 4px;
+}
+
+.rvm-tab-root #rvm-top-ribbon::-webkit-scrollbar-thumb {
+  background: rgba(148, 177, 214, 0.35);
+  border-radius: 999px;
+}
+
+.rvm-tab-root .rvm-ribbon-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  min-height: 46px;
+  padding: 16px 6px 4px;
+  border-radius: 8px;
+  background: rgba(5, 12, 24, 0.24);
+  border: 1px solid var(--vc-border-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.rvm-tab-root .rvm-ribbon-label {
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  color: var(--vc-text-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.rvm-tab-root .rvm-ribbon-button-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.rvm-tab-root .rvm-ribbon-file,
+.rvm-tab-root .rvm-ribbon-actions {
+  background: rgba(0, 0, 0, 0.18);
+  border-color: var(--vc-border-soft);
+}
+
+.rvm-tab-root .rvm-ribbon-nav,
+.rvm-tab-root .rvm-ribbon-view,
+.rvm-tab-root .rvm-ribbon-sectioning,
+.rvm-tab-root .rvm-ribbon-orient {
+  background: rgba(74, 158, 255, 0.06);
+  border: 1px solid rgba(74, 158, 255, 0.16);
+}
+
+.rvm-tab-root .rvm-ribbon-sectioning {
+  background: rgba(96, 200, 100, 0.07);
+  border-color: rgba(96, 200, 100, 0.18);
+}
+
+.rvm-tab-root .rvm-ribbon-orient {
+  background: rgba(148, 168, 188, 0.08);
+  border-color: rgba(148, 168, 188, 0.18);
+}
+
+.rvm-tab-root .rvm-ribbon-search {
+  flex: 1;
+  min-width: 190px;
+  max-width: 320px;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.rvm-tab-root .rvm-ribbon-theme {
+  min-width: 134px;
+  background: rgba(0, 0, 0, 0.18);
+  border-color: var(--vc-border-soft);
+}
+
+.rvm-tab-root #rvm-search-input {
+  width: 100%;
+  background: var(--vc-canvas-deep);
+  border: 1px solid var(--vc-border-strong);
+  border-radius: 5px;
+  color: var(--vc-text);
+  font-size: 11px;
+  height: 30px;
+  padding: 5px 10px;
+  outline: none;
+  font-family: var(--vc-font-body);
+}
+
+.rvm-tab-root #rvm-search-input:focus {
+  border-color: var(--vc-accent);
+}
+
+.rvm-tab-root .rvm-btn,
+.rvm-tab-root .rv-btn,
+.rvm-tab-root .rvm-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 5px 9px;
+  background: var(--vc-btn-bg);
+  border: 1px solid var(--vc-border-strong);
+  border-radius: 6px;
+  color: var(--vc-text);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.13s, border-color 0.13s, color 0.13s, transform 0.13s;
+  font-family: var(--vc-font-body);
+}
+
+.rvm-tab-root .rvm-btn:hover:not(:disabled),
+.rvm-tab-root .rv-btn:hover:not(:disabled),
+.rvm-tab-root .rvm-tool-btn:hover {
+  background: var(--vc-accent-soft);
+  border-color: rgba(96, 165, 250, 0.45);
+  color: #ffffff;
+}
+
+.rvm-tab-root .rvm-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rvm-tab-root .rvm-tool-btn.is-active,
+.rvm-tab-root .rvm-tool-btn.is-pressed,
+.rvm-tab-root .rvm-btn.is-active,
+.rvm-tab-root .rvm-btn.is-pressed {
+  background: var(--vc-accent) !important;
+  border-color: var(--vc-accent) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 0 1px rgba(74, 158, 255, 0.25);
+}
+
+.rvm-tab-root.geo-theme-highcontrast .rvm-tool-btn.is-active,
+.rvm-tab-root.geo-theme-highcontrast .rvm-tool-btn.is-pressed,
+.rvm-tab-root.geo-theme-highcontrast .rvm-btn.is-active,
+.rvm-tab-root.geo-theme-highcontrast .rvm-btn.is-pressed {
+  color: #000000 !important;
+}
+
+.rvm-tab-root.geo-theme-highcontrast .rvm-tool-btn.is-active svg,
+.rvm-tab-root.geo-theme-highcontrast .rvm-tool-btn.is-pressed svg,
+.rvm-tab-root.geo-theme-highcontrast .rvm-btn.is-active svg,
+.rvm-tab-root.geo-theme-highcontrast .rvm-btn.is-pressed svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+.rvm-tab-root .rvm-tool-btn.is-icon-only,
+.rvm-tab-root .rvm-btn.is-icon-only {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  padding: 4px;
+  justify-content: center;
+}
+
+.rvm-tab-root .rvm-tool-btn svg,
+.rvm-tab-root .rvm-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.rvm-tab-root .rvm-btn-file {
+  cursor: pointer;
+}
+
+.rvm-tab-root .rvm-theme-shell {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--vc-text);
+}
+
+.rvm-tab-root .rvm-theme-select {
+  min-width: 120px;
+  height: 30px;
+  background-color: var(--vc-canvas-deep);
+  border-color: var(--vc-border-strong);
+  color: var(--vc-text);
+}
+
+.rvm-tab-root .rvm-ribbon-actions .rvm-btn {
+  border-color: rgba(74, 222, 128, 0.34);
+  color: #b8f5ca;
+}
+
+.rvm-tab-root .rvm-ribbon-actions .rvm-btn:hover {
+  border-color: rgba(74, 222, 128, 0.55);
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.rvm-tab-root .rvm-btn-assisted {
+  border-color: rgba(74, 222, 128, 0.45);
+  color: #86efac;
+}
+
+.rvm-tab-root .rvm-capability-banner {
+  padding: 3px 12px;
+  font-size: 10.5px;
+  background: #1e2430;
+  border-bottom: 1px solid var(--vc-border-soft);
+  color: var(--vc-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.rvm-tab-root .rvm-capability-banner[data-mode="assisted"] {
+  color: var(--vc-pass);
+}
+
+.rvm-tab-root .rvm-capability-banner .cap-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--vc-text-muted);
+  flex-shrink: 0;
+}
+
+.rvm-tab-root .rvm-capability-banner[data-mode="assisted"] .cap-dot {
+  background: var(--vc-pass);
+}
+
+.rvm-tab-root .rvm-body,
+.rvm-tab-root .geo-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rvm-tab-root .rvm-left-panel {
+  width: 230px;
+  min-width: 160px;
+  max-width: 320px;
+  background: var(--vc-panel-bg);
+  border-right: 1px solid var(--vc-border);
+}
+
+.rvm-tab-root .rvm-panel-header {
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ec0e1;
+  border-bottom: 1px solid var(--vc-border-soft);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.rvm-tab-root #rvm-tree-scroll,
+.rvm-tab-root .rvm-tree,
+.rvm-tab-root #rvm-search-results {
+  scrollbar-color: rgba(129, 177, 230, 0.42) transparent;
+}
+
+.rvm-tab-root .rvm-tree {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 11px;
+}
+
+.rvm-tab-root .rvm-tree li {
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rvm-tab-root .rvm-tree li:hover,
+.rvm-tab-root .rvm-search-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #d7eaff;
+}
+
+.rvm-tab-root .rvm-tree li.is-selected,
+.rvm-tab-root .rvm-search-item.is-selected {
+  background: rgba(59, 130, 246, 0.2);
+  color: #e8f3ff;
+}
+
+.rvm-tab-root .rvm-tree-checkbox {
+  width: 13px;
+  height: 13px;
+  accent-color: var(--vc-accent);
+}
+
+.rvm-tab-root .rvm-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 30%, #1e2a40 0%, #111724 60%, var(--vc-canvas-bg) 100%);
+}
+
+.rvm-tab-root .rvm-placeholder {
+  color: var(--vc-text-muted);
+}
+
+.rvm-tab-root #rvm-section-panel {
+  position: absolute !important;
+  top: 60px !important;
+  left: 12px !important;
+  width: 236px !important;
+  background: rgba(12, 20, 34, 0.96) !important;
+  color: #e8f3ff !important;
+  padding: 14px 15px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.5) !important;
+  z-index: 20 !important;
+  display: none;
+  border: 1px solid rgba(74, 158, 255, 0.25) !important;
+}
+
+.rvm-tab-root #rvm-section-panel label {
+  color: #9db7d8;
+}
+
+.rvm-tab-root #rvm-section-panel input[type="range"] {
+  width: 100%;
+  accent-color: var(--vc-accent);
+}
+
+.rvm-tab-root #rvm-section-panel button {
+  border-radius: 6px;
+}
+
+.rvm-tab-root .rvm-right-panel {
+  width: 252px;
+  min-width: 160px;
+  max-width: 540px;
+  background: var(--vc-panel-alt-bg);
+  border-left: 1px solid var(--vc-border);
+}
+
+.rvm-tab-root .rvm-right-panel-resize-handle:hover,
+.rvm-tab-root .rvm-right-panel-resize-handle.is-dragging {
+  background: rgba(74, 158, 255, 0.35);
+}
+
+.rvm-tab-root #rvm-attr-search,
+.rvm-tab-root .rvm-attr-filter input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 6px 8px !important;
+  background: var(--vc-canvas-deep) !important;
+  color: var(--vc-text) !important;
+  border: 1px solid var(--vc-border-strong) !important;
+  border-radius: 4px !important;
+  outline: none;
+  font-family: var(--vc-font-body);
+}
+
+.rvm-tab-root #rvm-attr-search:focus,
+.rvm-tab-root .rvm-attr-filter input:focus,
+.rvm-tab-root #rvm-tag-severity-filter:focus {
+  border-color: var(--vc-accent) !important;
+}
+
+.rvm-tab-root #rvm-attributes-content,
+.rvm-tab-root #attr-body,
+.rvm-tab-root .rvm-attributes-panel {
+  overflow-y: auto;
+  scrollbar-color: rgba(129, 177, 230, 0.42) transparent;
+}
+
+.rvm-tab-root .attr-name-row {
+  padding: 7px 10px 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--vc-border-soft);
+}
+
+.rvm-tab-root .attr-obj-name {
+  color: #e8f3ff;
+}
+
+.rvm-tab-root .attr-obj-type {
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root .attr-empty {
+  color: var(--vc-text-muted);
+}
+
+.rvm-tab-root table.attr-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.rvm-tab-root table.attr-table td:first-child {
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root table.attr-table td:last-child {
+  color: var(--vc-text);
+}
+
+.rvm-tab-root .rvm-tag-section {
+  border-top: 1px solid var(--vc-border);
+}
+
+.rvm-tab-root .rvm-tag-actions-bar {
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--vc-border-soft);
+  padding: 6px 8px;
+}
+
+.rvm-tab-root .rvm-tag-title {
+  color: #d9e7ff;
+}
+
+.rvm-tab-root #rvm-tag-severity-filter {
+  background: var(--vc-canvas-deep) !important;
+  color: var(--vc-text) !important;
+  border: 1px solid var(--vc-border-strong) !important;
+  border-radius: 4px !important;
+}
+
+.rvm-tab-root #tag-list {
+  padding: 3px 0;
+}
+
+.rvm-tab-root .rvm-tag-list {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.rvm-tab-root .rvm-tag-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  gap: 4px;
+}
+
+.rvm-tab-root .rvm-tag-item.severity-high {
+  border-left: 3px solid #f87171;
+}
+
+.rvm-tab-root .rvm-tag-item.severity-medium {
+  border-left: 3px solid #f0c840;
+}
+
+.rvm-tab-root .rvm-tag-item.severity-low {
+  border-left: 3px solid #4ade80;
+}
+
+.rvm-tab-root .rvm-tag-text {
+  color: var(--vc-text);
+}
+
+.rvm-tab-root .rvm-tag-jump,
+.rvm-tab-root .rvm-tag-delete {
+  color: var(--vc-text-muted);
+}
+
+.rvm-tab-root .rvm-tag-jump:hover {
+  color: var(--vc-accent);
+}
+
+.rvm-tab-root .rvm-tag-delete:hover {
+  color: var(--vc-fail);
+}
+
+.rvm-tab-root #rvm-add-tag-btn,
+.rvm-tab-root #add-tag-btn {
+  margin: 6px 10px;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root #rvm-add-tag-btn:hover,
+.rvm-tab-root #add-tag-btn:hover {
+  background: var(--vc-accent-soft);
+  color: var(--vc-accent);
+  border-color: rgba(74, 158, 255, 0.4);
+}
+
+.rvm-tab-root .rvm-tag-label {
+  background: rgba(30, 32, 38, 0.9);
+  border: 1px solid var(--vc-accent);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  color: #d4d4d4;
+}
+
+.rvm-tab-root .rvm-tag-modal {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.rvm-tab-root .rvm-tag-modal-card {
+  width: min(420px, 92vw);
+  background: #1f2430;
+  border: 1px solid #394255;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rvm-tab-root .rvm-tag-modal-title {
+  color: #dce6ff;
+}
+
+.rvm-tab-root .rvm-tag-modal-row {
+  color: #9fb0d8;
+}
+
+.rvm-tab-root .rvm-tag-modal-row input,
+.rvm-tab-root .rvm-tag-modal-row select {
+  background: #131922;
+  border: 1px solid #44506a;
+  color: #dbe6ff;
+  border-radius: 6px;
+  padding: 8px;
+  font-family: var(--vc-font-body);
+}
+
+.rvm-tab-root .rvm-tag-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.rvm-tab-root .rvm-status-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--vc-banner-bg);
+  border-bottom: 1px solid var(--vc-border);
+  color: #9fb0c8;
+  font-size: 11px;
+  line-height: 1.2;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.rvm-tab-root #rvm-statusbar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 28px;
+  padding: 0;
+  background: var(--vc-status-bg);
+  border-top: 1px solid var(--vc-border);
+  color: var(--vc-text-dim);
+  font-size: 10.5px;
+  line-height: 1.2;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  flex-shrink: 0;
+}
+
+.rvm-tab-root .rvm-status-chip,
+.rvm-tab-root .mode-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+  padding: 2px 7px;
+  border: 1px solid rgba(116, 139, 171, 0.28);
+  border-radius: 999px;
+  background: rgba(38, 45, 56, 0.72);
+  color: #9fb0c8;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.rvm-tab-root .rvm-status-chip.is-active,
+.rvm-tab-root .mode-chip.select,
+.rvm-tab-root .mode-chip.measure {
+  color: #d9e7ff;
+  border-color: rgba(74, 158, 255, 0.42);
+  background: rgba(74, 158, 255, 0.16);
+}
+
+.rvm-tab-root .rvm-status-chip.is-warn {
+  color: #ffd59a;
+  border-color: rgba(226, 153, 74, 0.65);
+  background: rgba(226, 153, 74, 0.16);
+}
+
+.rvm-tab-root #rvm-statusbar .sb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border-right: 1px solid var(--vc-border-soft);
+  flex-shrink: 0;
+}
+
+.rvm-tab-root #rvm-statusbar .sb:last-child {
+  border-right: none;
+}
+
+.rvm-tab-root #rvm-statusbar .rvm-status-product-label {
+  color: var(--vc-accent);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.rvm-tab-root #rvm-statusbar .sc-coords {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--vc-text-dim);
+  font-family: var(--vc-font-mono);
+  font-size: 10px;
+}
+
+.rvm-tab-root #rvm-statusbar .sc-ax {
+  color: var(--vc-accent);
+  font-weight: 700;
+}
+
+.rvm-tab-root #rvm-statusbar .sc-v {
+  min-width: 34px;
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root #rvm-statusbar .rvm-status-count {
+  color: var(--vc-accent);
+  font-weight: 700;
+}
+
+.rvm-tab-root #rvm-statusbar .rvm-status-count-label {
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root #rvm-statusbar #rvm-sb-msg {
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root #rvm-statusbar .rvm-sb-msg {
+  flex: 1;
+  overflow: hidden;
+}
+
+.rvm-tab-root #rvm-statusbar .rvm-sb-perf {
+  margin-left: auto;
+  border-left: 1px solid var(--vc-border-soft);
+}
+
+.rvm-tab-root #rvm-statusbar #rvm-fps {
+  font-family: var(--vc-font-mono);
+  font-size: 10px;
+  color: var(--vc-text-muted);
+}
+
+.rvm-tab-root #vc-wrap {
+  top: 14px;
+  right: 14px;
+  width: 88px;
+}
+
+.rvm-tab-root #help-btn {
+  bottom: 44px;
+  right: 88px;
+  width: 26px;
+  height: 26px;
+  background: rgba(10, 16, 28, 0.7);
+  border: 1px solid var(--vc-border);
+  color: var(--vc-text-dim);
+}
+
+.rvm-tab-root #help-btn:hover {
+  background: var(--vc-accent-soft);
+  color: var(--vc-accent);
+}
+
+.rvm-tab-root #rvm-kbd,
+.rvm-tab-root #tag-modal {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.rvm-tab-root .kh,
+.rvm-tab-root .tm-card,
+.rvm-tab-root .rvm-tag-modal-card {
+  background: #0d1628;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 10px;
+}
+
+.rvm-tab-root .kh-t,
+.rvm-tab-root .tm-title,
+.rvm-tab-root .rvm-tag-modal-title {
+  color: var(--vc-accent);
+}
+
+.rvm-tab-root .kh-k {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+  color: var(--vc-text);
+}
+
+.rvm-tab-root .rvm-empty-state {
+  margin: 8px;
+  padding: 12px;
+  border: 1px dashed rgba(117, 139, 170, 0.32);
+  border-radius: 8px;
+  background: rgba(18, 23, 31, 0.72);
+  color: #9fb0c8;
+}
+
+.rvm-tab-root .rvm-empty-title {
+  color: #d9e7ff;
+}
+
+.rvm-tab-root .rvm-empty-body {
+  color: #91a1ba;
+}
+
+.rvm-tab-root .rvm-support-scale-controls input[type="range"] {
+  accent-color: var(--vc-accent);
+}
+
+.rvm-tab-root .rvm-support-scale-controls input[type="number"] {
+  background: var(--vc-canvas-deep);
+  border: 1px solid var(--vc-border-strong);
+  border-radius: 4px;
+  color: var(--vc-text);
+}
+
+@media (max-width: 1180px) {
+  .rvm-tab-root .rvm-left-panel {
+    width: 200px;
+  }
+
+  .rvm-tab-root .rvm-right-panel {
+    width: 240px;
+  }
+}

@@ -1,0 +1,76 @@
+name: XML CII BM8 Actual Validation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'viewer/converters/scripts/**'
+      - 'viewer/converters/py-worker.js'
+      - 'viewer/tabs/model-converters-ui-enhancements.js'
+      - 'CII error/**'
+      - 'docs/Masters/**'
+      - '.github/workflows/xml-cii-bm8-validation.yml'
+  push:
+    branches:
+      - main
+      - fix/xml-cii-fuzzy-density-node-weight
+      - fix/xml-cii-enriched-inputxml-download
+    paths:
+      - 'viewer/converters/scripts/**'
+      - 'viewer/converters/py-worker.js'
+      - 'viewer/tabs/model-converters-ui-enhancements.js'
+      - 'CII error/**'
+      - 'docs/Masters/**'
+      - '.github/workflows/xml-cii-bm8-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  bm8-actual-files:
+    name: Validate BM8 XML/JSON actual conversion path
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install test dependency
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+
+      - name: Run actual BM8 XML/JSON, NPS, and InputXML debug validation
+        env:
+          PYTHONUTF8: '1'
+          XML_CII_ARTIFACT_DIR: artifacts/xml-cii-bm8
+        run: |
+          mkdir -p artifacts/xml-cii-bm8
+          python -m pytest \
+            viewer/converters/scripts/test_xml_to_cii2019_actual_bm8.py \
+            viewer/converters/scripts/test_nps_bore_master.py \
+            viewer/converters/scripts/test_xml_to_inputxml_debug.py \
+            -q
+
+      - name: Show validation summary
+        if: always()
+        run: |
+          echo 'Generated validation artifacts:'
+          find artifacts/xml-cii-bm8 -maxdepth 1 -type f -print | sort || true
+          if [ -f artifacts/xml-cii-bm8/bm8-validation-summary.json ]; then
+            cat artifacts/xml-cii-bm8/bm8-validation-summary.json
+          fi
+
+      - name: Upload BM8 validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xml-cii-bm8-validation-artifacts
+          path: artifacts/xml-cii-bm8/
+          if-no-files-found: warn

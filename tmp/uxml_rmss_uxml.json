@@ -1,0 +1,7950 @@
+{
+  "schemaVersion": "uxml-topology-v1",
+  "profile": "UXML-TOPOLOGY-FULL",
+  "header": {
+    "projectId": "",
+    "modelId": "",
+    "createdBy": "PCF_GLB_Viewer_Conv",
+    "createdAt": "1970-01-01T00:00:00.000Z",
+    "purpose": "topology-normalization",
+    "notes": ""
+  },
+  "sources": [
+    {
+      "id": "SRC-00001",
+      "format": "INPUT_XML",
+      "path": "",
+      "name": "C:/Users/reall/Downloads/RMSS_ATTRIBUTE_managed_stage (2)_stagedjson_to_inputxml.xml",
+      "hash": "chars:535469",
+      "role": "PRIMARY",
+      "diagnostics": []
+    }
+  ],
+  "mappings": [
+    {
+      "id": "IX-MAP-00001",
+      "profile": "INPUT_XML",
+      "sourceFormat": "INPUT_XML",
+      "sourceField": "InputXML.Node/Point/Coordinate",
+      "targetField": "anchors[]",
+      "confidence": "ALIASED_SOURCE",
+      "notes": ""
+    },
+    {
+      "id": "IX-MAP-00002",
+      "profile": "INPUT_XML",
+      "sourceFormat": "INPUT_XML",
+      "sourceField": "InputXML.Element/Component/Pipe/Fitting/Support",
+      "targetField": "components[]",
+      "confidence": "ALIASED_SOURCE",
+      "notes": ""
+    },
+    {
+      "id": "IX-MAP-00003",
+      "profile": "INPUT_XML",
+      "sourceFormat": "INPUT_XML",
+      "sourceField": "InputXML endpoints/branch/center",
+      "targetField": "ports[]/segments[]",
+      "confidence": "ALIASED_SOURCE",
+      "notes": ""
+    }
+  ],
+  "units": {
+    "coordinates": "MM",
+    "bore": "MM",
+    "length": "MM",
+    "weight": "KG",
+    "pressure": "kPa",
+    "temperature": "C",
+    "rotation": "DEGREES"
+  },
+  "pipelines": [],
+  "components": [
+    {
+      "id": "IX-C-00001",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "533.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "219.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00001-EP1",
+        "IX-A-IX-C-00001-EP2",
+        "IX-A-IX-C-00001-CP",
+        "IX-A-IX-C-00001-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00001-BEND_END_1",
+        "IX-P-IX-C-00001-BEND_END_2",
+        "IX-P-IX-C-00001-BEND_CP",
+        "IX-P-IX-C-00001-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00001-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00002",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "533.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "329.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00002-EP1",
+        "IX-A-IX-C-00002-EP2",
+        "IX-A-IX-C-00002-CP",
+        "IX-A-IX-C-00002-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00002-BEND_END_1",
+        "IX-P-IX-C-00002-BEND_END_2",
+        "IX-P-IX-C-00002-BEND_CP",
+        "IX-P-IX-C-00002-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00002-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00003",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "533.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "419.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00003-EP1",
+        "IX-A-IX-C-00003-EP2",
+        "IX-A-IX-C-00003-CP",
+        "IX-A-IX-C-00003-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00003-BEND_END_1",
+        "IX-P-IX-C-00003-BEND_END_2",
+        "IX-P-IX-C-00003-BEND_CP",
+        "IX-P-IX-C-00003-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00003-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00004",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "305.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "479.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00004-EP1",
+        "IX-A-IX-C-00004-EP2",
+        "IX-A-IX-C-00004-CP",
+        "IX-A-IX-C-00004-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00004-BEND_END_1",
+        "IX-P-IX-C-00004-BEND_END_2",
+        "IX-P-IX-C-00004-BEND_CP",
+        "IX-P-IX-C-00004-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00004-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00005",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "305.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "519.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00005-EP1",
+        "IX-A-IX-C-00005-EP2",
+        "IX-A-IX-C-00005-CP",
+        "IX-A-IX-C-00005-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00005-BEND_END_1",
+        "IX-P-IX-C-00005-BEND_END_2",
+        "IX-P-IX-C-00005-BEND_CP",
+        "IX-P-IX-C-00005-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00005-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00006",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "305.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "549.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00006-EP1",
+        "IX-A-IX-C-00006-EP2",
+        "IX-A-IX-C-00006-CP",
+        "IX-A-IX-C-00006-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00006-BEND_END_1",
+        "IX-P-IX-C-00006-BEND_END_2",
+        "IX-P-IX-C-00006-BEND_CP",
+        "IX-P-IX-C-00006-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00006-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00007",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "739.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00007-EP1",
+        "IX-A-IX-C-00007-EP2",
+        "IX-A-IX-C-00007-CP",
+        "IX-A-IX-C-00007-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00007-BEND_END_1",
+        "IX-P-IX-C-00007-BEND_END_2",
+        "IX-P-IX-C-00007-BEND_CP",
+        "IX-P-IX-C-00007-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00007-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00008",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "769.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00008-EP1",
+        "IX-A-IX-C-00008-EP2",
+        "IX-A-IX-C-00008-CP",
+        "IX-A-IX-C-00008-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00008-BEND_END_1",
+        "IX-P-IX-C-00008-BEND_END_2",
+        "IX-P-IX-C-00008-BEND_CP",
+        "IX-P-IX-C-00008-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00008-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00009",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "159.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "969.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00009-EP1",
+        "IX-A-IX-C-00009-EP2",
+        "IX-A-IX-C-00009-CP",
+        "IX-A-IX-C-00009-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00009-BEND_END_1",
+        "IX-P-IX-C-00009-BEND_END_2",
+        "IX-P-IX-C-00009-BEND_CP",
+        "IX-P-IX-C-00009-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00009-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00010",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1049.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00010-EP1",
+        "IX-A-IX-C-00010-EP2",
+        "IX-A-IX-C-00010-CP",
+        "IX-A-IX-C-00010-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00010-BEND_END_1",
+        "IX-P-IX-C-00010-BEND_END_2",
+        "IX-P-IX-C-00010-BEND_CP",
+        "IX-P-IX-C-00010-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00010-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00011",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1079.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00011-EP1",
+        "IX-A-IX-C-00011-EP2",
+        "IX-A-IX-C-00011-CP",
+        "IX-A-IX-C-00011-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00011-BEND_END_1",
+        "IX-P-IX-C-00011-BEND_END_2",
+        "IX-P-IX-C-00011-BEND_CP",
+        "IX-P-IX-C-00011-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00011-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00012",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "159.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1279.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00012-EP1",
+        "IX-A-IX-C-00012-EP2",
+        "IX-A-IX-C-00012-CP",
+        "IX-A-IX-C-00012-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00012-BEND_END_1",
+        "IX-P-IX-C-00012-BEND_END_2",
+        "IX-P-IX-C-00012-BEND_CP",
+        "IX-P-IX-C-00012-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00012-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00013",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1339.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00013-EP1",
+        "IX-A-IX-C-00013-EP2",
+        "IX-A-IX-C-00013-CP",
+        "IX-A-IX-C-00013-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00013-BEND_END_1",
+        "IX-P-IX-C-00013-BEND_END_2",
+        "IX-P-IX-C-00013-BEND_CP",
+        "IX-P-IX-C-00013-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00013-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00014",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1369.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00014-EP1",
+        "IX-A-IX-C-00014-EP2",
+        "IX-A-IX-C-00014-CP",
+        "IX-A-IX-C-00014-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00014-BEND_END_1",
+        "IX-P-IX-C-00014-BEND_END_2",
+        "IX-P-IX-C-00014-BEND_CP",
+        "IX-P-IX-C-00014-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00014-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00015",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "159.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1569.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00015-EP1",
+        "IX-A-IX-C-00015-EP2",
+        "IX-A-IX-C-00015-CP",
+        "IX-A-IX-C-00015-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00015-BEND_END_1",
+        "IX-P-IX-C-00015-BEND_END_2",
+        "IX-P-IX-C-00015-BEND_CP",
+        "IX-P-IX-C-00015-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00015-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00016",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1629.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00016-EP1",
+        "IX-A-IX-C-00016-EP2",
+        "IX-A-IX-C-00016-CP",
+        "IX-A-IX-C-00016-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00016-BEND_END_1",
+        "IX-P-IX-C-00016-BEND_END_2",
+        "IX-P-IX-C-00016-BEND_CP",
+        "IX-P-IX-C-00016-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00016-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00017",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1659.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00017-EP1",
+        "IX-A-IX-C-00017-EP2",
+        "IX-A-IX-C-00017-CP",
+        "IX-A-IX-C-00017-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00017-BEND_END_1",
+        "IX-P-IX-C-00017-BEND_END_2",
+        "IX-P-IX-C-00017-BEND_CP",
+        "IX-P-IX-C-00017-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00017-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00018",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "159.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "1859.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00018-EP1",
+        "IX-A-IX-C-00018-EP2",
+        "IX-A-IX-C-00018-CP",
+        "IX-A-IX-C-00018-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00018-BEND_END_1",
+        "IX-P-IX-C-00018-BEND_END_2",
+        "IX-P-IX-C-00018-BEND_CP",
+        "IX-P-IX-C-00018-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00018-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00019",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "305.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2049.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00019-EP1",
+        "IX-A-IX-C-00019-EP2",
+        "IX-A-IX-C-00019-CP",
+        "IX-A-IX-C-00019-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00019-BEND_END_1",
+        "IX-P-IX-C-00019-BEND_END_2",
+        "IX-P-IX-C-00019-BEND_CP",
+        "IX-P-IX-C-00019-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00019-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00020",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "305.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2249.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00020-EP1",
+        "IX-A-IX-C-00020-EP2",
+        "IX-A-IX-C-00020-CP",
+        "IX-A-IX-C-00020-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00020-BEND_END_1",
+        "IX-P-IX-C-00020-BEND_END_2",
+        "IX-P-IX-C-00020-BEND_CP",
+        "IX-P-IX-C-00020-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00020-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00021",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "305.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2309.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00021-EP1",
+        "IX-A-IX-C-00021-EP2",
+        "IX-A-IX-C-00021-CP",
+        "IX-A-IX-C-00021-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00021-BEND_END_1",
+        "IX-P-IX-C-00021-BEND_END_2",
+        "IX-P-IX-C-00021-BEND_CP",
+        "IX-P-IX-C-00021-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00021-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00022",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2359.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00022-EP1",
+        "IX-A-IX-C-00022-EP2",
+        "IX-A-IX-C-00022-CP",
+        "IX-A-IX-C-00022-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00022-BEND_END_1",
+        "IX-P-IX-C-00022-BEND_END_2",
+        "IX-P-IX-C-00022-BEND_CP",
+        "IX-P-IX-C-00022-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00022-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00023",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "127.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2439.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00023-EP1",
+        "IX-A-IX-C-00023-EP2",
+        "IX-A-IX-C-00023-CP",
+        "IX-A-IX-C-00023-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00023-BEND_END_1",
+        "IX-P-IX-C-00023-BEND_END_2",
+        "IX-P-IX-C-00023-BEND_CP",
+        "IX-P-IX-C-00023-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00023-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00024",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2489.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00024-EP1",
+        "IX-A-IX-C-00024-EP2",
+        "IX-A-IX-C-00024-CP",
+        "IX-A-IX-C-00024-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00024-BEND_END_1",
+        "IX-P-IX-C-00024-BEND_END_2",
+        "IX-P-IX-C-00024-BEND_CP",
+        "IX-P-IX-C-00024-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00024-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00025",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "127.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2569.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00025-EP1",
+        "IX-A-IX-C-00025-EP2",
+        "IX-A-IX-C-00025-CP",
+        "IX-A-IX-C-00025-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00025-BEND_END_1",
+        "IX-P-IX-C-00025-BEND_END_2",
+        "IX-P-IX-C-00025-BEND_CP",
+        "IX-P-IX-C-00025-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00025-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00026",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2619.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00026-EP1",
+        "IX-A-IX-C-00026-EP2",
+        "IX-A-IX-C-00026-CP",
+        "IX-A-IX-C-00026-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00026-BEND_END_1",
+        "IX-P-IX-C-00026-BEND_END_2",
+        "IX-P-IX-C-00026-BEND_CP",
+        "IX-P-IX-C-00026-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00026-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00027",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "127.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2699.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00027-EP1",
+        "IX-A-IX-C-00027-EP2",
+        "IX-A-IX-C-00027-CP",
+        "IX-A-IX-C-00027-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00027-BEND_END_1",
+        "IX-P-IX-C-00027-BEND_END_2",
+        "IX-P-IX-C-00027-BEND_CP",
+        "IX-P-IX-C-00027-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00027-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00028",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "381.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2749.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00028-EP1",
+        "IX-A-IX-C-00028-EP2",
+        "IX-A-IX-C-00028-CP",
+        "IX-A-IX-C-00028-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00028-BEND_END_1",
+        "IX-P-IX-C-00028-BEND_END_2",
+        "IX-P-IX-C-00028-BEND_CP",
+        "IX-P-IX-C-00028-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00028-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00029",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "127.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2829.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00029-EP1",
+        "IX-A-IX-C-00029-EP2",
+        "IX-A-IX-C-00029-CP",
+        "IX-A-IX-C-00029-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00029-BEND_END_1",
+        "IX-P-IX-C-00029-BEND_END_2",
+        "IX-P-IX-C-00029-BEND_CP",
+        "IX-P-IX-C-00029-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00029-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00030",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2879.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00030-EP1",
+        "IX-A-IX-C-00030-EP2",
+        "IX-A-IX-C-00030-CP",
+        "IX-A-IX-C-00030-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00030-BEND_END_1",
+        "IX-P-IX-C-00030-BEND_END_2",
+        "IX-P-IX-C-00030-BEND_CP",
+        "IX-P-IX-C-00030-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00030-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00031",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2909.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00031-EP1",
+        "IX-A-IX-C-00031-EP2",
+        "IX-A-IX-C-00031-CP",
+        "IX-A-IX-C-00031-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00031-BEND_END_1",
+        "IX-P-IX-C-00031-BEND_END_2",
+        "IX-P-IX-C-00031-BEND_CP",
+        "IX-P-IX-C-00031-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00031-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00032",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2939.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00032-EP1",
+        "IX-A-IX-C-00032-EP2",
+        "IX-A-IX-C-00032-CP",
+        "IX-A-IX-C-00032-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00032-BEND_END_1",
+        "IX-P-IX-C-00032-BEND_END_2",
+        "IX-P-IX-C-00032-BEND_CP",
+        "IX-P-IX-C-00032-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00032-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00033",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "2969.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00033-EP1",
+        "IX-A-IX-C-00033-EP2",
+        "IX-A-IX-C-00033-CP",
+        "IX-A-IX-C-00033-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00033-BEND_END_1",
+        "IX-P-IX-C-00033-BEND_END_2",
+        "IX-P-IX-C-00033-BEND_CP",
+        "IX-P-IX-C-00033-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00033-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00034",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "3169.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00034-EP1",
+        "IX-A-IX-C-00034-EP2",
+        "IX-A-IX-C-00034-CP",
+        "IX-A-IX-C-00034-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00034-BEND_END_1",
+        "IX-P-IX-C-00034-BEND_END_2",
+        "IX-P-IX-C-00034-BEND_CP",
+        "IX-P-IX-C-00034-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00034-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00035",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "3199.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00035-EP1",
+        "IX-A-IX-C-00035-EP2",
+        "IX-A-IX-C-00035-CP",
+        "IX-A-IX-C-00035-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00035-BEND_END_1",
+        "IX-P-IX-C-00035-BEND_END_2",
+        "IX-P-IX-C-00035-BEND_CP",
+        "IX-P-IX-C-00035-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00035-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00036",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "3229.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00036-EP1",
+        "IX-A-IX-C-00036-EP2",
+        "IX-A-IX-C-00036-CP",
+        "IX-A-IX-C-00036-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00036-BEND_END_1",
+        "IX-P-IX-C-00036-BEND_END_2",
+        "IX-P-IX-C-00036-BEND_CP",
+        "IX-P-IX-C-00036-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00036-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00037",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "3499.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00037-EP1",
+        "IX-A-IX-C-00037-EP2",
+        "IX-A-IX-C-00037-CP",
+        "IX-A-IX-C-00037-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00037-BEND_END_1",
+        "IX-P-IX-C-00037-BEND_END_2",
+        "IX-P-IX-C-00037-BEND_CP",
+        "IX-P-IX-C-00037-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00037-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-C-00038",
+      "sourceRefs": [
+        "SRC-00001"
+      ],
+      "type": "-1.010100",
+      "normalizedType": "BEND",
+      "pipelineRef": "",
+      "lineKey": "",
+      "refNo": "",
+      "seqNo": "",
+      "name": "",
+      "bore": 0,
+      "branchBore": 0,
+      "boreUnit": "MM",
+      "sizeRaw": "",
+      "skey": "",
+      "ca": {},
+      "rawAttributes": {
+        "RADIUS": "76.000000",
+        "TYPE": "-1.010100",
+        "ANGLE1": "-2.020200",
+        "NODE1": "3619.000000",
+        "ANGLE2": "-1.010100",
+        "NODE2": "-1.010100",
+        "ANGLE3": "-1.010100",
+        "NODE3": "-1.010100",
+        "NUM_MITER": "-1.010100",
+        "FITTINGTHICKNESS": "-1.010100",
+        "KFACTOR": "-1.010100",
+        "sourceTagName": "Bend"
+      },
+      "normalized": {},
+      "derived": {},
+      "anchorIds": [
+        "IX-A-IX-C-00038-EP1",
+        "IX-A-IX-C-00038-EP2",
+        "IX-A-IX-C-00038-CP",
+        "IX-A-IX-C-00038-BP"
+      ],
+      "portIds": [
+        "IX-P-IX-C-00038-BEND_END_1",
+        "IX-P-IX-C-00038-BEND_END_2",
+        "IX-P-IX-C-00038-BEND_CP",
+        "IX-P-IX-C-00038-BEND_BP"
+      ],
+      "segmentIds": [
+        "IX-S-IX-C-00038-001"
+      ],
+      "supportId": "",
+      "confidence": "ALIASED_SOURCE",
+      "diagnostics": []
+    }
+  ],
+  "anchors": [
+    {
+      "id": "IX-A-IX-C-00001-EP1",
+      "componentId": "IX-C-00001",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00001-EP2",
+      "componentId": "IX-C-00001",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00001-CP",
+      "componentId": "IX-C-00001",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00001-BP",
+      "componentId": "IX-C-00001",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00002-EP1",
+      "componentId": "IX-C-00002",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00002-EP2",
+      "componentId": "IX-C-00002",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00002-CP",
+      "componentId": "IX-C-00002",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00002-BP",
+      "componentId": "IX-C-00002",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00003-EP1",
+      "componentId": "IX-C-00003",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00003-EP2",
+      "componentId": "IX-C-00003",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00003-CP",
+      "componentId": "IX-C-00003",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00003-BP",
+      "componentId": "IX-C-00003",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00004-EP1",
+      "componentId": "IX-C-00004",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00004-EP2",
+      "componentId": "IX-C-00004",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00004-CP",
+      "componentId": "IX-C-00004",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00004-BP",
+      "componentId": "IX-C-00004",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00005-EP1",
+      "componentId": "IX-C-00005",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00005-EP2",
+      "componentId": "IX-C-00005",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00005-CP",
+      "componentId": "IX-C-00005",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00005-BP",
+      "componentId": "IX-C-00005",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00006-EP1",
+      "componentId": "IX-C-00006",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00006-EP2",
+      "componentId": "IX-C-00006",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00006-CP",
+      "componentId": "IX-C-00006",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00006-BP",
+      "componentId": "IX-C-00006",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00007-EP1",
+      "componentId": "IX-C-00007",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00007-EP2",
+      "componentId": "IX-C-00007",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00007-CP",
+      "componentId": "IX-C-00007",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00007-BP",
+      "componentId": "IX-C-00007",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00008-EP1",
+      "componentId": "IX-C-00008",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00008-EP2",
+      "componentId": "IX-C-00008",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00008-CP",
+      "componentId": "IX-C-00008",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00008-BP",
+      "componentId": "IX-C-00008",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00009-EP1",
+      "componentId": "IX-C-00009",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00009-EP2",
+      "componentId": "IX-C-00009",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00009-CP",
+      "componentId": "IX-C-00009",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00009-BP",
+      "componentId": "IX-C-00009",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00010-EP1",
+      "componentId": "IX-C-00010",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00010-EP2",
+      "componentId": "IX-C-00010",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00010-CP",
+      "componentId": "IX-C-00010",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00010-BP",
+      "componentId": "IX-C-00010",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00011-EP1",
+      "componentId": "IX-C-00011",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00011-EP2",
+      "componentId": "IX-C-00011",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00011-CP",
+      "componentId": "IX-C-00011",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00011-BP",
+      "componentId": "IX-C-00011",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00012-EP1",
+      "componentId": "IX-C-00012",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00012-EP2",
+      "componentId": "IX-C-00012",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00012-CP",
+      "componentId": "IX-C-00012",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00012-BP",
+      "componentId": "IX-C-00012",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00013-EP1",
+      "componentId": "IX-C-00013",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00013-EP2",
+      "componentId": "IX-C-00013",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00013-CP",
+      "componentId": "IX-C-00013",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00013-BP",
+      "componentId": "IX-C-00013",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00014-EP1",
+      "componentId": "IX-C-00014",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00014-EP2",
+      "componentId": "IX-C-00014",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00014-CP",
+      "componentId": "IX-C-00014",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00014-BP",
+      "componentId": "IX-C-00014",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00015-EP1",
+      "componentId": "IX-C-00015",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00015-EP2",
+      "componentId": "IX-C-00015",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00015-CP",
+      "componentId": "IX-C-00015",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00015-BP",
+      "componentId": "IX-C-00015",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00016-EP1",
+      "componentId": "IX-C-00016",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00016-EP2",
+      "componentId": "IX-C-00016",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00016-CP",
+      "componentId": "IX-C-00016",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00016-BP",
+      "componentId": "IX-C-00016",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00017-EP1",
+      "componentId": "IX-C-00017",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00017-EP2",
+      "componentId": "IX-C-00017",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00017-CP",
+      "componentId": "IX-C-00017",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00017-BP",
+      "componentId": "IX-C-00017",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00018-EP1",
+      "componentId": "IX-C-00018",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00018-EP2",
+      "componentId": "IX-C-00018",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00018-CP",
+      "componentId": "IX-C-00018",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00018-BP",
+      "componentId": "IX-C-00018",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00019-EP1",
+      "componentId": "IX-C-00019",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00019-EP2",
+      "componentId": "IX-C-00019",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00019-CP",
+      "componentId": "IX-C-00019",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00019-BP",
+      "componentId": "IX-C-00019",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00020-EP1",
+      "componentId": "IX-C-00020",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00020-EP2",
+      "componentId": "IX-C-00020",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00020-CP",
+      "componentId": "IX-C-00020",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00020-BP",
+      "componentId": "IX-C-00020",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00021-EP1",
+      "componentId": "IX-C-00021",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00021-EP2",
+      "componentId": "IX-C-00021",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00021-CP",
+      "componentId": "IX-C-00021",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00021-BP",
+      "componentId": "IX-C-00021",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00022-EP1",
+      "componentId": "IX-C-00022",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00022-EP2",
+      "componentId": "IX-C-00022",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00022-CP",
+      "componentId": "IX-C-00022",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00022-BP",
+      "componentId": "IX-C-00022",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00023-EP1",
+      "componentId": "IX-C-00023",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00023-EP2",
+      "componentId": "IX-C-00023",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00023-CP",
+      "componentId": "IX-C-00023",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00023-BP",
+      "componentId": "IX-C-00023",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00024-EP1",
+      "componentId": "IX-C-00024",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00024-EP2",
+      "componentId": "IX-C-00024",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00024-CP",
+      "componentId": "IX-C-00024",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00024-BP",
+      "componentId": "IX-C-00024",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00025-EP1",
+      "componentId": "IX-C-00025",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00025-EP2",
+      "componentId": "IX-C-00025",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00025-CP",
+      "componentId": "IX-C-00025",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00025-BP",
+      "componentId": "IX-C-00025",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00026-EP1",
+      "componentId": "IX-C-00026",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00026-EP2",
+      "componentId": "IX-C-00026",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00026-CP",
+      "componentId": "IX-C-00026",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00026-BP",
+      "componentId": "IX-C-00026",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00027-EP1",
+      "componentId": "IX-C-00027",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00027-EP2",
+      "componentId": "IX-C-00027",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00027-CP",
+      "componentId": "IX-C-00027",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00027-BP",
+      "componentId": "IX-C-00027",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00028-EP1",
+      "componentId": "IX-C-00028",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00028-EP2",
+      "componentId": "IX-C-00028",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00028-CP",
+      "componentId": "IX-C-00028",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00028-BP",
+      "componentId": "IX-C-00028",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00029-EP1",
+      "componentId": "IX-C-00029",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00029-EP2",
+      "componentId": "IX-C-00029",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00029-CP",
+      "componentId": "IX-C-00029",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00029-BP",
+      "componentId": "IX-C-00029",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00030-EP1",
+      "componentId": "IX-C-00030",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00030-EP2",
+      "componentId": "IX-C-00030",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00030-CP",
+      "componentId": "IX-C-00030",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00030-BP",
+      "componentId": "IX-C-00030",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00031-EP1",
+      "componentId": "IX-C-00031",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00031-EP2",
+      "componentId": "IX-C-00031",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00031-CP",
+      "componentId": "IX-C-00031",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00031-BP",
+      "componentId": "IX-C-00031",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00032-EP1",
+      "componentId": "IX-C-00032",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00032-EP2",
+      "componentId": "IX-C-00032",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00032-CP",
+      "componentId": "IX-C-00032",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00032-BP",
+      "componentId": "IX-C-00032",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00033-EP1",
+      "componentId": "IX-C-00033",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00033-EP2",
+      "componentId": "IX-C-00033",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00033-CP",
+      "componentId": "IX-C-00033",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00033-BP",
+      "componentId": "IX-C-00033",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00034-EP1",
+      "componentId": "IX-C-00034",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00034-EP2",
+      "componentId": "IX-C-00034",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00034-CP",
+      "componentId": "IX-C-00034",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00034-BP",
+      "componentId": "IX-C-00034",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00035-EP1",
+      "componentId": "IX-C-00035",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00035-EP2",
+      "componentId": "IX-C-00035",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00035-CP",
+      "componentId": "IX-C-00035",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00035-BP",
+      "componentId": "IX-C-00035",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00036-EP1",
+      "componentId": "IX-C-00036",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00036-EP2",
+      "componentId": "IX-C-00036",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00036-CP",
+      "componentId": "IX-C-00036",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00036-BP",
+      "componentId": "IX-C-00036",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00037-EP1",
+      "componentId": "IX-C-00037",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00037-EP2",
+      "componentId": "IX-C-00037",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00037-CP",
+      "componentId": "IX-C-00037",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00037-BP",
+      "componentId": "IX-C-00037",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00038-EP1",
+      "componentId": "IX-C-00038",
+      "role": "EP1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP1",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00038-EP2",
+      "componentId": "IX-C-00038",
+      "role": "EP2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:EP2",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00038-CP",
+      "componentId": "IX-C-00038",
+      "role": "CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:CP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-A-IX-C-00038-BP",
+      "componentId": "IX-C-00038",
+      "role": "BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "sourceRef": null,
+      "sourceField": "Bend:BP",
+      "confidence": "ALIASED_SOURCE",
+      "fallbackLevel": "",
+      "derivationMethod": "",
+      "diagnostics": []
+    }
+  ],
+  "ports": [
+    {
+      "id": "IX-P-IX-C-00001-BEND_END_1",
+      "componentId": "IX-C-00001",
+      "anchorId": "IX-A-IX-C-00001-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00001-BEND_END_2",
+      "componentId": "IX-C-00001",
+      "anchorId": "IX-A-IX-C-00001-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00001-BEND_CP",
+      "componentId": "IX-C-00001",
+      "anchorId": "IX-A-IX-C-00001-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00001-BEND_BP",
+      "componentId": "IX-C-00001",
+      "anchorId": "IX-A-IX-C-00001-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00002-BEND_END_1",
+      "componentId": "IX-C-00002",
+      "anchorId": "IX-A-IX-C-00002-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00002-BEND_END_2",
+      "componentId": "IX-C-00002",
+      "anchorId": "IX-A-IX-C-00002-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00002-BEND_CP",
+      "componentId": "IX-C-00002",
+      "anchorId": "IX-A-IX-C-00002-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00002-BEND_BP",
+      "componentId": "IX-C-00002",
+      "anchorId": "IX-A-IX-C-00002-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00003-BEND_END_1",
+      "componentId": "IX-C-00003",
+      "anchorId": "IX-A-IX-C-00003-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00003-BEND_END_2",
+      "componentId": "IX-C-00003",
+      "anchorId": "IX-A-IX-C-00003-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00003-BEND_CP",
+      "componentId": "IX-C-00003",
+      "anchorId": "IX-A-IX-C-00003-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00003-BEND_BP",
+      "componentId": "IX-C-00003",
+      "anchorId": "IX-A-IX-C-00003-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00004-BEND_END_1",
+      "componentId": "IX-C-00004",
+      "anchorId": "IX-A-IX-C-00004-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00004-BEND_END_2",
+      "componentId": "IX-C-00004",
+      "anchorId": "IX-A-IX-C-00004-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00004-BEND_CP",
+      "componentId": "IX-C-00004",
+      "anchorId": "IX-A-IX-C-00004-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00004-BEND_BP",
+      "componentId": "IX-C-00004",
+      "anchorId": "IX-A-IX-C-00004-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00005-BEND_END_1",
+      "componentId": "IX-C-00005",
+      "anchorId": "IX-A-IX-C-00005-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00005-BEND_END_2",
+      "componentId": "IX-C-00005",
+      "anchorId": "IX-A-IX-C-00005-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00005-BEND_CP",
+      "componentId": "IX-C-00005",
+      "anchorId": "IX-A-IX-C-00005-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00005-BEND_BP",
+      "componentId": "IX-C-00005",
+      "anchorId": "IX-A-IX-C-00005-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00006-BEND_END_1",
+      "componentId": "IX-C-00006",
+      "anchorId": "IX-A-IX-C-00006-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00006-BEND_END_2",
+      "componentId": "IX-C-00006",
+      "anchorId": "IX-A-IX-C-00006-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00006-BEND_CP",
+      "componentId": "IX-C-00006",
+      "anchorId": "IX-A-IX-C-00006-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00006-BEND_BP",
+      "componentId": "IX-C-00006",
+      "anchorId": "IX-A-IX-C-00006-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00007-BEND_END_1",
+      "componentId": "IX-C-00007",
+      "anchorId": "IX-A-IX-C-00007-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00007-BEND_END_2",
+      "componentId": "IX-C-00007",
+      "anchorId": "IX-A-IX-C-00007-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00007-BEND_CP",
+      "componentId": "IX-C-00007",
+      "anchorId": "IX-A-IX-C-00007-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00007-BEND_BP",
+      "componentId": "IX-C-00007",
+      "anchorId": "IX-A-IX-C-00007-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00008-BEND_END_1",
+      "componentId": "IX-C-00008",
+      "anchorId": "IX-A-IX-C-00008-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00008-BEND_END_2",
+      "componentId": "IX-C-00008",
+      "anchorId": "IX-A-IX-C-00008-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00008-BEND_CP",
+      "componentId": "IX-C-00008",
+      "anchorId": "IX-A-IX-C-00008-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00008-BEND_BP",
+      "componentId": "IX-C-00008",
+      "anchorId": "IX-A-IX-C-00008-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00009-BEND_END_1",
+      "componentId": "IX-C-00009",
+      "anchorId": "IX-A-IX-C-00009-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00009-BEND_END_2",
+      "componentId": "IX-C-00009",
+      "anchorId": "IX-A-IX-C-00009-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00009-BEND_CP",
+      "componentId": "IX-C-00009",
+      "anchorId": "IX-A-IX-C-00009-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00009-BEND_BP",
+      "componentId": "IX-C-00009",
+      "anchorId": "IX-A-IX-C-00009-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00010-BEND_END_1",
+      "componentId": "IX-C-00010",
+      "anchorId": "IX-A-IX-C-00010-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00010-BEND_END_2",
+      "componentId": "IX-C-00010",
+      "anchorId": "IX-A-IX-C-00010-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00010-BEND_CP",
+      "componentId": "IX-C-00010",
+      "anchorId": "IX-A-IX-C-00010-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00010-BEND_BP",
+      "componentId": "IX-C-00010",
+      "anchorId": "IX-A-IX-C-00010-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00011-BEND_END_1",
+      "componentId": "IX-C-00011",
+      "anchorId": "IX-A-IX-C-00011-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00011-BEND_END_2",
+      "componentId": "IX-C-00011",
+      "anchorId": "IX-A-IX-C-00011-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00011-BEND_CP",
+      "componentId": "IX-C-00011",
+      "anchorId": "IX-A-IX-C-00011-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00011-BEND_BP",
+      "componentId": "IX-C-00011",
+      "anchorId": "IX-A-IX-C-00011-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00012-BEND_END_1",
+      "componentId": "IX-C-00012",
+      "anchorId": "IX-A-IX-C-00012-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00012-BEND_END_2",
+      "componentId": "IX-C-00012",
+      "anchorId": "IX-A-IX-C-00012-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00012-BEND_CP",
+      "componentId": "IX-C-00012",
+      "anchorId": "IX-A-IX-C-00012-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00012-BEND_BP",
+      "componentId": "IX-C-00012",
+      "anchorId": "IX-A-IX-C-00012-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00013-BEND_END_1",
+      "componentId": "IX-C-00013",
+      "anchorId": "IX-A-IX-C-00013-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00013-BEND_END_2",
+      "componentId": "IX-C-00013",
+      "anchorId": "IX-A-IX-C-00013-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00013-BEND_CP",
+      "componentId": "IX-C-00013",
+      "anchorId": "IX-A-IX-C-00013-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00013-BEND_BP",
+      "componentId": "IX-C-00013",
+      "anchorId": "IX-A-IX-C-00013-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00014-BEND_END_1",
+      "componentId": "IX-C-00014",
+      "anchorId": "IX-A-IX-C-00014-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00014-BEND_END_2",
+      "componentId": "IX-C-00014",
+      "anchorId": "IX-A-IX-C-00014-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00014-BEND_CP",
+      "componentId": "IX-C-00014",
+      "anchorId": "IX-A-IX-C-00014-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00014-BEND_BP",
+      "componentId": "IX-C-00014",
+      "anchorId": "IX-A-IX-C-00014-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00015-BEND_END_1",
+      "componentId": "IX-C-00015",
+      "anchorId": "IX-A-IX-C-00015-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00015-BEND_END_2",
+      "componentId": "IX-C-00015",
+      "anchorId": "IX-A-IX-C-00015-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00015-BEND_CP",
+      "componentId": "IX-C-00015",
+      "anchorId": "IX-A-IX-C-00015-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00015-BEND_BP",
+      "componentId": "IX-C-00015",
+      "anchorId": "IX-A-IX-C-00015-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00016-BEND_END_1",
+      "componentId": "IX-C-00016",
+      "anchorId": "IX-A-IX-C-00016-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00016-BEND_END_2",
+      "componentId": "IX-C-00016",
+      "anchorId": "IX-A-IX-C-00016-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00016-BEND_CP",
+      "componentId": "IX-C-00016",
+      "anchorId": "IX-A-IX-C-00016-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00016-BEND_BP",
+      "componentId": "IX-C-00016",
+      "anchorId": "IX-A-IX-C-00016-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00017-BEND_END_1",
+      "componentId": "IX-C-00017",
+      "anchorId": "IX-A-IX-C-00017-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00017-BEND_END_2",
+      "componentId": "IX-C-00017",
+      "anchorId": "IX-A-IX-C-00017-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00017-BEND_CP",
+      "componentId": "IX-C-00017",
+      "anchorId": "IX-A-IX-C-00017-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00017-BEND_BP",
+      "componentId": "IX-C-00017",
+      "anchorId": "IX-A-IX-C-00017-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00018-BEND_END_1",
+      "componentId": "IX-C-00018",
+      "anchorId": "IX-A-IX-C-00018-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00018-BEND_END_2",
+      "componentId": "IX-C-00018",
+      "anchorId": "IX-A-IX-C-00018-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00018-BEND_CP",
+      "componentId": "IX-C-00018",
+      "anchorId": "IX-A-IX-C-00018-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00018-BEND_BP",
+      "componentId": "IX-C-00018",
+      "anchorId": "IX-A-IX-C-00018-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00019-BEND_END_1",
+      "componentId": "IX-C-00019",
+      "anchorId": "IX-A-IX-C-00019-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00019-BEND_END_2",
+      "componentId": "IX-C-00019",
+      "anchorId": "IX-A-IX-C-00019-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00019-BEND_CP",
+      "componentId": "IX-C-00019",
+      "anchorId": "IX-A-IX-C-00019-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00019-BEND_BP",
+      "componentId": "IX-C-00019",
+      "anchorId": "IX-A-IX-C-00019-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00020-BEND_END_1",
+      "componentId": "IX-C-00020",
+      "anchorId": "IX-A-IX-C-00020-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00020-BEND_END_2",
+      "componentId": "IX-C-00020",
+      "anchorId": "IX-A-IX-C-00020-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00020-BEND_CP",
+      "componentId": "IX-C-00020",
+      "anchorId": "IX-A-IX-C-00020-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00020-BEND_BP",
+      "componentId": "IX-C-00020",
+      "anchorId": "IX-A-IX-C-00020-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00021-BEND_END_1",
+      "componentId": "IX-C-00021",
+      "anchorId": "IX-A-IX-C-00021-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00021-BEND_END_2",
+      "componentId": "IX-C-00021",
+      "anchorId": "IX-A-IX-C-00021-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00021-BEND_CP",
+      "componentId": "IX-C-00021",
+      "anchorId": "IX-A-IX-C-00021-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00021-BEND_BP",
+      "componentId": "IX-C-00021",
+      "anchorId": "IX-A-IX-C-00021-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00022-BEND_END_1",
+      "componentId": "IX-C-00022",
+      "anchorId": "IX-A-IX-C-00022-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00022-BEND_END_2",
+      "componentId": "IX-C-00022",
+      "anchorId": "IX-A-IX-C-00022-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00022-BEND_CP",
+      "componentId": "IX-C-00022",
+      "anchorId": "IX-A-IX-C-00022-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00022-BEND_BP",
+      "componentId": "IX-C-00022",
+      "anchorId": "IX-A-IX-C-00022-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00023-BEND_END_1",
+      "componentId": "IX-C-00023",
+      "anchorId": "IX-A-IX-C-00023-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00023-BEND_END_2",
+      "componentId": "IX-C-00023",
+      "anchorId": "IX-A-IX-C-00023-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00023-BEND_CP",
+      "componentId": "IX-C-00023",
+      "anchorId": "IX-A-IX-C-00023-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00023-BEND_BP",
+      "componentId": "IX-C-00023",
+      "anchorId": "IX-A-IX-C-00023-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00024-BEND_END_1",
+      "componentId": "IX-C-00024",
+      "anchorId": "IX-A-IX-C-00024-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00024-BEND_END_2",
+      "componentId": "IX-C-00024",
+      "anchorId": "IX-A-IX-C-00024-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00024-BEND_CP",
+      "componentId": "IX-C-00024",
+      "anchorId": "IX-A-IX-C-00024-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00024-BEND_BP",
+      "componentId": "IX-C-00024",
+      "anchorId": "IX-A-IX-C-00024-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00025-BEND_END_1",
+      "componentId": "IX-C-00025",
+      "anchorId": "IX-A-IX-C-00025-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00025-BEND_END_2",
+      "componentId": "IX-C-00025",
+      "anchorId": "IX-A-IX-C-00025-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00025-BEND_CP",
+      "componentId": "IX-C-00025",
+      "anchorId": "IX-A-IX-C-00025-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00025-BEND_BP",
+      "componentId": "IX-C-00025",
+      "anchorId": "IX-A-IX-C-00025-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00026-BEND_END_1",
+      "componentId": "IX-C-00026",
+      "anchorId": "IX-A-IX-C-00026-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00026-BEND_END_2",
+      "componentId": "IX-C-00026",
+      "anchorId": "IX-A-IX-C-00026-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00026-BEND_CP",
+      "componentId": "IX-C-00026",
+      "anchorId": "IX-A-IX-C-00026-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00026-BEND_BP",
+      "componentId": "IX-C-00026",
+      "anchorId": "IX-A-IX-C-00026-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00027-BEND_END_1",
+      "componentId": "IX-C-00027",
+      "anchorId": "IX-A-IX-C-00027-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00027-BEND_END_2",
+      "componentId": "IX-C-00027",
+      "anchorId": "IX-A-IX-C-00027-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00027-BEND_CP",
+      "componentId": "IX-C-00027",
+      "anchorId": "IX-A-IX-C-00027-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00027-BEND_BP",
+      "componentId": "IX-C-00027",
+      "anchorId": "IX-A-IX-C-00027-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00028-BEND_END_1",
+      "componentId": "IX-C-00028",
+      "anchorId": "IX-A-IX-C-00028-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00028-BEND_END_2",
+      "componentId": "IX-C-00028",
+      "anchorId": "IX-A-IX-C-00028-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00028-BEND_CP",
+      "componentId": "IX-C-00028",
+      "anchorId": "IX-A-IX-C-00028-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00028-BEND_BP",
+      "componentId": "IX-C-00028",
+      "anchorId": "IX-A-IX-C-00028-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00029-BEND_END_1",
+      "componentId": "IX-C-00029",
+      "anchorId": "IX-A-IX-C-00029-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00029-BEND_END_2",
+      "componentId": "IX-C-00029",
+      "anchorId": "IX-A-IX-C-00029-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00029-BEND_CP",
+      "componentId": "IX-C-00029",
+      "anchorId": "IX-A-IX-C-00029-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00029-BEND_BP",
+      "componentId": "IX-C-00029",
+      "anchorId": "IX-A-IX-C-00029-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00030-BEND_END_1",
+      "componentId": "IX-C-00030",
+      "anchorId": "IX-A-IX-C-00030-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00030-BEND_END_2",
+      "componentId": "IX-C-00030",
+      "anchorId": "IX-A-IX-C-00030-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00030-BEND_CP",
+      "componentId": "IX-C-00030",
+      "anchorId": "IX-A-IX-C-00030-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00030-BEND_BP",
+      "componentId": "IX-C-00030",
+      "anchorId": "IX-A-IX-C-00030-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00031-BEND_END_1",
+      "componentId": "IX-C-00031",
+      "anchorId": "IX-A-IX-C-00031-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00031-BEND_END_2",
+      "componentId": "IX-C-00031",
+      "anchorId": "IX-A-IX-C-00031-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00031-BEND_CP",
+      "componentId": "IX-C-00031",
+      "anchorId": "IX-A-IX-C-00031-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00031-BEND_BP",
+      "componentId": "IX-C-00031",
+      "anchorId": "IX-A-IX-C-00031-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00032-BEND_END_1",
+      "componentId": "IX-C-00032",
+      "anchorId": "IX-A-IX-C-00032-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00032-BEND_END_2",
+      "componentId": "IX-C-00032",
+      "anchorId": "IX-A-IX-C-00032-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00032-BEND_CP",
+      "componentId": "IX-C-00032",
+      "anchorId": "IX-A-IX-C-00032-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00032-BEND_BP",
+      "componentId": "IX-C-00032",
+      "anchorId": "IX-A-IX-C-00032-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00033-BEND_END_1",
+      "componentId": "IX-C-00033",
+      "anchorId": "IX-A-IX-C-00033-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00033-BEND_END_2",
+      "componentId": "IX-C-00033",
+      "anchorId": "IX-A-IX-C-00033-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00033-BEND_CP",
+      "componentId": "IX-C-00033",
+      "anchorId": "IX-A-IX-C-00033-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00033-BEND_BP",
+      "componentId": "IX-C-00033",
+      "anchorId": "IX-A-IX-C-00033-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00034-BEND_END_1",
+      "componentId": "IX-C-00034",
+      "anchorId": "IX-A-IX-C-00034-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00034-BEND_END_2",
+      "componentId": "IX-C-00034",
+      "anchorId": "IX-A-IX-C-00034-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00034-BEND_CP",
+      "componentId": "IX-C-00034",
+      "anchorId": "IX-A-IX-C-00034-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00034-BEND_BP",
+      "componentId": "IX-C-00034",
+      "anchorId": "IX-A-IX-C-00034-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00035-BEND_END_1",
+      "componentId": "IX-C-00035",
+      "anchorId": "IX-A-IX-C-00035-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00035-BEND_END_2",
+      "componentId": "IX-C-00035",
+      "anchorId": "IX-A-IX-C-00035-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00035-BEND_CP",
+      "componentId": "IX-C-00035",
+      "anchorId": "IX-A-IX-C-00035-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00035-BEND_BP",
+      "componentId": "IX-C-00035",
+      "anchorId": "IX-A-IX-C-00035-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00036-BEND_END_1",
+      "componentId": "IX-C-00036",
+      "anchorId": "IX-A-IX-C-00036-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00036-BEND_END_2",
+      "componentId": "IX-C-00036",
+      "anchorId": "IX-A-IX-C-00036-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00036-BEND_CP",
+      "componentId": "IX-C-00036",
+      "anchorId": "IX-A-IX-C-00036-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00036-BEND_BP",
+      "componentId": "IX-C-00036",
+      "anchorId": "IX-A-IX-C-00036-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00037-BEND_END_1",
+      "componentId": "IX-C-00037",
+      "anchorId": "IX-A-IX-C-00037-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00037-BEND_END_2",
+      "componentId": "IX-C-00037",
+      "anchorId": "IX-A-IX-C-00037-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00037-BEND_CP",
+      "componentId": "IX-C-00037",
+      "anchorId": "IX-A-IX-C-00037-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00037-BEND_BP",
+      "componentId": "IX-C-00037",
+      "anchorId": "IX-A-IX-C-00037-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00038-BEND_END_1",
+      "componentId": "IX-C-00038",
+      "anchorId": "IX-A-IX-C-00038-EP1",
+      "role": "BEND_END_1",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00038-BEND_END_2",
+      "componentId": "IX-C-00038",
+      "anchorId": "IX-A-IX-C-00038-EP2",
+      "role": "BEND_END_2",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00038-BEND_CP",
+      "componentId": "IX-C-00038",
+      "anchorId": "IX-A-IX-C-00038-CP",
+      "role": "BEND_CP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    },
+    {
+      "id": "IX-P-IX-C-00038-BEND_BP",
+      "componentId": "IX-C-00038",
+      "anchorId": "IX-A-IX-C-00038-BP",
+      "role": "BEND_BP",
+      "point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "bore": 0,
+      "branchBore": 0,
+      "fixed": true,
+      "futureMovable": false,
+      "mutableNow": false,
+      "connectsTo": "ENDPOINT",
+      "maxDegree": 1,
+      "diagnostics": []
+    }
+  ],
+  "segments": [
+    {
+      "id": "IX-S-IX-C-00001-001",
+      "componentId": "IX-C-00001",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00001-EP1",
+      "endAnchorId": "IX-A-IX-C-00001-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00002-001",
+      "componentId": "IX-C-00002",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00002-EP1",
+      "endAnchorId": "IX-A-IX-C-00002-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00003-001",
+      "componentId": "IX-C-00003",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00003-EP1",
+      "endAnchorId": "IX-A-IX-C-00003-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00004-001",
+      "componentId": "IX-C-00004",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00004-EP1",
+      "endAnchorId": "IX-A-IX-C-00004-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00005-001",
+      "componentId": "IX-C-00005",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00005-EP1",
+      "endAnchorId": "IX-A-IX-C-00005-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00006-001",
+      "componentId": "IX-C-00006",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00006-EP1",
+      "endAnchorId": "IX-A-IX-C-00006-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00007-001",
+      "componentId": "IX-C-00007",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00007-EP1",
+      "endAnchorId": "IX-A-IX-C-00007-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00008-001",
+      "componentId": "IX-C-00008",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00008-EP1",
+      "endAnchorId": "IX-A-IX-C-00008-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00009-001",
+      "componentId": "IX-C-00009",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00009-EP1",
+      "endAnchorId": "IX-A-IX-C-00009-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00010-001",
+      "componentId": "IX-C-00010",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00010-EP1",
+      "endAnchorId": "IX-A-IX-C-00010-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00011-001",
+      "componentId": "IX-C-00011",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00011-EP1",
+      "endAnchorId": "IX-A-IX-C-00011-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00012-001",
+      "componentId": "IX-C-00012",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00012-EP1",
+      "endAnchorId": "IX-A-IX-C-00012-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00013-001",
+      "componentId": "IX-C-00013",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00013-EP1",
+      "endAnchorId": "IX-A-IX-C-00013-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00014-001",
+      "componentId": "IX-C-00014",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00014-EP1",
+      "endAnchorId": "IX-A-IX-C-00014-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00015-001",
+      "componentId": "IX-C-00015",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00015-EP1",
+      "endAnchorId": "IX-A-IX-C-00015-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00016-001",
+      "componentId": "IX-C-00016",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00016-EP1",
+      "endAnchorId": "IX-A-IX-C-00016-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00017-001",
+      "componentId": "IX-C-00017",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00017-EP1",
+      "endAnchorId": "IX-A-IX-C-00017-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00018-001",
+      "componentId": "IX-C-00018",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00018-EP1",
+      "endAnchorId": "IX-A-IX-C-00018-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00019-001",
+      "componentId": "IX-C-00019",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00019-EP1",
+      "endAnchorId": "IX-A-IX-C-00019-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00020-001",
+      "componentId": "IX-C-00020",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00020-EP1",
+      "endAnchorId": "IX-A-IX-C-00020-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00021-001",
+      "componentId": "IX-C-00021",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00021-EP1",
+      "endAnchorId": "IX-A-IX-C-00021-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00022-001",
+      "componentId": "IX-C-00022",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00022-EP1",
+      "endAnchorId": "IX-A-IX-C-00022-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00023-001",
+      "componentId": "IX-C-00023",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00023-EP1",
+      "endAnchorId": "IX-A-IX-C-00023-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00024-001",
+      "componentId": "IX-C-00024",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00024-EP1",
+      "endAnchorId": "IX-A-IX-C-00024-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00025-001",
+      "componentId": "IX-C-00025",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00025-EP1",
+      "endAnchorId": "IX-A-IX-C-00025-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00026-001",
+      "componentId": "IX-C-00026",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00026-EP1",
+      "endAnchorId": "IX-A-IX-C-00026-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00027-001",
+      "componentId": "IX-C-00027",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00027-EP1",
+      "endAnchorId": "IX-A-IX-C-00027-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00028-001",
+      "componentId": "IX-C-00028",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00028-EP1",
+      "endAnchorId": "IX-A-IX-C-00028-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00029-001",
+      "componentId": "IX-C-00029",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00029-EP1",
+      "endAnchorId": "IX-A-IX-C-00029-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00030-001",
+      "componentId": "IX-C-00030",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00030-EP1",
+      "endAnchorId": "IX-A-IX-C-00030-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00031-001",
+      "componentId": "IX-C-00031",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00031-EP1",
+      "endAnchorId": "IX-A-IX-C-00031-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00032-001",
+      "componentId": "IX-C-00032",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00032-EP1",
+      "endAnchorId": "IX-A-IX-C-00032-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00033-001",
+      "componentId": "IX-C-00033",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00033-EP1",
+      "endAnchorId": "IX-A-IX-C-00033-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00034-001",
+      "componentId": "IX-C-00034",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00034-EP1",
+      "endAnchorId": "IX-A-IX-C-00034-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00035-001",
+      "componentId": "IX-C-00035",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00035-EP1",
+      "endAnchorId": "IX-A-IX-C-00035-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00036-001",
+      "componentId": "IX-C-00036",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00036-EP1",
+      "endAnchorId": "IX-A-IX-C-00036-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00037-001",
+      "componentId": "IX-C-00037",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00037-EP1",
+      "endAnchorId": "IX-A-IX-C-00037-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    },
+    {
+      "id": "IX-S-IX-C-00038-001",
+      "componentId": "IX-C-00038",
+      "type": "BEND_CHORD",
+      "startAnchorId": "IX-A-IX-C-00038-EP1",
+      "endAnchorId": "IX-A-IX-C-00038-EP2",
+      "supportAnchorId": "",
+      "bore": 0,
+      "length": null,
+      "lengthUnit": "MM",
+      "diagnostics": []
+    }
+  ],
+  "supports": [],
+  "topologyHints": [],
+  "rayEvidence": [],
+  "lossContract": [],
+  "diagnostics": [
+    {
+      "id": "D-00001",
+      "severity": "INFO",
+      "code": "UXML-NORMALIZER-STARTED",
+      "message": "Started UXML normalization for profile INPUT_XML.",
+      "componentId": "",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "SRC-00001",
+      "details": {}
+    },
+    {
+      "id": "IX-D-00002",
+      "severity": "INFO",
+      "code": "UXML-INPUTXML-MAPPER-STARTED",
+      "message": "Started adaptive InputXML mapper. Nodes=0, candidate component tags=38.",
+      "componentId": "",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "SRC-00001",
+      "details": {
+        "fileName": "C:/Users/reall/Downloads/RMSS_ATTRIBUTE_managed_stage (2)_stagedjson_to_inputxml.xml",
+        "selectedSourceType": "INPUT_XML"
+      }
+    },
+    {
+      "id": "IX-D-00003",
+      "severity": "INFO",
+      "code": "UXML-INPUTXML-MAPPER-COMPLETED",
+      "message": "Mapped InputXML components=38, anchors=152, ports=152, segments=38.",
+      "componentId": "",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "SRC-00001",
+      "details": {
+        "componentCount": 38,
+        "anchorCount": 152,
+        "portCount": 152,
+        "segmentCount": 38,
+        "supportCount": 0,
+        "diagnosticCount": 1,
+        "lossCount": 0
+      }
+    },
+    {
+      "id": "D-00004",
+      "severity": "INFO",
+      "code": "UXML-NORMALIZER-INPUTXML-MAPPER-OK",
+      "message": "InputXML adaptive mapper completed. Components=38.",
+      "componentId": "",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "SRC-00001",
+      "details": {
+        "componentCount": 38,
+        "anchorCount": 152,
+        "portCount": 152,
+        "segmentCount": 38,
+        "supportCount": 0,
+        "diagnosticCount": 2,
+        "lossCount": 0
+      }
+    },
+    {
+      "id": "D-00005",
+      "severity": "INFO",
+      "code": "UXML-NORMALIZER-COMPLETED",
+      "message": "Completed UXML normalization skeleton. Components=38, Anchors=152, Ports=152.",
+      "componentId": "",
+      "anchorId": "",
+      "portId": "",
+      "segmentId": "",
+      "supportId": "",
+      "sourceId": "SRC-00001",
+      "details": {}
+    }
+  ]
+}

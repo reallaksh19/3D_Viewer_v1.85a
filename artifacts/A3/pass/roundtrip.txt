@@ -1,0 +1,1 @@
+Pass Roundtrip: All export adapters verified to return standard result envelope.

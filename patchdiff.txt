@@ -1,0 +1,51 @@
+Patch trace — XML->CII element-length patch syntax fix
+Date: 2026-06-08
+
+Problem
+=======
+Model Converters failed to render with:
+
+  Failed to render Model Converters: Unexpected token 'export'
+  app.js?v=20260608-xml-cii-missed-items-1:263 SyntaxError: Unexpected token 'export'
+
+Root cause
+==========
+viewer/tabs/xml-cii-element-length-run-patch.js contained:
+
+  export function installXmlCiiElementLengthRunPatch() { ... }
+
+The file is imported only for side effects from viewer/index.html. In the current app/runtime path, this caused the tab render/evaluation path to reject module-only export syntax.
+
+Changed files
+=============
+
+1) viewer/tabs/xml-cii-element-length-run-patch.js
+--------------------------------------------------
+- Removed the top-level `export` keyword.
+- Kept the installer as a normal function:
+
+    function installXmlCiiElementLengthRunPatch() { ... }
+
+- Exposed the installer on window for debug/manual re-run:
+
+    window.installXmlCiiElementLengthRunPatch = installXmlCiiElementLengthRunPatch;
+
+- Kept the existing automatic call:
+
+    installXmlCiiElementLengthRunPatch();
+
+2) viewer/index.html
+--------------------
+- Bumped the element-length patch cache key:
+
+    xml-cii-element-length-run-patch.js?v=20260608-element-length-3
+
+- Bumped app init cache key:
+
+    app.js?v=20260608-xml-cii-missed-items-2
+
+Expected result
+===============
+- Browser no longer sees `export` in xml-cii-element-length-run-patch.js.
+- Model Converters tab should render instead of failing at app.js renderActiveTab.
+- Cache-busted URLs force the browser to load the fixed patch file.

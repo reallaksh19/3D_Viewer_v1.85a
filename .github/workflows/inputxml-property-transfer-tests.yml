@@ -1,0 +1,50 @@
+name: InputXML Property Transfer Tests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'viewer/tabs/inputxml-property-transfer/**'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-ui.js'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui.js'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v2.js'
+      - 'Benchmarks/InputXML Property Transfer/**'
+      - 'scripts/test-inputxml-property-transfer-coordinate-benchmark.mjs'
+      - '.github/workflows/inputxml-property-transfer-tests.yml'
+  pull_request:
+    paths:
+      - 'viewer/tabs/inputxml-property-transfer/**'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-ui.js'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui.js'
+      - 'viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v2.js'
+      - 'Benchmarks/InputXML Property Transfer/**'
+      - 'scripts/test-inputxml-property-transfer-coordinate-benchmark.mjs'
+      - '.github/workflows/inputxml-property-transfer-tests.yml'
+
+jobs:
+  inputxml-property-transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Syntax check
+        run: |
+          node --check viewer/tabs/inputxml-property-transfer/inputxml-property-transfer-defaults.js
+          node --check viewer/tabs/inputxml-property-transfer/inputxml-property-transfer-parser.js
+          node --check viewer/tabs/inputxml-property-transfer/inputxml-property-transfer-matcher.js
+          node --check viewer/tabs/inputxml-property-transfer/inputxml-property-transfer-report.js
+          node --check viewer/tabs/inputxml-property-transfer/inputxml-property-transfer-writer.js
+          node --check viewer/tabs/inputxml-property-transfer/index.js
+          node --check viewer/tabs/model-converters/inputxml-property-transfer-ui.js
+          node --check viewer/tabs/model-converters/inputxml-property-transfer-popup-ui.js
+          node --check viewer/tabs/model-converters/inputxml-property-transfer-popup-ui-v2.js
+          node --check scripts/test-inputxml-property-transfer-coordinate-benchmark.mjs
+
+      - name: Run coordinate benchmark
+        run: node scripts/test-inputxml-property-transfer-coordinate-benchmark.mjs

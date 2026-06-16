@@ -1,0 +1,37 @@
+name: PSI116 BM1 Regression
+
+on:
+  push:
+    paths:
+      - "viewer/converters/scripts/**"
+      - ".github/workflows/psi116-bm1-regression.yml"
+      - "Benchmarks/Managejson to Input XML/RMSS/RMSS_ATTRIBUTE.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bm1-stagedjson-xml-cii:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run BM1 staged JSON XML CII regression
+        run: |
+          python viewer/converters/scripts/psi116_regression_bm1.py
+
+      - name: Upload BM1 regression artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: psi116-bm1-regression-artifacts
+          path: |
+            reports/psi116_bm1_regression/**
+          if-no-files-found: warn

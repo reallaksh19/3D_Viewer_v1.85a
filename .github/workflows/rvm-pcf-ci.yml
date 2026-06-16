@@ -1,0 +1,45 @@
+name: RVM PCF CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'viewer/rvm-pcf-extract/**'
+      - 'viewer/converters/xml-cii2019-core/**'
+      - 'viewer/tabs/model-converters/workflow/**'
+      - 'viewer/tabs/rvm-json-pcf-*.js'
+      - 'viewer/tabs/viewer3d-rvm-tab.js'
+      - 'viewer/contracts/runtime-events.js'
+      - 'viewer/core/event-bus.js'
+      - 'viewer/core/state.js'
+      - 'viewer/tests/rvm-pcf-*.test.js'
+      - '.github/workflows/rvm-pcf-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rvm-pcf-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify XML CII master context
+        run: node viewer/tests/rvm-pcf-master-context.test.js
+
+      - name: Verify shared workflow adapters
+        run: node viewer/tests/rvm-pcf-shared-workflow-adapters.test.js
+
+      - name: Verify JSON/RVM PCF row enricher
+        run: node viewer/tests/rvm-pcf-row-enricher.test.js
+
+      - name: Verify JSON/RVM PCF adapter preview and run
+        run: node viewer/tests/rvm-pcf-json-adapter-preview-run.test.js

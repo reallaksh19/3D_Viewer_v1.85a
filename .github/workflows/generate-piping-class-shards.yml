@@ -1,0 +1,39 @@
+name: Generate specwise piping class shards
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - docs/Masters/Piping_class_master.json
+      - tools/split-piping-class-master.mjs
+      - .github/workflows/generate-piping-class-shards.yml
+
+permissions:
+  contents: write
+
+jobs:
+  split-piping-class-master:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate specwise shards
+        run: node tools/split-piping-class-master.mjs
+
+      - name: Commit generated shards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/Masters/SpecwisePipingClass
+          if git diff --cached --quiet; then
+            echo "No shard changes to commit."
+          else
+            git commit -m "Generate specwise piping class shards"
+            git push
+          fi

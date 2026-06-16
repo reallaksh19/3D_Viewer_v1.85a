@@ -1,0 +1,74 @@
+name: RVM Assisted Conversion
+on:
+  push:
+    branches:
+      - 'rvm-job-*'
+    paths:
+      - 'job-input/*.rvm'
+
+permissions:
+  contents: write
+
+jobs:
+  convert-rvm:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download RVM Parser
+        run: |
+          # This assumes the parser is available as a GitHub release on the current repo
+          # Or you can place the binary in tools/rvmparser-windows-bin.exe
+          Invoke-WebRequest -Uri "https://github.com/reallaksh19/PCF_GLB_Viewer_Conv/releases/download/v1.0/rvmparser-windows-bin.exe" -OutFile rvmparser.exe -ErrorAction SilentlyContinue || Write-Host "Download skipped or failed"
+
+      - name: Check for RVM parser in tools directory
+        id: check_parser
+        run: |
+          if (Test-Path "tools/rvmparser-windows-bin.exe") {
+             echo "parser_exists=true" >> $env:GITHUB_OUTPUT
+          } else {
+             echo "parser_exists=false" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Convert RVM to GLB
+        run: |
+          $rvmFiles = Get-ChildItem -Path "job-input" -Filter "*.rvm"
+          if ($rvmFiles.Count -eq 0) {
+            Write-Host "No RVM files found in job-input directory."
+            exit 0
+          }
+
+          $rvmFile = $rvmFiles[0].FullName
+          $stem = [System.IO.Path]::GetFileNameWithoutExtension($rvmFile)
+          $glbFile = "job-output/$stem.glb"
+
+          New-Item -ItemType Directory -Force -Path "job-output" | Out-Null
+
+          $parser = "rvmparser.exe"
+          if ("${{ steps.check_parser.outputs.parser_exists }}" -eq "true") {
+             $parser = "tools\rvmparser-windows-bin.exe"
+          }
+
+          # Using the RVM to GLTF conversion command
+          Write-Host "Running: $parser $rvmFile --output-gltf=$glbFile"
+          & $parser $rvmFile "--output-gltf=$glbFile"
+
+          if ($LASTEXITCODE -ne 0) {
+             Write-Error "RVM Parser failed with exit code $LASTEXITCODE"
+             exit 1
+          }
+
+      - name: Commit Output
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add job-output/
+
+          $changes = git status --porcelain
+          if ([string]::IsNullOrWhiteSpace($changes)) {
+             Write-Host "No changes to commit."
+          } else {
+             git commit -m "chore: add converted GLB output [skip ci]"
+             git push
+          }

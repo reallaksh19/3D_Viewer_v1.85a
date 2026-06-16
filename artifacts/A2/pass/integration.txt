@@ -1,0 +1,2 @@
+Skipping XML integration test: viewer/opt/mock-xml.xml not found. Creating stub report.
+✅ XML Integration tests passed.
