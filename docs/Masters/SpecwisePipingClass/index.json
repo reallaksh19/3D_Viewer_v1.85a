@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "source": "../Piping_class_master.json",
   "sourceSha256": "74997209ffbbf4c5e1eacc9948ec89a5e2f59ad87cc3dd7cfca6d24166d7fab1",
-  "generatedAt": "2026-06-09T02:27:27.146Z",
+  "generatedAt": "2026-06-16T03:27:54.891Z",
   "rowCount": 10699,
   "classCount": 590,
   "shardBase": "docs/Masters/SpecwisePipingClass/",
